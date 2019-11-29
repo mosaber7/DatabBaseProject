@@ -19,7 +19,7 @@ CREATE TABLE Restaurant.MenuItems
 	MenuItemID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY,
 	[Name] NVARCHAR (32) NOT NULL,
 	Price DECIMAL NOT NULL,
-	Description NVARCHAR(1024),
+	[Description] NVARCHAR(1024),
 	EffectiveFrom DATETIMEOFFSET NOT NULL DEFAULT(SYSDATETIMEOFFSET()),
 	EffectiveTo DATETIMEOFFSET
 
@@ -27,34 +27,6 @@ CREATE TABLE Restaurant.MenuItems
 	
 );
 GO
-
----Checks to see if a MenuItem already exists with that name
----whichs is currently Effective
-CREATE OR ALTER FUNCTION Restaurant.CheckNameAlreadyExisting
-(
-	@FoodName NVARCHAR (32),
-	@EffectiveDate DATETIMEOFFSET
-)
-RETURNS BIT
-AS
-BEGIN 
-	IF EXISTS
-	(
-		SELECT MI.MenuItemID
-		FROM Restaurant.MenuItems MI
-		WHERE @FoodName = MI.[Name] AND 
-		(MI.EffectiveTo =  NULL OR
-			MI.EffectiveTo > @EffectiveDate)
-	) RETURN 0
-	RETURN 1
-END;
-GO
-
-ALTER TABLE Restaurant.MenuItems
-ADD CONSTRAINT CheckUniqueNameOnDate CHECK
-(
-	Restaurant.CheckNameAlreadyExisting([Name], EffectiveFrom) = 0
-)
 
 DROP TABLE IF EXISTS Restaurant.Ingredients;
 
@@ -87,32 +59,6 @@ CREATE TABLE Restaurant.Shifts
 	ClockInTime DATETIMEOFFSET NOT NULL DEFAULT (SYSDATETIMEOFFSET()),
 	ClockOutTime DATETIMEOFFSET
 );
-GO
-
----Checks to see if there is an open shift for a certain Waiter
-CREATE OR ALTER FUNCTION Restaurant.CheckNoOpenShiftsForWaiter
-(
-	@WaiterID INT
-)
-RETURNS BIT
-AS
-BEGIN 
-	IF EXISTS
-	(
-		SELECT *
-		FROM Restaurant.Waiters W
-			INNER JOIN Restaurant.Shifts S ON S.WaiterID = W.WaiterID
-		WHERE S.ClockOutTime = NULL AND W.WaiterID = @WaiterID
-	) RETURN 0
-	RETURN 1
-END;
-GO
-
-ALTER TABLE Restaurant.Shifts
-ADD CONSTRAINT CheckUniqueOpenShift CHECK
-(
-	Restaurant.CheckNoOpenShiftsForWaiter(WaiterID) = 1
-)
 
 DROP TABLE IF EXISTS Restaurant.[Tables];
 
@@ -157,6 +103,8 @@ CREATE TABLE Restaurant.FoodIngredient
 	FoodID INT NOT NULL FOREIGN KEY REFERENCES Restaurant.Foods (FoodID),
 	IngredientID INT NOT NULL FOREIGN KEY REFERENCES Restaurant.Ingredients (IngredientID),
 	AmountUsed DECIMAL NOT NULL DEFAULT (1)
+
+	PRIMARY KEY (FoodID, IngredientID)
 );
 
 DROP TABLE IF EXISTS Restaurant.MenuItemIngredient;
@@ -166,4 +114,6 @@ CREATE TABLE Restaurant.MenuItemIngredient
 	MenuItemID INT NOT NULL FOREIGN KEY REFERENCES Restaurant.MenuItems (MenuItemID),
 	IngredientID INT NOT NULL FOREIGN KEY REFERENCES Restaurant.Ingredients (IngredientID),
 	AmountUsed DECIMAL NOT NULL DEFAULT (1)
+
+	PRIMARY KEY (MenuItemID, IngredientID)
 );

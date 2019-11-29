@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{F5D45D81-7AF8-4630-9F77-DAF4C1DD19D7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantApp", "WindowsFormsApp1\RestaurantApp.csproj", "{F5D45D81-7AF8-4630-9F77-DAF4C1DD19D7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseData", "DatabaseData\DatabaseData\DatabaseData.csproj", "{5E98E9D9-7D22-4497-A640-1D453F10192A}"
 EndProject

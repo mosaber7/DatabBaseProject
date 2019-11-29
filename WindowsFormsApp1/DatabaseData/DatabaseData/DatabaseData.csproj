@@ -46,14 +46,24 @@
   <ItemGroup>
     <Folder Include="DataDelegates\" />
     <Folder Include="Models\" />
-    <Folder Include="Sql\Procedures\GetData\" />
+    <Folder Include="Sql\Procedures\ReadData\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Sql\Creation\SchemaCreation.sql" />
     <Content Include="Sql\Creation\Table Creation.sql" />
-    <Content Include="Sql\Procedures\Add\AddFood.sql" />
-    <Content Include="Sql\Procedures\Add\AddOrder.sql" />
-    <Content Include="Sql\Procedures\Add\AddWaiter.sql" />
+    <Content Include="Sql\Procedures\UsefulFunctions.sql" />
+    <Content Include="Sql\Procedures\WriteData\AddFood.sql" />
+    <Content Include="Sql\Procedures\WriteData\AddFoodIngredientIntoLastFood.sql" />
+    <Content Include="Sql\Procedures\WriteData\AddIngredient.sql" />
+    <Content Include="Sql\Procedures\WriteData\AddMenuItem.sql" />
+    <Content Include="Sql\Procedures\WriteData\AddMenuItemIngredient.sql" />
+    <Content Include="Sql\Procedures\WriteData\AddOrder.sql" />
+    <Content Include="Sql\Procedures\WriteData\AddShift.sql" />
+    <Content Include="Sql\Procedures\WriteData\AddTable.sql" />
+    <Content Include="Sql\Procedures\WriteData\AddWaiter.sql" />
+    <Content Include="Sql\Procedures\WriteData\CloseShift.sql" />
+    <Content Include="Sql\Procedures\WriteData\RemoveMenuItem.sql" />
+    <Content Include="Sql\Procedures\WriteData\SchemaCreation.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

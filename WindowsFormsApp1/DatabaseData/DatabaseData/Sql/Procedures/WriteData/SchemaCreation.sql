@@ -1,0 +1,14 @@
+/*
+* CIS 560 Project
+* 11/9/2019 2:31 PM
+*/
+
+/*
+* SCHEMA CREATION
+*/
+
+DROP SCHEMA IF EXISTS Restaurant;
+GO
+
+CREATE SCHEMA Restaurant;
+GO

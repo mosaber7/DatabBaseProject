@@ -41,11 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Food.cs" />
+    <Compile Include="Models\Ingredient.cs" />
+    <Compile Include="Models\MenuItem.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\Waiter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataDelegates\" />
-    <Folder Include="Models\" />
     <Folder Include="Sql\Procedures\ReadData\" />
   </ItemGroup>
   <ItemGroup>

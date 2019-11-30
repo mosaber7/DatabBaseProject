@@ -54,8 +54,10 @@
   <ItemGroup>
     <Content Include="Sql\Creation\SchemaCreation.sql" />
     <Content Include="Sql\Creation\Table Creation.sql" />
+    <Content Include="Sql\Procedures\ReadData\FetchAllActiveMenuItems.sql" />
     <Content Include="Sql\Procedures\ReadData\FetchAllCurrentlyWorkingWaiters.sql" />
     <Content Include="Sql\Procedures\ReadData\FetchAllFoodsFromOrder.sql" />
+    <Content Include="Sql\Procedures\ReadData\FetchAllIngredientsFromActiveMenuItem.sql" />
     <Content Include="Sql\Procedures\ReadData\FetchAllOrdersOfTable.sql" />
     <Content Include="Sql\Procedures\UsefulFunctions.sql" />
     <Content Include="Sql\Procedures\WriteData\AddFood.sql" />

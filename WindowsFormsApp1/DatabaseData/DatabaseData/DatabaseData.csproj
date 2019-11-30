@@ -50,11 +50,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DataDelegates\" />
-    <Folder Include="Sql\Procedures\ReadData\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Sql\Creation\SchemaCreation.sql" />
     <Content Include="Sql\Creation\Table Creation.sql" />
+    <Content Include="Sql\Procedures\ReadData\FetchAllCurrentlyWorkingWaiters.sql" />
+    <Content Include="Sql\Procedures\ReadData\FetchAllFoodsFromOrder.sql" />
+    <Content Include="Sql\Procedures\ReadData\FetchAllOrdersOfTable.sql" />
     <Content Include="Sql\Procedures\UsefulFunctions.sql" />
     <Content Include="Sql\Procedures\WriteData\AddFood.sql" />
     <Content Include="Sql\Procedures\WriteData\AddFoodIngredientIntoLastFood.sql" />
@@ -65,7 +67,9 @@
     <Content Include="Sql\Procedures\WriteData\AddShift.sql" />
     <Content Include="Sql\Procedures\WriteData\AddTable.sql" />
     <Content Include="Sql\Procedures\WriteData\AddWaiter.sql" />
+    <Content Include="Sql\Procedures\WriteData\CancelOrder.sql" />
     <Content Include="Sql\Procedures\WriteData\CloseShift.sql" />
+    <Content Include="Sql\Procedures\WriteData\DeliveredOrder.sql" />
     <Content Include="Sql\Procedures\WriteData\RemoveMenuItem.sql" />
     <Content Include="Sql\Procedures\WriteData\SchemaCreation.sql" />
   </ItemGroup>

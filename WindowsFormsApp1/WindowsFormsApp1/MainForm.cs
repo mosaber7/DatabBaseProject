@@ -45,12 +45,37 @@ namespace WindowsFormsApp1
             ActivePane = PropertiesList.SelectedIndex;
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void label8_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label8_Click(object sender, EventArgs e)
+        private void AddIngredientButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RestockIngredientButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddMenuItemButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RemoveSelectedItemButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HireWaiterSubmitButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FireSelectedWaiterButton_Click(object sender, EventArgs e)
         {
 
         }

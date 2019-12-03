@@ -33,39 +33,53 @@
             this.MainPanel = new System.Windows.Forms.Panel();
             this.PropertyChangePanel = new System.Windows.Forms.Panel();
             this.PropertiesList = new System.Windows.Forms.ListBox();
-            this.AddMenuItemPanel = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.RemoveMenuItemPanel = new System.Windows.Forms.Panel();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
             this.HireWaiterPanel = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.HireWaiterSubmitButton = new System.Windows.Forms.Button();
+            this.HireWaiterNameInput = new System.Windows.Forms.TextBox();
+            this.HireWaiterWageInput = new System.Windows.Forms.TextBox();
             this.FireWaiterPanel = new System.Windows.Forms.Panel();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.FireWaiterList = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.FireSelectedWaiterButton = new System.Windows.Forms.Button();
             this.AddIngredientPanel = new System.Windows.Forms.Panel();
-            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.AddIngredientUnits = new System.Windows.Forms.TextBox();
+            this.AddIngredientAmount = new System.Windows.Forms.TextBox();
+            this.AddIngredientName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.AddIngredientButton = new System.Windows.Forms.Button();
             this.RestockIngredientPanel = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.RestockIngredientsList = new System.Windows.Forms.ListBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
+            this.RestockIngredientButton = new System.Windows.Forms.Button();
+            this.AddMenuItemPanel = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.AddMenuItemDescription = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.AddMenuItemPrice = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.AddMenuItemName = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.AddMenuItemButton = new System.Windows.Forms.Button();
+            this.RemoveMenuItemPanel = new System.Windows.Forms.Panel();
+            this.RemoveMenuItemList = new System.Windows.Forms.ListBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.RemoveSelectedItemButton = new System.Windows.Forms.Button();
             this.MainPanel.SuspendLayout();
             this.PropertyChangePanel.SuspendLayout();
-            this.AddMenuItemPanel.SuspendLayout();
-            this.RemoveMenuItemPanel.SuspendLayout();
             this.HireWaiterPanel.SuspendLayout();
             this.FireWaiterPanel.SuspendLayout();
             this.AddIngredientPanel.SuspendLayout();
             this.RestockIngredientPanel.SuspendLayout();
+            this.AddMenuItemPanel.SuspendLayout();
+            this.RemoveMenuItemPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // order
@@ -102,12 +116,12 @@
             // PropertyChangePanel
             // 
             this.PropertyChangePanel.Controls.Add(this.PropertiesList);
-            this.PropertyChangePanel.Controls.Add(this.AddMenuItemPanel);
-            this.PropertyChangePanel.Controls.Add(this.RemoveMenuItemPanel);
-            this.PropertyChangePanel.Controls.Add(this.HireWaiterPanel);
             this.PropertyChangePanel.Controls.Add(this.FireWaiterPanel);
             this.PropertyChangePanel.Controls.Add(this.AddIngredientPanel);
             this.PropertyChangePanel.Controls.Add(this.RestockIngredientPanel);
+            this.PropertyChangePanel.Controls.Add(this.AddMenuItemPanel);
+            this.PropertyChangePanel.Controls.Add(this.RemoveMenuItemPanel);
+            this.PropertyChangePanel.Controls.Add(this.HireWaiterPanel);
             this.PropertyChangePanel.Location = new System.Drawing.Point(12, 12);
             this.PropertyChangePanel.Name = "PropertyChangePanel";
             this.PropertyChangePanel.Size = new System.Drawing.Size(576, 342);
@@ -130,81 +144,14 @@
             this.PropertiesList.TabIndex = 0;
             this.PropertiesList.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
-            // AddMenuItemPanel
-            // 
-            this.AddMenuItemPanel.Controls.Add(this.label6);
-            this.AddMenuItemPanel.Controls.Add(this.button4);
-            this.AddMenuItemPanel.Location = new System.Drawing.Point(129, 3);
-            this.AddMenuItemPanel.Name = "AddMenuItemPanel";
-            this.AddMenuItemPanel.Size = new System.Drawing.Size(444, 336);
-            this.AddMenuItemPanel.TabIndex = 7;
-            this.AddMenuItemPanel.Visible = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.label6.Location = new System.Drawing.Point(3, 8);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(129, 22);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Add Menu Item";
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(53, 291);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(133, 23);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Add Menu Item";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // RemoveMenuItemPanel
-            // 
-            this.RemoveMenuItemPanel.Controls.Add(this.listBox2);
-            this.RemoveMenuItemPanel.Controls.Add(this.label5);
-            this.RemoveMenuItemPanel.Controls.Add(this.button3);
-            this.RemoveMenuItemPanel.Location = new System.Drawing.Point(129, 3);
-            this.RemoveMenuItemPanel.Name = "RemoveMenuItemPanel";
-            this.RemoveMenuItemPanel.Size = new System.Drawing.Size(444, 336);
-            this.RemoveMenuItemPanel.TabIndex = 3;
-            this.RemoveMenuItemPanel.Visible = false;
-            // 
-            // listBox2
-            // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(53, 34);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(133, 251);
-            this.listBox2.TabIndex = 6;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.label5.Location = new System.Drawing.Point(3, 8);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(163, 22);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Remove Menu Item";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(53, 291);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(133, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Remove Selected Item";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
             // HireWaiterPanel
             // 
             this.HireWaiterPanel.Controls.Add(this.label3);
             this.HireWaiterPanel.Controls.Add(this.label2);
             this.HireWaiterPanel.Controls.Add(this.label1);
-            this.HireWaiterPanel.Controls.Add(this.button1);
-            this.HireWaiterPanel.Controls.Add(this.textBox2);
-            this.HireWaiterPanel.Controls.Add(this.textBox1);
+            this.HireWaiterPanel.Controls.Add(this.HireWaiterSubmitButton);
+            this.HireWaiterPanel.Controls.Add(this.HireWaiterNameInput);
+            this.HireWaiterPanel.Controls.Add(this.HireWaiterWageInput);
             this.HireWaiterPanel.Location = new System.Drawing.Point(129, 3);
             this.HireWaiterPanel.Name = "HireWaiterPanel";
             this.HireWaiterPanel.Size = new System.Drawing.Size(444, 336);
@@ -239,48 +186,48 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Name";
             // 
-            // button1
+            // HireWaiterSubmitButton
             // 
-            this.button1.Location = new System.Drawing.Point(86, 86);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Hire Waiter";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.HireWaiterSubmitButton.Location = new System.Drawing.Point(86, 86);
+            this.HireWaiterSubmitButton.Name = "HireWaiterSubmitButton";
+            this.HireWaiterSubmitButton.Size = new System.Drawing.Size(100, 23);
+            this.HireWaiterSubmitButton.TabIndex = 2;
+            this.HireWaiterSubmitButton.Text = "Hire Waiter";
+            this.HireWaiterSubmitButton.UseVisualStyleBackColor = true;
+            this.HireWaiterSubmitButton.Click += new System.EventHandler(this.HireWaiterSubmitButton_Click);
             // 
-            // textBox2
+            // HireWaiterNameInput
             // 
-            this.textBox2.Location = new System.Drawing.Point(86, 34);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 1;
+            this.HireWaiterNameInput.Location = new System.Drawing.Point(86, 34);
+            this.HireWaiterNameInput.Name = "HireWaiterNameInput";
+            this.HireWaiterNameInput.Size = new System.Drawing.Size(100, 20);
+            this.HireWaiterNameInput.TabIndex = 1;
             // 
-            // textBox1
+            // HireWaiterWageInput
             // 
-            this.textBox1.Location = new System.Drawing.Point(86, 60);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
+            this.HireWaiterWageInput.Location = new System.Drawing.Point(86, 60);
+            this.HireWaiterWageInput.Name = "HireWaiterWageInput";
+            this.HireWaiterWageInput.Size = new System.Drawing.Size(100, 20);
+            this.HireWaiterWageInput.TabIndex = 0;
             // 
             // FireWaiterPanel
             // 
-            this.FireWaiterPanel.Controls.Add(this.listBox1);
+            this.FireWaiterPanel.Controls.Add(this.FireWaiterList);
             this.FireWaiterPanel.Controls.Add(this.label4);
-            this.FireWaiterPanel.Controls.Add(this.button2);
+            this.FireWaiterPanel.Controls.Add(this.FireSelectedWaiterButton);
             this.FireWaiterPanel.Location = new System.Drawing.Point(129, 3);
             this.FireWaiterPanel.Name = "FireWaiterPanel";
             this.FireWaiterPanel.Size = new System.Drawing.Size(444, 336);
             this.FireWaiterPanel.TabIndex = 1;
             this.FireWaiterPanel.Visible = false;
             // 
-            // listBox1
+            // FireWaiterList
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(53, 34);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(133, 251);
-            this.listBox1.TabIndex = 6;
+            this.FireWaiterList.FormattingEnabled = true;
+            this.FireWaiterList.Location = new System.Drawing.Point(53, 34);
+            this.FireWaiterList.Name = "FireWaiterList";
+            this.FireWaiterList.Size = new System.Drawing.Size(133, 251);
+            this.FireWaiterList.TabIndex = 6;
             // 
             // label4
             // 
@@ -292,33 +239,79 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Fire Waiter";
             // 
-            // button2
+            // FireSelectedWaiterButton
             // 
-            this.button2.Location = new System.Drawing.Point(53, 291);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(133, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Fire Selected Waiter";
-            this.button2.UseVisualStyleBackColor = true;
+            this.FireSelectedWaiterButton.Location = new System.Drawing.Point(53, 291);
+            this.FireSelectedWaiterButton.Name = "FireSelectedWaiterButton";
+            this.FireSelectedWaiterButton.Size = new System.Drawing.Size(133, 23);
+            this.FireSelectedWaiterButton.TabIndex = 2;
+            this.FireSelectedWaiterButton.Text = "Fire Selected Waiter";
+            this.FireSelectedWaiterButton.UseVisualStyleBackColor = true;
+            this.FireSelectedWaiterButton.Click += new System.EventHandler(this.FireSelectedWaiterButton_Click);
             // 
             // AddIngredientPanel
             // 
-            this.AddIngredientPanel.Controls.Add(this.listBox3);
+            this.AddIngredientPanel.Controls.Add(this.label14);
+            this.AddIngredientPanel.Controls.Add(this.label13);
+            this.AddIngredientPanel.Controls.Add(this.label12);
+            this.AddIngredientPanel.Controls.Add(this.AddIngredientUnits);
+            this.AddIngredientPanel.Controls.Add(this.AddIngredientAmount);
+            this.AddIngredientPanel.Controls.Add(this.AddIngredientName);
             this.AddIngredientPanel.Controls.Add(this.label7);
-            this.AddIngredientPanel.Controls.Add(this.button5);
+            this.AddIngredientPanel.Controls.Add(this.AddIngredientButton);
             this.AddIngredientPanel.Location = new System.Drawing.Point(129, 3);
             this.AddIngredientPanel.Name = "AddIngredientPanel";
             this.AddIngredientPanel.Size = new System.Drawing.Size(444, 336);
             this.AddIngredientPanel.TabIndex = 7;
             this.AddIngredientPanel.Visible = false;
             // 
-            // listBox3
+            // label14
             // 
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.Location = new System.Drawing.Point(53, 34);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(133, 251);
-            this.listBox3.TabIndex = 6;
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(46, 91);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(31, 13);
+            this.label14.TabIndex = 11;
+            this.label14.Text = "Units";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(36, 66);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(43, 13);
+            this.label13.TabIndex = 10;
+            this.label13.Text = "Amount";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(42, 40);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(35, 13);
+            this.label12.TabIndex = 9;
+            this.label12.Text = "Name";
+            // 
+            // AddIngredientUnits
+            // 
+            this.AddIngredientUnits.Location = new System.Drawing.Point(83, 89);
+            this.AddIngredientUnits.Name = "AddIngredientUnits";
+            this.AddIngredientUnits.Size = new System.Drawing.Size(100, 20);
+            this.AddIngredientUnits.TabIndex = 8;
+            // 
+            // AddIngredientAmount
+            // 
+            this.AddIngredientAmount.Location = new System.Drawing.Point(83, 63);
+            this.AddIngredientAmount.Name = "AddIngredientAmount";
+            this.AddIngredientAmount.Size = new System.Drawing.Size(100, 20);
+            this.AddIngredientAmount.TabIndex = 7;
+            // 
+            // AddIngredientName
+            // 
+            this.AddIngredientName.Location = new System.Drawing.Point(83, 37);
+            this.AddIngredientName.Name = "AddIngredientName";
+            this.AddIngredientName.Size = new System.Drawing.Size(100, 20);
+            this.AddIngredientName.TabIndex = 6;
             // 
             // label7
             // 
@@ -330,24 +323,52 @@
             this.label7.TabIndex = 5;
             this.label7.Text = "Add Ingredient";
             // 
-            // button5
+            // AddIngredientButton
             // 
-            this.button5.Location = new System.Drawing.Point(53, 291);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(133, 23);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "Add Ingredient";
-            this.button5.UseVisualStyleBackColor = true;
+            this.AddIngredientButton.Location = new System.Drawing.Point(83, 115);
+            this.AddIngredientButton.Name = "AddIngredientButton";
+            this.AddIngredientButton.Size = new System.Drawing.Size(100, 23);
+            this.AddIngredientButton.TabIndex = 2;
+            this.AddIngredientButton.Text = "Add Ingredient";
+            this.AddIngredientButton.UseVisualStyleBackColor = true;
+            this.AddIngredientButton.Click += new System.EventHandler(this.AddIngredientButton_Click);
             // 
             // RestockIngredientPanel
             // 
+            this.RestockIngredientPanel.Controls.Add(this.label15);
+            this.RestockIngredientPanel.Controls.Add(this.textBox1);
+            this.RestockIngredientPanel.Controls.Add(this.RestockIngredientsList);
             this.RestockIngredientPanel.Controls.Add(this.label8);
-            this.RestockIngredientPanel.Controls.Add(this.button6);
+            this.RestockIngredientPanel.Controls.Add(this.RestockIngredientButton);
             this.RestockIngredientPanel.Location = new System.Drawing.Point(129, 3);
             this.RestockIngredientPanel.Name = "RestockIngredientPanel";
             this.RestockIngredientPanel.Size = new System.Drawing.Size(444, 336);
             this.RestockIngredientPanel.TabIndex = 8;
             this.RestockIngredientPanel.Visible = false;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(14, 254);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(43, 13);
+            this.label15.TabIndex = 8;
+            this.label15.Text = "Amount";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(63, 251);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(120, 20);
+            this.textBox1.TabIndex = 7;
+            // 
+            // RestockIngredientsList
+            // 
+            this.RestockIngredientsList.FormattingEnabled = true;
+            this.RestockIngredientsList.Location = new System.Drawing.Point(63, 33);
+            this.RestockIngredientsList.Name = "RestockIngredientsList";
+            this.RestockIngredientsList.Size = new System.Drawing.Size(120, 212);
+            this.RestockIngredientsList.TabIndex = 6;
             // 
             // label8
             // 
@@ -360,14 +381,139 @@
             this.label8.Text = "Restock Ingredient";
             this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
-            // button6
+            // RestockIngredientButton
             // 
-            this.button6.Location = new System.Drawing.Point(53, 291);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(133, 23);
-            this.button6.TabIndex = 2;
-            this.button6.Text = "Restock Ingredient";
-            this.button6.UseVisualStyleBackColor = true;
+            this.RestockIngredientButton.Location = new System.Drawing.Point(63, 291);
+            this.RestockIngredientButton.Name = "RestockIngredientButton";
+            this.RestockIngredientButton.Size = new System.Drawing.Size(121, 23);
+            this.RestockIngredientButton.TabIndex = 2;
+            this.RestockIngredientButton.Text = "Restock Ingredient";
+            this.RestockIngredientButton.UseVisualStyleBackColor = true;
+            this.RestockIngredientButton.Click += new System.EventHandler(this.RestockIngredientButton_Click);
+            // 
+            // AddMenuItemPanel
+            // 
+            this.AddMenuItemPanel.Controls.Add(this.label11);
+            this.AddMenuItemPanel.Controls.Add(this.AddMenuItemDescription);
+            this.AddMenuItemPanel.Controls.Add(this.label10);
+            this.AddMenuItemPanel.Controls.Add(this.AddMenuItemPrice);
+            this.AddMenuItemPanel.Controls.Add(this.label9);
+            this.AddMenuItemPanel.Controls.Add(this.AddMenuItemName);
+            this.AddMenuItemPanel.Controls.Add(this.label6);
+            this.AddMenuItemPanel.Controls.Add(this.AddMenuItemButton);
+            this.AddMenuItemPanel.Location = new System.Drawing.Point(129, 3);
+            this.AddMenuItemPanel.Name = "AddMenuItemPanel";
+            this.AddMenuItemPanel.Size = new System.Drawing.Size(444, 336);
+            this.AddMenuItemPanel.TabIndex = 7;
+            this.AddMenuItemPanel.Visible = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(20, 91);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(60, 13);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "Description";
+            // 
+            // AddMenuItemDescription
+            // 
+            this.AddMenuItemDescription.Location = new System.Drawing.Point(86, 91);
+            this.AddMenuItemDescription.Multiline = true;
+            this.AddMenuItemDescription.Name = "AddMenuItemDescription";
+            this.AddMenuItemDescription.Size = new System.Drawing.Size(137, 107);
+            this.AddMenuItemDescription.TabIndex = 10;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(49, 66);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(31, 13);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "Price";
+            // 
+            // AddMenuItemPrice
+            // 
+            this.AddMenuItemPrice.Location = new System.Drawing.Point(86, 63);
+            this.AddMenuItemPrice.Name = "AddMenuItemPrice";
+            this.AddMenuItemPrice.Size = new System.Drawing.Size(137, 20);
+            this.AddMenuItemPrice.TabIndex = 8;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(45, 37);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Name";
+            // 
+            // AddMenuItemName
+            // 
+            this.AddMenuItemName.Location = new System.Drawing.Point(86, 33);
+            this.AddMenuItemName.Name = "AddMenuItemName";
+            this.AddMenuItemName.Size = new System.Drawing.Size(137, 20);
+            this.AddMenuItemName.TabIndex = 6;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.label6.Location = new System.Drawing.Point(3, 8);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(129, 22);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Add Menu Item";
+            // 
+            // AddMenuItemButton
+            // 
+            this.AddMenuItemButton.Location = new System.Drawing.Point(86, 204);
+            this.AddMenuItemButton.Name = "AddMenuItemButton";
+            this.AddMenuItemButton.Size = new System.Drawing.Size(137, 23);
+            this.AddMenuItemButton.TabIndex = 2;
+            this.AddMenuItemButton.Text = "Add Menu Item";
+            this.AddMenuItemButton.UseVisualStyleBackColor = true;
+            this.AddMenuItemButton.Click += new System.EventHandler(this.AddMenuItemButton_Click);
+            // 
+            // RemoveMenuItemPanel
+            // 
+            this.RemoveMenuItemPanel.Controls.Add(this.RemoveMenuItemList);
+            this.RemoveMenuItemPanel.Controls.Add(this.label5);
+            this.RemoveMenuItemPanel.Controls.Add(this.RemoveSelectedItemButton);
+            this.RemoveMenuItemPanel.Location = new System.Drawing.Point(129, 3);
+            this.RemoveMenuItemPanel.Name = "RemoveMenuItemPanel";
+            this.RemoveMenuItemPanel.Size = new System.Drawing.Size(444, 336);
+            this.RemoveMenuItemPanel.TabIndex = 3;
+            this.RemoveMenuItemPanel.Visible = false;
+            // 
+            // RemoveMenuItemList
+            // 
+            this.RemoveMenuItemList.FormattingEnabled = true;
+            this.RemoveMenuItemList.Location = new System.Drawing.Point(53, 34);
+            this.RemoveMenuItemList.Name = "RemoveMenuItemList";
+            this.RemoveMenuItemList.Size = new System.Drawing.Size(133, 251);
+            this.RemoveMenuItemList.TabIndex = 6;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.label5.Location = new System.Drawing.Point(3, 8);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(163, 22);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Remove Menu Item";
+            // 
+            // RemoveSelectedItemButton
+            // 
+            this.RemoveSelectedItemButton.Location = new System.Drawing.Point(53, 291);
+            this.RemoveSelectedItemButton.Name = "RemoveSelectedItemButton";
+            this.RemoveSelectedItemButton.Size = new System.Drawing.Size(133, 23);
+            this.RemoveSelectedItemButton.TabIndex = 2;
+            this.RemoveSelectedItemButton.Text = "Remove Selected Item";
+            this.RemoveSelectedItemButton.UseVisualStyleBackColor = true;
+            this.RemoveSelectedItemButton.Click += new System.EventHandler(this.RemoveSelectedItemButton_Click);
             // 
             // MainForm
             // 
@@ -382,10 +528,6 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MainPanel.ResumeLayout(false);
             this.PropertyChangePanel.ResumeLayout(false);
-            this.AddMenuItemPanel.ResumeLayout(false);
-            this.AddMenuItemPanel.PerformLayout();
-            this.RemoveMenuItemPanel.ResumeLayout(false);
-            this.RemoveMenuItemPanel.PerformLayout();
             this.HireWaiterPanel.ResumeLayout(false);
             this.HireWaiterPanel.PerformLayout();
             this.FireWaiterPanel.ResumeLayout(false);
@@ -394,6 +536,10 @@
             this.AddIngredientPanel.PerformLayout();
             this.RestockIngredientPanel.ResumeLayout(false);
             this.RestockIngredientPanel.PerformLayout();
+            this.AddMenuItemPanel.ResumeLayout(false);
+            this.AddMenuItemPanel.PerformLayout();
+            this.RemoveMenuItemPanel.ResumeLayout(false);
+            this.RemoveMenuItemPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -406,30 +552,44 @@
         private System.Windows.Forms.Panel PropertyChangePanel;
         private System.Windows.Forms.ListBox PropertiesList;
         private System.Windows.Forms.Panel HireWaiterPanel;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button HireWaiterSubmitButton;
+        private System.Windows.Forms.TextBox HireWaiterNameInput;
+        private System.Windows.Forms.TextBox HireWaiterWageInput;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel FireWaiterPanel;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button FireSelectedWaiterButton;
+        private System.Windows.Forms.ListBox FireWaiterList;
         private System.Windows.Forms.Panel RemoveMenuItemPanel;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox RemoveMenuItemList;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button RemoveSelectedItemButton;
         private System.Windows.Forms.Panel AddMenuItemPanel;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button AddMenuItemButton;
         private System.Windows.Forms.Panel AddIngredientPanel;
-        private System.Windows.Forms.ListBox listBox3;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button AddIngredientButton;
         private System.Windows.Forms.Panel RestockIngredientPanel;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button RestockIngredientButton;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox AddMenuItemName;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox AddMenuItemDescription;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox AddMenuItemPrice;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox AddIngredientUnits;
+        private System.Windows.Forms.TextBox AddIngredientAmount;
+        private System.Windows.Forms.TextBox AddIngredientName;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ListBox RestockIngredientsList;
     }
 }
 

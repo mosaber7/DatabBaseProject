@@ -92,11 +92,11 @@
             // 
             // PropertyChangePanel
             // 
+            this.PropertyChangePanel.Controls.Add(this.FireWaiterPanel);
+            this.PropertyChangePanel.Controls.Add(this.PropertiesList);
             this.PropertyChangePanel.Controls.Add(this.AddMenuItemPanel);
             this.PropertyChangePanel.Controls.Add(this.RemoveMenuItemPanel);
             this.PropertyChangePanel.Controls.Add(this.HireWaiterPanel);
-            this.PropertyChangePanel.Controls.Add(this.FireWaiterPanel);
-            this.PropertyChangePanel.Controls.Add(this.PropertiesList);
             this.PropertyChangePanel.Location = new System.Drawing.Point(12, 12);
             this.PropertyChangePanel.Name = "PropertyChangePanel";
             this.PropertyChangePanel.Size = new System.Drawing.Size(576, 342);
@@ -111,6 +111,7 @@
             this.AddMenuItemPanel.Name = "AddMenuItemPanel";
             this.AddMenuItemPanel.Size = new System.Drawing.Size(444, 336);
             this.AddMenuItemPanel.TabIndex = 7;
+            this.AddMenuItemPanel.Visible = false;
             // 
             // label6
             // 
@@ -140,6 +141,7 @@
             this.RemoveMenuItemPanel.Name = "RemoveMenuItemPanel";
             this.RemoveMenuItemPanel.Size = new System.Drawing.Size(444, 336);
             this.RemoveMenuItemPanel.TabIndex = 3;
+            this.RemoveMenuItemPanel.Visible = false;
             // 
             // listBox2
             // 
@@ -243,6 +245,7 @@
             this.FireWaiterPanel.Name = "FireWaiterPanel";
             this.FireWaiterPanel.Size = new System.Drawing.Size(444, 336);
             this.FireWaiterPanel.TabIndex = 1;
+            this.FireWaiterPanel.Visible = false;
             // 
             // listBox1
             // 

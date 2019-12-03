@@ -32,6 +32,7 @@
             this.Waiter = new System.Windows.Forms.Button();
             this.MainPanel = new System.Windows.Forms.Panel();
             this.PropertyChangePanel = new System.Windows.Forms.Panel();
+            this.PropertiesList = new System.Windows.Forms.ListBox();
             this.AddMenuItemPanel = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
@@ -50,13 +51,21 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.PropertiesList = new System.Windows.Forms.ListBox();
+            this.AddIngredientPanel = new System.Windows.Forms.Panel();
+            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.button5 = new System.Windows.Forms.Button();
+            this.RestockIngredientPanel = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.button6 = new System.Windows.Forms.Button();
             this.MainPanel.SuspendLayout();
             this.PropertyChangePanel.SuspendLayout();
             this.AddMenuItemPanel.SuspendLayout();
             this.RemoveMenuItemPanel.SuspendLayout();
             this.HireWaiterPanel.SuspendLayout();
             this.FireWaiterPanel.SuspendLayout();
+            this.AddIngredientPanel.SuspendLayout();
+            this.RestockIngredientPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // order
@@ -92,16 +101,34 @@
             // 
             // PropertyChangePanel
             // 
-            this.PropertyChangePanel.Controls.Add(this.FireWaiterPanel);
             this.PropertyChangePanel.Controls.Add(this.PropertiesList);
             this.PropertyChangePanel.Controls.Add(this.AddMenuItemPanel);
             this.PropertyChangePanel.Controls.Add(this.RemoveMenuItemPanel);
             this.PropertyChangePanel.Controls.Add(this.HireWaiterPanel);
+            this.PropertyChangePanel.Controls.Add(this.FireWaiterPanel);
+            this.PropertyChangePanel.Controls.Add(this.AddIngredientPanel);
+            this.PropertyChangePanel.Controls.Add(this.RestockIngredientPanel);
             this.PropertyChangePanel.Location = new System.Drawing.Point(12, 12);
             this.PropertyChangePanel.Name = "PropertyChangePanel";
             this.PropertyChangePanel.Size = new System.Drawing.Size(576, 342);
             this.PropertyChangePanel.TabIndex = 3;
             this.PropertyChangePanel.Visible = false;
+            // 
+            // PropertiesList
+            // 
+            this.PropertiesList.FormattingEnabled = true;
+            this.PropertiesList.Items.AddRange(new object[] {
+            "Hire Waiter",
+            "Fire Waiter",
+            "Add Menu Item",
+            "Remove Menu Item",
+            "Add Ingredient",
+            "Restock Ingredient"});
+            this.PropertiesList.Location = new System.Drawing.Point(6, 3);
+            this.PropertiesList.Name = "PropertiesList";
+            this.PropertiesList.Size = new System.Drawing.Size(120, 329);
+            this.PropertiesList.TabIndex = 0;
+            this.PropertiesList.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // AddMenuItemPanel
             // 
@@ -274,21 +301,73 @@
             this.button2.Text = "Fire Selected Waiter";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // PropertiesList
+            // AddIngredientPanel
             // 
-            this.PropertiesList.FormattingEnabled = true;
-            this.PropertiesList.Items.AddRange(new object[] {
-            "Hire Waiter",
-            "Fire Waiter",
-            "Add Menu Item",
-            "Remove Menu Item",
-            "Add Ingredient",
-            "Restock Ingredient"});
-            this.PropertiesList.Location = new System.Drawing.Point(3, 3);
-            this.PropertiesList.Name = "PropertiesList";
-            this.PropertiesList.Size = new System.Drawing.Size(120, 329);
-            this.PropertiesList.TabIndex = 0;
-            this.PropertiesList.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            this.AddIngredientPanel.Controls.Add(this.listBox3);
+            this.AddIngredientPanel.Controls.Add(this.label7);
+            this.AddIngredientPanel.Controls.Add(this.button5);
+            this.AddIngredientPanel.Location = new System.Drawing.Point(129, 3);
+            this.AddIngredientPanel.Name = "AddIngredientPanel";
+            this.AddIngredientPanel.Size = new System.Drawing.Size(444, 336);
+            this.AddIngredientPanel.TabIndex = 7;
+            this.AddIngredientPanel.Visible = false;
+            // 
+            // listBox3
+            // 
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.Location = new System.Drawing.Point(53, 34);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(133, 251);
+            this.listBox3.TabIndex = 6;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.label7.Location = new System.Drawing.Point(3, 8);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(126, 22);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Add Ingredient";
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(53, 291);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(133, 23);
+            this.button5.TabIndex = 2;
+            this.button5.Text = "Add Ingredient";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // RestockIngredientPanel
+            // 
+            this.RestockIngredientPanel.Controls.Add(this.label8);
+            this.RestockIngredientPanel.Controls.Add(this.button6);
+            this.RestockIngredientPanel.Location = new System.Drawing.Point(129, 3);
+            this.RestockIngredientPanel.Name = "RestockIngredientPanel";
+            this.RestockIngredientPanel.Size = new System.Drawing.Size(444, 336);
+            this.RestockIngredientPanel.TabIndex = 8;
+            this.RestockIngredientPanel.Visible = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.label8.Location = new System.Drawing.Point(3, 8);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(159, 22);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Restock Ingredient";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(53, 291);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(133, 23);
+            this.button6.TabIndex = 2;
+            this.button6.Text = "Restock Ingredient";
+            this.button6.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -311,6 +390,10 @@
             this.HireWaiterPanel.PerformLayout();
             this.FireWaiterPanel.ResumeLayout(false);
             this.FireWaiterPanel.PerformLayout();
+            this.AddIngredientPanel.ResumeLayout(false);
+            this.AddIngredientPanel.PerformLayout();
+            this.RestockIngredientPanel.ResumeLayout(false);
+            this.RestockIngredientPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -340,6 +423,13 @@
         private System.Windows.Forms.Panel AddMenuItemPanel;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Panel AddIngredientPanel;
+        private System.Windows.Forms.ListBox listBox3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Panel RestockIngredientPanel;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button button6;
     }
 }
 

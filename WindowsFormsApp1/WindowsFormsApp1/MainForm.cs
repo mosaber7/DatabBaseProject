@@ -31,7 +31,9 @@ namespace WindowsFormsApp1
                 HireWaiterPanel,
                 FireWaiterPanel,
                 AddMenuItemPanel,
-                RemoveMenuItemPanel
+                RemoveMenuItemPanel,
+                AddIngredientPanel,
+                RestockIngredientPanel
             };
         }
 
@@ -44,6 +46,11 @@ namespace WindowsFormsApp1
         }
 
         private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
         {
 
         }

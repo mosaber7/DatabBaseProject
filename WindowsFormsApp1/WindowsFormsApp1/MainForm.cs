@@ -45,24 +45,26 @@ namespace WindowsFormsApp1
             ActivePane = PropertiesList.SelectedIndex;
         }
 
-        private void label8_Click(object sender, EventArgs e)
+        private void HireWaiterSubmitButton_Click(object sender, EventArgs e)
         {
+            string Name = HireWaiterNameInput.Text;
+            string Wage = HireWaiterWageInput.Text;
 
+            // TODO Fill.
         }
 
-        private void AddIngredientButton_Click(object sender, EventArgs e)
+        private void FireSelectedWaiterButton_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void RestockIngredientButton_Click(object sender, EventArgs e)
-        {
-
+            
         }
 
         private void AddMenuItemButton_Click(object sender, EventArgs e)
         {
+            string Name = AddMenuItemName.Text;
+            string Price = AddMenuItemPrice.Text;
+            string Description = AddMenuItemDescription.Text;
 
+            // TODO Fill.
         }
 
         private void RemoveSelectedItemButton_Click(object sender, EventArgs e)
@@ -70,14 +72,22 @@ namespace WindowsFormsApp1
 
         }
 
-        private void HireWaiterSubmitButton_Click(object sender, EventArgs e)
+        private void AddIngredientButton_Click(object sender, EventArgs e)
         {
+            string Name = AddIngredientName.Text;
+            string Amount = AddIngredientAmount.Text;
+            string Units = AddIngredientUnits.Text;
 
+            // TODO Fill.
         }
 
-        private void FireSelectedWaiterButton_Click(object sender, EventArgs e)
+        private void RestockIngredientButton_Click(object sender, EventArgs e)
         {
+            string NewAmount = RestockIngredientAmount.Text;
 
+            // TODO Fill.
         }
+
+
     }
 }

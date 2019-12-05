@@ -97,5 +97,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DatabaseData\DatabaseData\DatabaseData.csproj">
+      <Project>{5E98E9D9-7D22-4497-A640-1D453F10192A}</Project>
+      <Name>DatabaseData</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

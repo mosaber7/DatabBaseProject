@@ -33,6 +33,17 @@
             this.MainPanel = new System.Windows.Forms.Panel();
             this.PropertyChangePanel = new System.Windows.Forms.Panel();
             this.PropertiesList = new System.Windows.Forms.ListBox();
+            this.RemoveMenuItemPanel = new System.Windows.Forms.Panel();
+            this.RemoveMenuItemList = new System.Windows.Forms.ListBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.RemoveSelectedItemButton = new System.Windows.Forms.Button();
+            this.HireWaiterPanel = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.HireWaiterSubmitButton = new System.Windows.Forms.Button();
+            this.HireWaiterNameInput = new System.Windows.Forms.TextBox();
+            this.HireWaiterWageInput = new System.Windows.Forms.TextBox();
             this.FireWaiterPanel = new System.Windows.Forms.Panel();
             this.FireWaiterList = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -61,25 +72,14 @@
             this.AddMenuItemName = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.AddMenuItemButton = new System.Windows.Forms.Button();
-            this.RemoveMenuItemPanel = new System.Windows.Forms.Panel();
-            this.RemoveMenuItemList = new System.Windows.Forms.ListBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.RemoveSelectedItemButton = new System.Windows.Forms.Button();
-            this.HireWaiterPanel = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.HireWaiterSubmitButton = new System.Windows.Forms.Button();
-            this.HireWaiterNameInput = new System.Windows.Forms.TextBox();
-            this.HireWaiterWageInput = new System.Windows.Forms.TextBox();
             this.MainPanel.SuspendLayout();
             this.PropertyChangePanel.SuspendLayout();
+            this.RemoveMenuItemPanel.SuspendLayout();
+            this.HireWaiterPanel.SuspendLayout();
             this.FireWaiterPanel.SuspendLayout();
             this.AddIngredientPanel.SuspendLayout();
             this.RestockIngredientPanel.SuspendLayout();
             this.AddMenuItemPanel.SuspendLayout();
-            this.RemoveMenuItemPanel.SuspendLayout();
-            this.HireWaiterPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // order
@@ -100,7 +100,7 @@
             this.Waiter.Name = "Waiter";
             this.Waiter.Size = new System.Drawing.Size(152, 84);
             this.Waiter.TabIndex = 1;
-            this.Waiter.Text = "button2";
+            this.Waiter.Text = "Properties";
             this.Waiter.UseVisualStyleBackColor = true;
             this.Waiter.Click += new System.EventHandler(this.Waiter_Click);
             // 
@@ -116,12 +116,12 @@
             // PropertyChangePanel
             // 
             this.PropertyChangePanel.Controls.Add(this.PropertiesList);
+            this.PropertyChangePanel.Controls.Add(this.FireWaiterPanel);
+            this.PropertyChangePanel.Controls.Add(this.AddIngredientPanel);
             this.PropertyChangePanel.Controls.Add(this.RestockIngredientPanel);
             this.PropertyChangePanel.Controls.Add(this.AddMenuItemPanel);
             this.PropertyChangePanel.Controls.Add(this.RemoveMenuItemPanel);
             this.PropertyChangePanel.Controls.Add(this.HireWaiterPanel);
-            this.PropertyChangePanel.Controls.Add(this.FireWaiterPanel);
-            this.PropertyChangePanel.Controls.Add(this.AddIngredientPanel);
             this.PropertyChangePanel.Location = new System.Drawing.Point(12, 12);
             this.PropertyChangePanel.Name = "PropertyChangePanel";
             this.PropertyChangePanel.Size = new System.Drawing.Size(576, 342);
@@ -144,6 +144,111 @@
             this.PropertiesList.TabIndex = 0;
             this.PropertiesList.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
+            // RemoveMenuItemPanel
+            // 
+            this.RemoveMenuItemPanel.Controls.Add(this.RemoveMenuItemList);
+            this.RemoveMenuItemPanel.Controls.Add(this.label5);
+            this.RemoveMenuItemPanel.Controls.Add(this.RemoveSelectedItemButton);
+            this.RemoveMenuItemPanel.Location = new System.Drawing.Point(129, 3);
+            this.RemoveMenuItemPanel.Name = "RemoveMenuItemPanel";
+            this.RemoveMenuItemPanel.Size = new System.Drawing.Size(444, 336);
+            this.RemoveMenuItemPanel.TabIndex = 3;
+            this.RemoveMenuItemPanel.Visible = false;
+            // 
+            // RemoveMenuItemList
+            // 
+            this.RemoveMenuItemList.FormattingEnabled = true;
+            this.RemoveMenuItemList.Location = new System.Drawing.Point(53, 34);
+            this.RemoveMenuItemList.Name = "RemoveMenuItemList";
+            this.RemoveMenuItemList.Size = new System.Drawing.Size(133, 251);
+            this.RemoveMenuItemList.TabIndex = 6;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.label5.Location = new System.Drawing.Point(3, 8);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(163, 22);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Remove Menu Item";
+            // 
+            // RemoveSelectedItemButton
+            // 
+            this.RemoveSelectedItemButton.Location = new System.Drawing.Point(53, 291);
+            this.RemoveSelectedItemButton.Name = "RemoveSelectedItemButton";
+            this.RemoveSelectedItemButton.Size = new System.Drawing.Size(133, 23);
+            this.RemoveSelectedItemButton.TabIndex = 2;
+            this.RemoveSelectedItemButton.Text = "Remove Selected Item";
+            this.RemoveSelectedItemButton.UseVisualStyleBackColor = true;
+            this.RemoveSelectedItemButton.Click += new System.EventHandler(this.RemoveSelectedItemButton_Click);
+            // 
+            // HireWaiterPanel
+            // 
+            this.HireWaiterPanel.Controls.Add(this.label3);
+            this.HireWaiterPanel.Controls.Add(this.label2);
+            this.HireWaiterPanel.Controls.Add(this.label1);
+            this.HireWaiterPanel.Controls.Add(this.HireWaiterSubmitButton);
+            this.HireWaiterPanel.Controls.Add(this.HireWaiterNameInput);
+            this.HireWaiterPanel.Controls.Add(this.HireWaiterWageInput);
+            this.HireWaiterPanel.Location = new System.Drawing.Point(129, 3);
+            this.HireWaiterPanel.Name = "HireWaiterPanel";
+            this.HireWaiterPanel.Size = new System.Drawing.Size(444, 336);
+            this.HireWaiterPanel.TabIndex = 0;
+            this.HireWaiterPanel.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.label3.Location = new System.Drawing.Point(3, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(100, 22);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Hire Waiter";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(50, 63);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(36, 13);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Wage";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(51, 37);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Name";
+            // 
+            // HireWaiterSubmitButton
+            // 
+            this.HireWaiterSubmitButton.Location = new System.Drawing.Point(86, 86);
+            this.HireWaiterSubmitButton.Name = "HireWaiterSubmitButton";
+            this.HireWaiterSubmitButton.Size = new System.Drawing.Size(100, 23);
+            this.HireWaiterSubmitButton.TabIndex = 2;
+            this.HireWaiterSubmitButton.Text = "Hire Waiter";
+            this.HireWaiterSubmitButton.UseVisualStyleBackColor = true;
+            this.HireWaiterSubmitButton.Click += new System.EventHandler(this.HireWaiterSubmitButton_Click);
+            // 
+            // HireWaiterNameInput
+            // 
+            this.HireWaiterNameInput.Location = new System.Drawing.Point(86, 34);
+            this.HireWaiterNameInput.Name = "HireWaiterNameInput";
+            this.HireWaiterNameInput.Size = new System.Drawing.Size(100, 20);
+            this.HireWaiterNameInput.TabIndex = 1;
+            // 
+            // HireWaiterWageInput
+            // 
+            this.HireWaiterWageInput.Location = new System.Drawing.Point(86, 60);
+            this.HireWaiterWageInput.Name = "HireWaiterWageInput";
+            this.HireWaiterWageInput.Size = new System.Drawing.Size(100, 20);
+            this.HireWaiterWageInput.TabIndex = 0;
+            // 
             // FireWaiterPanel
             // 
             this.FireWaiterPanel.Controls.Add(this.FireWaiterList);
@@ -157,6 +262,7 @@
             // 
             // FireWaiterList
             // 
+            this.Load += new System.EventHandler(this.FireWaiterListLoad);
             this.FireWaiterList.FormattingEnabled = true;
             this.FireWaiterList.Location = new System.Drawing.Point(53, 34);
             this.FireWaiterList.Name = "FireWaiterList";
@@ -409,111 +515,6 @@
             this.AddMenuItemButton.UseVisualStyleBackColor = true;
             this.AddMenuItemButton.Click += new System.EventHandler(this.AddMenuItemButton_Click);
             // 
-            // RemoveMenuItemPanel
-            // 
-            this.RemoveMenuItemPanel.Controls.Add(this.RemoveMenuItemList);
-            this.RemoveMenuItemPanel.Controls.Add(this.label5);
-            this.RemoveMenuItemPanel.Controls.Add(this.RemoveSelectedItemButton);
-            this.RemoveMenuItemPanel.Location = new System.Drawing.Point(129, 3);
-            this.RemoveMenuItemPanel.Name = "RemoveMenuItemPanel";
-            this.RemoveMenuItemPanel.Size = new System.Drawing.Size(444, 336);
-            this.RemoveMenuItemPanel.TabIndex = 3;
-            this.RemoveMenuItemPanel.Visible = false;
-            // 
-            // RemoveMenuItemList
-            // 
-            this.RemoveMenuItemList.FormattingEnabled = true;
-            this.RemoveMenuItemList.Location = new System.Drawing.Point(53, 34);
-            this.RemoveMenuItemList.Name = "RemoveMenuItemList";
-            this.RemoveMenuItemList.Size = new System.Drawing.Size(133, 251);
-            this.RemoveMenuItemList.TabIndex = 6;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.label5.Location = new System.Drawing.Point(3, 8);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(163, 22);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Remove Menu Item";
-            // 
-            // RemoveSelectedItemButton
-            // 
-            this.RemoveSelectedItemButton.Location = new System.Drawing.Point(53, 291);
-            this.RemoveSelectedItemButton.Name = "RemoveSelectedItemButton";
-            this.RemoveSelectedItemButton.Size = new System.Drawing.Size(133, 23);
-            this.RemoveSelectedItemButton.TabIndex = 2;
-            this.RemoveSelectedItemButton.Text = "Remove Selected Item";
-            this.RemoveSelectedItemButton.UseVisualStyleBackColor = true;
-            this.RemoveSelectedItemButton.Click += new System.EventHandler(this.RemoveSelectedItemButton_Click);
-            // 
-            // HireWaiterPanel
-            // 
-            this.HireWaiterPanel.Controls.Add(this.label3);
-            this.HireWaiterPanel.Controls.Add(this.label2);
-            this.HireWaiterPanel.Controls.Add(this.label1);
-            this.HireWaiterPanel.Controls.Add(this.HireWaiterSubmitButton);
-            this.HireWaiterPanel.Controls.Add(this.HireWaiterNameInput);
-            this.HireWaiterPanel.Controls.Add(this.HireWaiterWageInput);
-            this.HireWaiterPanel.Location = new System.Drawing.Point(129, 3);
-            this.HireWaiterPanel.Name = "HireWaiterPanel";
-            this.HireWaiterPanel.Size = new System.Drawing.Size(444, 336);
-            this.HireWaiterPanel.TabIndex = 0;
-            this.HireWaiterPanel.Visible = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.label3.Location = new System.Drawing.Point(3, 8);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 22);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Hire Waiter";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(50, 63);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Wage";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(51, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Name";
-            // 
-            // HireWaiterSubmitButton
-            // 
-            this.HireWaiterSubmitButton.Location = new System.Drawing.Point(86, 86);
-            this.HireWaiterSubmitButton.Name = "HireWaiterSubmitButton";
-            this.HireWaiterSubmitButton.Size = new System.Drawing.Size(100, 23);
-            this.HireWaiterSubmitButton.TabIndex = 2;
-            this.HireWaiterSubmitButton.Text = "Hire Waiter";
-            this.HireWaiterSubmitButton.UseVisualStyleBackColor = true;
-            this.HireWaiterSubmitButton.Click += new System.EventHandler(this.HireWaiterSubmitButton_Click);
-            // 
-            // HireWaiterNameInput
-            // 
-            this.HireWaiterNameInput.Location = new System.Drawing.Point(86, 34);
-            this.HireWaiterNameInput.Name = "HireWaiterNameInput";
-            this.HireWaiterNameInput.Size = new System.Drawing.Size(100, 20);
-            this.HireWaiterNameInput.TabIndex = 1;
-            // 
-            // HireWaiterWageInput
-            // 
-            this.HireWaiterWageInput.Location = new System.Drawing.Point(86, 60);
-            this.HireWaiterWageInput.Name = "HireWaiterWageInput";
-            this.HireWaiterWageInput.Size = new System.Drawing.Size(100, 20);
-            this.HireWaiterWageInput.TabIndex = 0;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -527,6 +528,10 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MainPanel.ResumeLayout(false);
             this.PropertyChangePanel.ResumeLayout(false);
+            this.RemoveMenuItemPanel.ResumeLayout(false);
+            this.RemoveMenuItemPanel.PerformLayout();
+            this.HireWaiterPanel.ResumeLayout(false);
+            this.HireWaiterPanel.PerformLayout();
             this.FireWaiterPanel.ResumeLayout(false);
             this.FireWaiterPanel.PerformLayout();
             this.AddIngredientPanel.ResumeLayout(false);
@@ -535,10 +540,6 @@
             this.RestockIngredientPanel.PerformLayout();
             this.AddMenuItemPanel.ResumeLayout(false);
             this.AddMenuItemPanel.PerformLayout();
-            this.RemoveMenuItemPanel.ResumeLayout(false);
-            this.RemoveMenuItemPanel.PerformLayout();
-            this.HireWaiterPanel.ResumeLayout(false);
-            this.HireWaiterPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }

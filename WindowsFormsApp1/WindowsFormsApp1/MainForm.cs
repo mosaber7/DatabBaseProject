@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
+using DatabaseData;
 
 namespace WindowsFormsApp1
 {
@@ -12,6 +15,8 @@ namespace WindowsFormsApp1
         public MainForm()
         {
             InitializeComponent();
+            TsqlExecutionAgent tea = new TsqlExecutionAgent("mssql.cs.ksu.edu", "mri", "mri", "ThisIsThePassword23456");
+            tea.ExecuteQuery();
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -55,7 +60,7 @@ namespace WindowsFormsApp1
 
         private void FireSelectedWaiterButton_Click(object sender, EventArgs e)
         {
-            
+            //string FiredWaiters = FireWaiterList.SelectedValue;
         }
 
         private void AddMenuItemButton_Click(object sender, EventArgs e)
@@ -88,6 +93,19 @@ namespace WindowsFormsApp1
             // TODO Fill.
         }
 
+        private void FireWaiterListLoad(object sender, EventArgs e)
+        {
+            // TODO SQL query to populate list.
+        }
 
+        private void RemoveMenuItemListLoad(object sender, EventArgs e)
+        {
+            // TODO SQL query to populate list.
+        }
+
+        private void RestockIngredientListLoad(object sender, EventArgs e)
+        {
+            // TODO SQL query to populate list.
+        }
     }
 }

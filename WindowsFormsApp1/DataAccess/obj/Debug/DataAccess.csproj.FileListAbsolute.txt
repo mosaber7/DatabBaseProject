@@ -1,0 +1,6 @@
+D:\Documents\Sadness\SQL Class\Project SQL Repo\WindowsFormsApp1\DataAccess\bin\Debug\DataAccess.dll
+D:\Documents\Sadness\SQL Class\Project SQL Repo\WindowsFormsApp1\DataAccess\bin\Debug\DataAccess.pdb
+D:\Documents\Sadness\SQL Class\Project SQL Repo\WindowsFormsApp1\DataAccess\obj\Debug\DataAccess.csprojAssemblyReference.cache
+D:\Documents\Sadness\SQL Class\Project SQL Repo\WindowsFormsApp1\DataAccess\obj\Debug\DataAccess.csproj.CoreCompileInputs.cache
+D:\Documents\Sadness\SQL Class\Project SQL Repo\WindowsFormsApp1\DataAccess\obj\Debug\DataAccess.dll
+D:\Documents\Sadness\SQL Class\Project SQL Repo\WindowsFormsApp1\DataAccess\obj\Debug\DataAccess.pdb

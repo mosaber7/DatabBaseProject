@@ -8,7 +8,7 @@ using DatabaseData.DataDelegates.Query;
 
 namespace DatabaseData
 {
-    class SqlWaiterRepository
+    public class SqlWaiterRepository
     {
         private readonly SqlCommandExecutor executor;
 

@@ -7,22 +7,14 @@ namespace DatabaseData.DataDelegates.Query
 {
     internal class FetchAllCurrentlyWorkingWaitersDelegate : DataReaderDelegate<IReadOnlyList<Waiter>>
     {
-        private readonly string firstName;
-        private readonly string lastName;
-
-        public FetchAllCurrentlyWorkingWaitersDelegate(string firstname, string lastname)
+        public FetchAllCurrentlyWorkingWaitersDelegate()
             : base("Restaurant.FetchAllCurrentlyWorkingWaiters")
         {
-            firstName = firstname;
-            lastName = lastname;
         }
 
         public override void PrepareCommand(SqlCommand command)
         {
             base.PrepareCommand(command);
-
-            command.Parameters.AddWithValue("FirstName", firstName);
-            command.Parameters.AddWithValue("LastName", lastName);
         }
 
         public override IReadOnlyList<Waiter> Translate(SqlCommand command, IDataRowReader reader)

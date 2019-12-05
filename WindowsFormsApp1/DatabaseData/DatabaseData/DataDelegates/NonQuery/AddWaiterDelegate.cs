@@ -6,14 +6,16 @@ namespace DatabaseData.DataDelegates
 {
     internal class AddWaiterDelegate : NonQueryDataDelegate<Waiter>
     {
-        public readonly string firstName;
-        public readonly string lastName;
+        private readonly string firstName;
+        private readonly string lastName;
+        private readonly decimal salary;
 
-        public AddWaiterDelegate(string firstname, string lastname)
+        public AddWaiterDelegate(string firstname, string lastname, decimal salary)
             : base("Restaurant.AddWaiter")
         {
             firstName = firstname;
             lastName = lastname;
+            this.salary = salary;
         }
 
         public override void PrepareCommand(SqlCommand command)
@@ -22,6 +24,7 @@ namespace DatabaseData.DataDelegates
 
             command.Parameters.AddWithValue("FirstName", firstName);
             command.Parameters.AddWithValue("LastName", lastName);
+            command.Parameters.AddWithValue("Salary", salary);
         }
 
         public override Waiter Translate(SqlCommand command)

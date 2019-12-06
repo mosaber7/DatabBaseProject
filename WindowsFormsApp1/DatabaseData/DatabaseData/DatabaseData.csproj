@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataDelegates\NonQuery\MenuItems\AddIngredientDelegate.cs" />
     <Compile Include="DataDelegates\NonQuery\MenuItems\AddMenuItemDelegate.cs" />
     <Compile Include="DataDelegates\NonQuery\Orders\AddFoodDelegate.cs" />
+    <Compile Include="DataDelegates\NonQuery\Orders\AddFoodIngredientDelegate.cs" />
     <Compile Include="DataDelegates\NonQuery\Orders\AddOrderDelegate.cs" />
     <Compile Include="DataDelegates\NonQuery\Waiter\AddShiftDelegate.cs" />
     <Compile Include="DataDelegates\NonQuery\Waiter\AddShiftNoDateDelegate.cs" />
@@ -51,11 +53,13 @@
     <Compile Include="DataDelegates\Query\FetchAllCurrentlyWorkingWaitersDelegate.cs" />
     <Compile Include="Models\Food.cs" />
     <Compile Include="Models\Ingredient.cs" />
+    <Compile Include="Models\IngredientInformation.cs" />
     <Compile Include="Models\MenuItem.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Shift.cs" />
     <Compile Include="Models\Waiter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlOrderRepository.cs" />
     <Compile Include="SqlWaiterRepository.cs" />
   </ItemGroup>
   <ItemGroup />

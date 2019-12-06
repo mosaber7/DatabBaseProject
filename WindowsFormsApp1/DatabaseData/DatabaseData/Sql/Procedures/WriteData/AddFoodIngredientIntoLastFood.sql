@@ -1,3 +1,12 @@
+CREATE OR ALTER PROCEDURE Restaurant.AddFoodIngredient
+	@FoodID INT,
+	@IngredientName NVARCHAR (32),
+	@AmountUsed DECIMAL
+AS
+	INSERT INTO Restaurant.FoodIngredient(FoodID, IngredientID, AmountUsed)
+	VALUES (@FoodID, Restaurant.RetrieveIngredientID(@IngredientName), @AmountUsed);
+GO
+
 CREATE OR ALTER PROCEDURE Restaurant.AddFoodIngredientIntoLastFood
 	@TableNumber INT,
 	@OrderDate DATETIMEOFFSET,

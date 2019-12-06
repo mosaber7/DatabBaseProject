@@ -15,7 +15,7 @@ namespace WindowsFormsApp1
         public MainForm()
         {
             InitializeComponent();
-            TsqlExecutionAgent tea = new TsqlExecutionAgent("mssql.cs.ksu.edu", "mri", "mri", "");
+            TsqlExecutionAgent tea = new TsqlExecutionAgent("mssql.cs.ksu.edu", "mri", "mri", "ThisIsThePassword23456");
             tea.ExecuteQuery();
         }
 

@@ -32,7 +32,7 @@ namespace WindowsFormsApp1
             string connectionString = "Server=mssql.cs.ksu.edu;Database=santiagoscavone;UID=santiagoscavone;Pwd=Sqlpassword1!";
 
             SqlWaiterRepository sql = new SqlWaiterRepository(connectionString);
-            sql.CreateWaiter("ww", "ss", 5);
+            sql.AddShift("ww", "ss", )
         }
     }
 }

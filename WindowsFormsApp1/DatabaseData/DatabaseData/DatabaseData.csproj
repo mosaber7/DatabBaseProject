@@ -41,10 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataDelegates\NonQuery\AddMenuItemDelegate.cs" />
-    <Compile Include="DataDelegates\NonQuery\AddShiftDelegate.cs" />
-    <Compile Include="DataDelegates\NonQuery\AddWaiterDelegate.cs" />
-    <Compile Include="DataDelegates\NonQuery\CloseShiftDelegate.cs" />
+    <Compile Include="DataDelegates\NonQuery\MenuItems\AddMenuItemDelegate.cs" />
+    <Compile Include="DataDelegates\NonQuery\Orders\AddFoodDelegate.cs" />
+    <Compile Include="DataDelegates\NonQuery\Orders\AddOrderDelegate.cs" />
+    <Compile Include="DataDelegates\NonQuery\Waiter\AddShiftDelegate.cs" />
+    <Compile Include="DataDelegates\NonQuery\Waiter\AddShiftNoDateDelegate.cs" />
+    <Compile Include="DataDelegates\NonQuery\Waiter\AddWaiterDelegate.cs" />
+    <Compile Include="DataDelegates\NonQuery\Waiter\CloseShiftDelegate.cs" />
     <Compile Include="DataDelegates\Query\FetchAllCurrentlyWorkingWaitersDelegate.cs" />
     <Compile Include="Models\Food.cs" />
     <Compile Include="Models\Ingredient.cs" />
@@ -78,7 +81,6 @@
     <Content Include="Sql\Procedures\WriteData\CloseShift.sql" />
     <Content Include="Sql\Procedures\WriteData\DeliveredOrder.sql" />
     <Content Include="Sql\Procedures\WriteData\RemoveMenuItem.sql" />
-    <Content Include="Sql\Procedures\WriteData\SchemaCreation.sql" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\DataAccess\DataAccess.csproj">

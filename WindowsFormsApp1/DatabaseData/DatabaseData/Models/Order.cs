@@ -4,14 +4,17 @@ namespace DatabaseData.Models
 {
     public class Order
     {
+        public int OrderID { get; }
+
         public Waiter WaiterInCharge { get; }
 
         public int TableNumber { get; }
 
-        public DateTime OrderedOn { get; }
+        public DateTimeOffset OrderedOn { get; }
 
-        public Order(Waiter waiter, int tableNum, DateTime timeOfOrder)
+        public Order(int id, Waiter waiter, int tableNum, DateTimeOffset timeOfOrder)
         {
+            OrderID = id;
             WaiterInCharge = waiter;
             TableNumber = tableNum;
             OrderedOn = timeOfOrder;

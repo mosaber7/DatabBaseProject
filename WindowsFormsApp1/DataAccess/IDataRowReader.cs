@@ -11,6 +11,7 @@ namespace DataAccess
         DateTimeOffset GetDateTimeOffset(string name, DateTimeOffset defaultValue);
         int GetInt32(string name);
         int GetInt32(string name, int defaultValue);
+        decimal GetDecimal(string name);
         string GetString(string name);
         string GetString(string name, string defaultValue);
         T GetValue<T>(string name);

@@ -4,19 +4,19 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Windows.Forms;
 using DatabaseData;
+using DatabaseData.Models;
 
 namespace WindowsFormsApp1
 {
     public partial class MainForm : Form
     {
+        private string connectionString = "";
         private System.Windows.Forms.Panel[] PropertiesDict;
         private int ActivePane = 0;
 
         public MainForm()
         {
             InitializeComponent();
-            TsqlExecutionAgent tea = new TsqlExecutionAgent("mssql.cs.ksu.edu", "mri", "mri", "ThisIsThePassword23456");
-            tea.ExecuteQuery();
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -52,29 +52,42 @@ namespace WindowsFormsApp1
 
         private void HireWaiterSubmitButton_Click(object sender, EventArgs e)
         {
+            // TODO test
             string Name = HireWaiterNameInput.Text;
-            string Wage = HireWaiterWageInput.Text;
+            decimal Wage = decimal.Parse(HireWaiterWageInput.Text);
 
-            // TODO Fill.
+            string FirstName = Name.Substring(0, Name.IndexOf(' '));
+            string LastName = Name.Substring(Name.IndexOf(' ') + 1);
+
+            SqlWaiterRepository sql = new SqlWaiterRepository(connectionString);
+            sql.CreateWaiter(FirstName, LastName, Wage);
         }
 
         private void FireSelectedWaiterButton_Click(object sender, EventArgs e)
         {
-            //string FiredWaiters = FireWaiterList.SelectedValue;
+            string FiredWaiters = FireWaiterList.SelectedItem.ToString();
+            SqlWaiterRepository sql = new SqlWaiterRepository(connectionString);
+            // TODO implement FireWaiterDelegate()
         }
 
         private void AddMenuItemButton_Click(object sender, EventArgs e)
         {
+            // TODO test.
             string Name = AddMenuItemName.Text;
-            string Price = AddMenuItemPrice.Text;
+            decimal Price = decimal.Parse(AddMenuItemPrice.Text);
             string Description = AddMenuItemDescription.Text;
 
-            // TODO Fill.
+            SqlMenuItemRepository sql = new SqlMenuItemRepository(connectionString);
+            sql.CreateMenuItem(Name, Price, Description);
         }
 
+        // Functional.
         private void RemoveSelectedItemButton_Click(object sender, EventArgs e)
         {
+            string RemovedMenuItem = RemoveMenuItemList.SelectedItem.ToString();
 
+            SqlMenuItemRepository sql = new SqlMenuItemRepository(connectionString);
+            sql.RemoveMenuItem(RemovedMenuItem);
         }
 
         private void AddIngredientButton_Click(object sender, EventArgs e)
@@ -95,12 +108,22 @@ namespace WindowsFormsApp1
 
         private void FireWaiterListLoad(object sender, EventArgs e)
         {
-            // TODO SQL query to populate list.
+            // TODO test.
+            SqlWaiterRepository sql = new SqlWaiterRepository(connectionString);
+            foreach(Waiter waiter in sql.FetchAllCurrentylWorkingWaiters())
+            {
+                FireWaiterList.Items.Add(waiter.FirstName + " " + waiter.LastName);
+            }
         }
 
         private void RemoveMenuItemListLoad(object sender, EventArgs e)
         {
-            // TODO SQL query to populate list.
+            // TODO test.
+            SqlMenuItemRepository sql = new SqlMenuItemRepository(connectionString);
+            foreach(DatabaseData.Models.MenuItem item in sql.GetAllMenuItems())
+            {
+                RemoveMenuItemList.Items.Add(item.Name);
+            }
         }
 
         private void RestockIngredientListLoad(object sender, EventArgs e)

@@ -51,6 +51,11 @@ namespace DataAccess
             return GetValue(name, reader.GetBoolean, defaultValue);
         }
 
+        public decimal GetDecimal(string name)
+        {
+            return GetValue(name, reader.GetDecimal);
+        }
+
         public string GetString(string name)
         {
             return GetValue(name, reader.GetString);

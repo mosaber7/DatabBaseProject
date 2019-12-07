@@ -194,6 +194,8 @@ namespace WindowsFormsApp1
             string dateString = DailySalesInput.Text;
             DateTimeOffset date = new DateTimeOffset(DateTime.Parse(dateString + " 8:00:00 AM"));
             // TODO SQL query.
+            SqlStatisticsRepository sql = new SqlStatisticsRepository(connectionString);
+            sql.GetDaySales(date);
             Console.WriteLine(1);
         }
 

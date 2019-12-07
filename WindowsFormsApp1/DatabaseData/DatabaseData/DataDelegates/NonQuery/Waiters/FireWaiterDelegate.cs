@@ -1,21 +1,20 @@
-﻿using DatabaseData.Models;
-using DataAccess;
+﻿using DataAccess;
+using DatabaseData.Models;
 using System.Data.SqlClient;
+using System.Collections.Generic;
 
 namespace DatabaseData.DataDelegates.NonQuery.Waiters
 {
-    internal class AddWaiterDelegate : NonQueryDataDelegate<Waiter>
+    internal class FireWaiterDelegate : NonQueryDataDelegate<Waiter>
     {
         private readonly string firstName;
         private readonly string lastName;
-        private readonly decimal salary;
 
-        public AddWaiterDelegate(string firstname, string lastname, decimal salary)
-            : base("Restaurant.AddWaiter")
+        public FireWaiterDelegate(string firstname, string lastname)
+            : base("Restaurant.FireWaiter")
         {
             firstName = firstname;
             lastName = lastname;
-            this.salary = salary;
         }
 
         public override void PrepareCommand(SqlCommand command)
@@ -24,12 +23,11 @@ namespace DatabaseData.DataDelegates.NonQuery.Waiters
 
             command.Parameters.AddWithValue("FirstName", firstName);
             command.Parameters.AddWithValue("LastName", lastName);
-            command.Parameters.AddWithValue("Salary", salary);
         }
 
         public override Waiter Translate(SqlCommand command)
         {
-            return new Waiter(firstName, lastName, salary);
+            return new Waiter(firstName, lastName);
         }
     }
 }

@@ -16,7 +16,7 @@ namespace DatabaseData
             executor = new SqlCommandExecutor(connectionString);
         }
 
-        public void CreateWaiter(string FirstName, string LastName, decimal Salary)
+        public Waiter AddWaiter(string FirstName, string LastName, decimal Salary)
         {
             if (FirstName.Length == 0)
             {
@@ -26,7 +26,12 @@ namespace DatabaseData
             {
                 throw new ArgumentException("Empty last name");
             }
-            executor.ExecuteNonQuery(new AddWaiterDelegate(FirstName, LastName, Salary));
+            return executor.ExecuteNonQuery(new AddWaiterDelegate(FirstName, LastName, Salary));
+        }
+
+        public Waiter FireWaiter(string firstName, string lastName)
+        {
+            return executor.ExecuteNonQuery(new FireWaiterDelegate(firstName, lastName));
         }
 
         public IReadOnlyList<Waiter> FetchAllCurrentylWorkingWaiters()
@@ -34,20 +39,12 @@ namespace DatabaseData
             return executor.ExecuteReader(new FetchAllCurrentlyWorkingWaitersDelegate());
         }
 
-        public void AddShift(string firstName, string lastName, DateTimeOffset timeOfShift)
+        public IReadOnlyList<Waiter> FetchAllWaiters()
         {
-            if (firstName.Length == 0)
-            {
-                throw new ArgumentException("Empty first Name");
-            }
-            if (lastName.Length == 0)
-            {
-                throw new ArgumentException("Empty last name");
-            }
-            executor.ExecuteNonQuery(new AddShiftDelegate(firstName, lastName, timeOfShift));
+            return executor.ExecuteReader(new FetchAllWaitersDelegate());
         }
 
-        public void CloseShift(string firstName, string lastName)
+        public DateTimeOffset OpenShift(string firstName,string lastName)
         {
             if (firstName.Length == 0)
             {
@@ -57,7 +54,35 @@ namespace DatabaseData
             {
                 throw new ArgumentException("Empty last name");
             }
-            executor.ExecuteNonQuery(new CloseShiftDelegate(firstName, lastName, DateTimeOffset.Now));
+            return executor.ExecuteNonQuery(new AddShiftNoDateDelegate(firstName, lastName));
+        }
+
+        public void AddShift(string firstName, string lastName, DateTimeOffset startingTime, DateTimeOffset endingTime)
+        {
+            if (firstName.Length == 0)
+            {
+                throw new ArgumentException("Empty first Name");
+            }
+            if (lastName.Length == 0)
+            {
+                throw new ArgumentException("Empty last name");
+            }
+            executor.ExecuteNonQuery(new CloseShiftNoDateDelegate(firstName, lastName));
+            executor.ExecuteNonQuery(new AddShiftDelegate(firstName, lastName, startingTime));
+            executor.ExecuteNonQuery(new CloseShiftDelegate(firstName, lastName, endingTime));
+        }
+
+        public DateTimeOffset CloseShift(string firstName, string lastName)
+        {
+            if (firstName.Length == 0)
+            {
+                throw new ArgumentException("Empty first Name");
+            }
+            if (lastName.Length == 0)
+            {
+                throw new ArgumentException("Empty last name");
+            }
+            return executor.ExecuteNonQuery(new CloseShiftNoDateDelegate(firstName, lastName));
         }
     }
 }

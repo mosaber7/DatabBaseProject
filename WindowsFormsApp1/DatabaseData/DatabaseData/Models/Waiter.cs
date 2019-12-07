@@ -12,10 +12,20 @@ namespace DatabaseData.Models
 
         public string LastName { get; }
 
+        public decimal Salary { get; }
+
         public Waiter(string first, string last)
         {
             FirstName = first;
             LastName = last;
+            Salary = -1;
+        }
+
+        public Waiter(string first, string last, decimal salary)
+        {
+            FirstName = first;
+            LastName = last;
+            Salary = salary;
         }
     }
 }

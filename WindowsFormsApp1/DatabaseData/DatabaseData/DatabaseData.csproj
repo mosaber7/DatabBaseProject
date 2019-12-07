@@ -53,11 +53,14 @@
     <Compile Include="DataDelegates\NonQuery\Waiters\AddShiftNoDateDelegate.cs" />
     <Compile Include="DataDelegates\NonQuery\Waiters\AddWaiterDelegate.cs" />
     <Compile Include="DataDelegates\NonQuery\Waiters\CloseShiftDelegate.cs" />
+    <Compile Include="DataDelegates\NonQuery\Waiters\CloseShiftNoDateDelegate.cs" />
+    <Compile Include="DataDelegates\NonQuery\Waiters\FireWaiterDelegate.cs" />
     <Compile Include="DataDelegates\Query\MenuItems\FetchAllActiveMenuItemsDelegate.cs" />
     <Compile Include="DataDelegates\Query\MenuItems\FetchAllIngredientsFromActiveMenuItemDelegate.cs" />
     <Compile Include="DataDelegates\Query\Orders\FetchAllFoodsFromOrderDelegate.cs" />
     <Compile Include="DataDelegates\Query\Orders\FetchAllIngredientsFromFoodDelegate.cs" />
     <Compile Include="DataDelegates\Query\Waiters\FetchAllCurrentlyWorkingWaitersDelegate.cs" />
+    <Compile Include="DataDelegates\Query\Waiters\FetchAllWaitersDelegate.cs" />
     <Compile Include="Models\Food.cs" />
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\IngredientInformation.cs" />
@@ -80,6 +83,7 @@
     <Content Include="Sql\Procedures\ReadData\FetchAllIngredientsFromActiveMenuItem.sql" />
     <Content Include="Sql\Procedures\ReadData\FetchAllIngredientsFromFood.sql" />
     <Content Include="Sql\Procedures\ReadData\FetchAllOrdersOfTable.sql" />
+    <Content Include="Sql\Procedures\ReadData\FetchAllWaiters.sql" />
     <Content Include="Sql\Procedures\UsefulFunctions.sql" />
     <Content Include="Sql\Procedures\WriteData\AddFood.sql" />
     <Content Include="Sql\Procedures\WriteData\AddFoodIngredientIntoLastFood.sql" />
@@ -93,6 +97,7 @@
     <Content Include="Sql\Procedures\WriteData\CancelOrder.sql" />
     <Content Include="Sql\Procedures\WriteData\CloseShift.sql" />
     <Content Include="Sql\Procedures\WriteData\DeliveredOrder.sql" />
+    <Content Include="Sql\Procedures\WriteData\FireWaiter.sql" />
     <Content Include="Sql\Procedures\WriteData\RemoveMenuItem.sql" />
   </ItemGroup>
   <ItemGroup>

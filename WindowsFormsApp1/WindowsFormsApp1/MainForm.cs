@@ -12,7 +12,9 @@ namespace WindowsFormsApp1
     {
         private readonly string connectionString = "Server=mssql.cs.ksu.edu;Database=santiagoscavone;UID=santiagoscavone;Password=Sqlpassword1!";
         private System.Windows.Forms.Panel[] PropertiesDict;
+        private System.Windows.Forms.Panel[] ReportsDict;
         private int ActivePane = 0;
+        private int ActiveReportsPane = 0;
 
         SqlMenuItemsRepository menuItemsRepository;
         SqlOrderRepository orderRepository;
@@ -54,6 +56,13 @@ namespace WindowsFormsApp1
                 AddIngredientPanel,
                 RestockIngredientPanel
             };
+
+            ReportsDict = new[] {
+                DailySalesPanel,
+                MostOrderedFoodPanel,
+                EotMPanel,
+                CustSatPanel
+            };
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -62,6 +71,12 @@ namespace WindowsFormsApp1
             PropertiesDict[PropertiesList.SelectedIndex].BringToFront();
             PropertiesDict[PropertiesList.SelectedIndex].Show();
             ActivePane = PropertiesList.SelectedIndex;
+        }
+
+        private void PropertiesReturnButton_Click(object sender, EventArgs e)
+        {
+            MainPanel.Show();
+            PropertyChangePanel.Hide();
         }
 
         private void HireWaiterSubmitButton_Click(object sender, EventArgs e)
@@ -103,7 +118,6 @@ namespace WindowsFormsApp1
             RemoveMenuItemListLoad(null, null);
         }
 
-        // Functional.
         private void RemoveSelectedItemButton_Click(object sender, EventArgs e)
         {
             string RemovedMenuItem = RemoveMenuItemList.SelectedItem.ToString();
@@ -149,5 +163,61 @@ namespace WindowsFormsApp1
         {
             // TODO SQL query to populate list.
         }
+
+        // ------------------- REPORTS
+
+        private void ReportsButton_Click(object sender, EventArgs e)
+        {
+            MainPanel.Hide();
+            ReportPanel.Show();
+        }
+
+        private void ReportsReturnButton_Click(object sender, EventArgs e)
+        {
+            MainPanel.Show();
+            ReportPanel.Hide();
+        }
+
+        private void ReportQueriesList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ReportsDict[ActiveReportsPane].Hide();
+            ReportsDict[ReportQueriesList.SelectedIndex].BringToFront();
+            ReportsDict[ReportQueriesList.SelectedIndex].Show();
+            ActiveReportsPane = ReportQueriesList.SelectedIndex;
+        }
+
+        private void MostOrderedFoodSubmit_Click(object sender, EventArgs e)
+        {
+            // TODO Most Ordered Food Query.
+
+            Console.WriteLine(2);
+        }
+
+        private void DailySalesSubmit_Click(object sender, EventArgs e)
+        {
+            string dateString = DailySalesInput.Text;
+            DateTimeOffset date = new DateTimeOffset(DateTime.Parse(dateString + " 8:00:00 AM"));
+            // TODO SQL query.
+            SqlStatisticsRepository sql = new SqlStatisticsRepository(connectionString);
+            sql.GetDaySales(date);
+            Console.WriteLine(1);
+        }
+
+        private void EotMSubmit_Click(object sender, EventArgs e)
+        {
+            string monthString = EotMInput.Text;
+            // TODO SQL query.
+            Console.WriteLine(3);
+        }
+
+        private void CustSatSubmit_Click(object sender, EventArgs e)
+        {
+            string startDateString = CustSatStartDateInput.Text;
+            string endDateString = CustSatEndDateInput.Text;
+            // TODO SQL query.
+            Console.WriteLine(4);
+        }
+
+        
     }
 }

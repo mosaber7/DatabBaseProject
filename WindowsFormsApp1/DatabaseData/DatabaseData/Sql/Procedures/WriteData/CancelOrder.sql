@@ -1,4 +1,14 @@
 CREATE OR ALTER PROCEDURE Restaurant.CancelOrder
+	@OrderID INT
+AS
+	UPDATE Restaurant.Orders
+	SET
+		[Status] = 3
+	WHERE
+		OrderID = @OrderID
+GO
+
+CREATE OR ALTER PROCEDURE Restaurant.CancelOrderUsingWaiterTableDate
 	@WaiterFirstName NVARCHAR(64),
 	@WaiterLastName NVARCHAR(64),
 	@TableNumber INT,

@@ -47,6 +47,8 @@
     <Compile Include="DataDelegates\NonQuery\Orders\AddFoodDelegate.cs" />
     <Compile Include="DataDelegates\NonQuery\Orders\AddFoodIngredientDelegate.cs" />
     <Compile Include="DataDelegates\NonQuery\Orders\AddOrderDelegate.cs" />
+    <Compile Include="DataDelegates\NonQuery\Orders\CancelOrderDelegate.cs" />
+    <Compile Include="DataDelegates\NonQuery\Orders\DeliveredOrderDelegate.cs" />
     <Compile Include="DataDelegates\NonQuery\Waiters\AddShiftDelegate.cs" />
     <Compile Include="DataDelegates\NonQuery\Waiters\AddShiftNoDateDelegate.cs" />
     <Compile Include="DataDelegates\NonQuery\Waiters\AddWaiterDelegate.cs" />

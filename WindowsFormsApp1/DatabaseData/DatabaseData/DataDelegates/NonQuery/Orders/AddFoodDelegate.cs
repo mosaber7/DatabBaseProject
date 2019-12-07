@@ -28,7 +28,7 @@ namespace DatabaseData.DataDelegates.NonQuery.Orders
             command.Parameters.AddWithValue("MenuItemName", name);
             command.Parameters.AddWithValue("Quantity", quantity);
 
-            var id = command.Parameters.Add("OrderID", SqlDbType.Int);
+            var id = command.Parameters.Add("FoodID", SqlDbType.Int);
             id.Direction = ParameterDirection.Output;
         }
 

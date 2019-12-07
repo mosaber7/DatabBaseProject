@@ -42,5 +42,15 @@ namespace DatabaseData
 
             return foods;
         }
+
+        public void CancelOrder(int orderID)
+        {
+            executor.ExecuteNonQuery(new CancelOrderDelegate(orderID));
+        }
+
+        public void DeliverOrder(int orderID, decimal tip)
+        {
+            executor.ExecuteNonQuery(new DeliveredOrderDelegate(orderID, tip));
+        }
     }
 }

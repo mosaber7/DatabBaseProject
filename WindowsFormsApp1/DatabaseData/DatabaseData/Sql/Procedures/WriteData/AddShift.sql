@@ -21,7 +21,8 @@ GO
 
 CREATE OR ALTER PROCEDURE Restaurant.AddShiftNoDate
 	@WaiterFirstName NVARCHAR (64),
-	@WaiterLastName NVARCHAR (64)
+	@WaiterLastName NVARCHAR (64),
+	@ClockIn DATETIMEOFFSET OUTPUT
 AS
 	DECLARE @WaiterID INT = Restaurant.RetrieveWaiter(@WaiterFirstName, @WaiterLastName);
 	---If that waiter doesn't have an open shift already
@@ -33,7 +34,15 @@ AS
 		WHERE S.ClockOutTime IS NULL
 			AND @WaiterID = W.WaiterID
 	)
-	INSERT INTO Restaurant.Shifts(WaiterID)
-	VALUES(@WaiterID);
+	BEGIN
+		INSERT INTO Restaurant.Shifts(WaiterID)
+		VALUES(@WaiterID);
+		SET @ClockIn = (
+			SELECT S.ClockInTime
+			FROM Restaurant.Waiters W
+				INNER JOIN Restaurant.Shifts S ON W.WaiterID = S.WaiterID
+			WHERE W.WaiterID = @WaiterID
+		);
+	END
 	ELSE
 		THROW 50000, 'The Waiter already has an open shift', 1

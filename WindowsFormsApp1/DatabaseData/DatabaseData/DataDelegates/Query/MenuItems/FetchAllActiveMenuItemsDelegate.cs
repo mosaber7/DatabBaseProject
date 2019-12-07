@@ -26,7 +26,7 @@ namespace DatabaseData.DataDelegates.Query.MenuItems
             {
                 menuItems.Add(new MenuItem(
                     reader.GetString("Name"), reader.GetString("Description"),
-                    decimal.Parse(reader.GetString("Price"))));
+                    reader.GetValue<decimal>("Price")));
             }
 
             return menuItems;

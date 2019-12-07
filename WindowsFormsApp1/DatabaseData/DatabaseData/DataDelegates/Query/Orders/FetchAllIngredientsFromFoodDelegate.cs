@@ -30,8 +30,8 @@ namespace DatabaseData.DataDelegates.Query.Orders
             while(reader.Read())
             {
                 ingredients.Add(new Ingredient(
-                    reader.GetString("Name"), 
-                    decimal.Parse(reader.GetString("AmountUsed"))));
+                    reader.GetString("Name"),
+                    reader.GetValue<decimal>("AmountUsed")));
             }
 
             return ingredients;

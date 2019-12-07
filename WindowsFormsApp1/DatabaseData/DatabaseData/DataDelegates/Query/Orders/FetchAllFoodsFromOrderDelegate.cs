@@ -32,7 +32,7 @@ namespace DatabaseData.DataDelegates.Query.Orders
                     reader.GetInt32("FoodID"),
                     reader.GetString("Name"),
                     reader.GetInt32("Quantity"),
-                    decimal.Parse(reader.GetString("Price"))));
+                    reader.GetValue<decimal>("Price")));
             }
 
             return foods;

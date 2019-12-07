@@ -42,6 +42,7 @@ AS
 			FROM Restaurant.Waiters W
 				INNER JOIN Restaurant.Shifts S ON W.WaiterID = S.WaiterID
 			WHERE W.WaiterID = @WaiterID
+				AND S.ClockOutTime IS NULL
 		);
 	END
 	ELSE

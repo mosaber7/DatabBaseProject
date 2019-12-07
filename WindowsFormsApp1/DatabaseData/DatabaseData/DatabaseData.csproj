@@ -45,6 +45,7 @@
     <Compile Include="DataDelegates\NonQuery\MenuItems\AddMenuItemDelegate.cs" />
     <Compile Include="DataDelegates\NonQuery\MenuItems\AddMenuItemIngredientDelegate.cs" />
     <Compile Include="DataDelegates\NonQuery\MenuItems\RemoveMenuItemDelegate.cs" />
+    <Compile Include="DataDelegates\NonQuery\MenuItems\RestockIngredientDelegate.cs" />
     <Compile Include="DataDelegates\NonQuery\Orders\AddFoodDelegate.cs" />
     <Compile Include="DataDelegates\NonQuery\Orders\AddFoodIngredientDelegate.cs" />
     <Compile Include="DataDelegates\NonQuery\Orders\AddIngredientDelegate.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="DataDelegates\NonQuery\Waiters\CloseShiftNoDateDelegate.cs" />
     <Compile Include="DataDelegates\NonQuery\Waiters\FireWaiterDelegate.cs" />
     <Compile Include="DataDelegates\Query\MenuItems\FetchAllActiveMenuItemsDelegate.cs" />
+    <Compile Include="DataDelegates\Query\MenuItems\FetchAllIngredientsDelegate.cs" />
     <Compile Include="DataDelegates\Query\MenuItems\FetchAllIngredientsFromActiveMenuItemDelegate.cs" />
     <Compile Include="DataDelegates\Query\Orders\FetchAllFoodsFromOrderDelegate.cs" />
     <Compile Include="DataDelegates\Query\Orders\FetchAllIngredientsFromFoodDelegate.cs" />
@@ -89,6 +91,7 @@
     <Content Include="Sql\Procedures\ReadData\FetchAllActiveMenuItems.sql" />
     <Content Include="Sql\Procedures\ReadData\FetchAllCurrentlyWorkingWaiters.sql" />
     <Content Include="Sql\Procedures\ReadData\FetchAllFoodsFromOrder.sql" />
+    <Content Include="Sql\Procedures\ReadData\FetchAllIngredients.sql" />
     <Content Include="Sql\Procedures\ReadData\FetchAllIngredientsFromActiveMenuItem.sql" />
     <Content Include="Sql\Procedures\ReadData\FetchAllIngredientsFromFood.sql" />
     <Content Include="Sql\Procedures\ReadData\FetchAllOrdersOfTable.sql" />

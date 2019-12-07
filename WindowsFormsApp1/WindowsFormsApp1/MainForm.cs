@@ -29,6 +29,10 @@ namespace WindowsFormsApp1
             orderRepository = new SqlOrderRepository(connectionString);
             waiterRepository = new SqlWaiterRepository(connectionString);
             statisticsRepository = new SqlStatisticsRepository(connectionString);
+
+            DateTime start = new DateTime(2019, 12, 4, 7, 30, 0);
+            DateTime end = new DateTime(2019, 12, 4, 18, 30, 0);
+            waiterRepository.AddShift("Kevin", "Johnson", start, end);
         }
 
         private void Button1_Click(object sender, EventArgs e)

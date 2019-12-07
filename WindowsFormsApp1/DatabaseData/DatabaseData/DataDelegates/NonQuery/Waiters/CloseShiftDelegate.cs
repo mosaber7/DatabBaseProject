@@ -12,7 +12,7 @@ namespace DatabaseData.DataDelegates.NonQuery.Waiters
         private readonly DateTimeOffset clockOut;
 
         public CloseShiftDelegate(string waiterFirstName, string waiterLastName, DateTimeOffset clockOut)
-            : base("Restaurant.AddShift")
+            : base("Restaurant.CloseShift")
         {
             this.waiterFirstName = waiterFirstName;
             this.waiterLastName = waiterLastName;

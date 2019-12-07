@@ -108,6 +108,10 @@
             this.EotMInput = new System.Windows.Forms.TextBox();
             this.EotMSubmit = new System.Windows.Forms.Button();
             this.EotMLabel_1 = new System.Windows.Forms.Label();
+            this.AddIngredientCost = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
+            this.AddMenuItemIngredients = new System.Windows.Forms.TextBox();
+            this.label24 = new System.Windows.Forms.Label();
             this.MainPanel.SuspendLayout();
             this.PropertyChangePanel.SuspendLayout();
             this.RemoveMenuItemPanel.SuspendLayout();
@@ -186,12 +190,12 @@
             // 
             this.PropertyChangePanel.Controls.Add(this.PropertiesReturnButton);
             this.PropertyChangePanel.Controls.Add(this.PropertiesList);
+            this.PropertyChangePanel.Controls.Add(this.AddMenuItemPanel);
             this.PropertyChangePanel.Controls.Add(this.RemoveMenuItemPanel);
             this.PropertyChangePanel.Controls.Add(this.HireWaiterPanel);
             this.PropertyChangePanel.Controls.Add(this.FireWaiterPanel);
             this.PropertyChangePanel.Controls.Add(this.AddIngredientPanel);
             this.PropertyChangePanel.Controls.Add(this.RestockIngredientPanel);
-            this.PropertyChangePanel.Controls.Add(this.AddMenuItemPanel);
             this.PropertyChangePanel.Location = new System.Drawing.Point(12, 12);
             this.PropertyChangePanel.Name = "PropertyChangePanel";
             this.PropertyChangePanel.Size = new System.Drawing.Size(576, 342);
@@ -370,6 +374,8 @@
             // 
             // AddIngredientPanel
             // 
+            this.AddIngredientPanel.Controls.Add(this.label23);
+            this.AddIngredientPanel.Controls.Add(this.AddIngredientCost);
             this.AddIngredientPanel.Controls.Add(this.label14);
             this.AddIngredientPanel.Controls.Add(this.label13);
             this.AddIngredientPanel.Controls.Add(this.label12);
@@ -444,7 +450,7 @@
             // 
             // AddIngredientButton
             // 
-            this.AddIngredientButton.Location = new System.Drawing.Point(83, 115);
+            this.AddIngredientButton.Location = new System.Drawing.Point(83, 144);
             this.AddIngredientButton.Name = "AddIngredientButton";
             this.AddIngredientButton.Size = new System.Drawing.Size(100, 23);
             this.AddIngredientButton.TabIndex = 2;
@@ -511,6 +517,8 @@
             // 
             // AddMenuItemPanel
             // 
+            this.AddMenuItemPanel.Controls.Add(this.label24);
+            this.AddMenuItemPanel.Controls.Add(this.AddMenuItemIngredients);
             this.AddMenuItemPanel.Controls.Add(this.label11);
             this.AddMenuItemPanel.Controls.Add(this.AddMenuItemDescription);
             this.AddMenuItemPanel.Controls.Add(this.label10);
@@ -539,7 +547,7 @@
             this.AddMenuItemDescription.Location = new System.Drawing.Point(86, 91);
             this.AddMenuItemDescription.Multiline = true;
             this.AddMenuItemDescription.Name = "AddMenuItemDescription";
-            this.AddMenuItemDescription.Size = new System.Drawing.Size(137, 107);
+            this.AddMenuItemDescription.Size = new System.Drawing.Size(245, 88);
             this.AddMenuItemDescription.TabIndex = 10;
             // 
             // label10
@@ -586,7 +594,7 @@
             // 
             // AddMenuItemButton
             // 
-            this.AddMenuItemButton.Location = new System.Drawing.Point(86, 204);
+            this.AddMenuItemButton.Location = new System.Drawing.Point(86, 304);
             this.AddMenuItemButton.Name = "AddMenuItemButton";
             this.AddMenuItemButton.Size = new System.Drawing.Size(137, 23);
             this.AddMenuItemButton.TabIndex = 2;
@@ -921,14 +929,47 @@
             this.EotMLabel_1.TabIndex = 0;
             this.EotMLabel_1.Text = "Employee of the Month";
             // 
+            // AddIngredientCost
+            // 
+            this.AddIngredientCost.Location = new System.Drawing.Point(83, 115);
+            this.AddIngredientCost.Name = "AddIngredientCost";
+            this.AddIngredientCost.Size = new System.Drawing.Size(100, 20);
+            this.AddIngredientCost.TabIndex = 12;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(7, 118);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(68, 13);
+            this.label23.TabIndex = 13;
+            this.label23.Text = "Cost per Unit";
+            // 
+            // AddMenuItemIngredients
+            // 
+            this.AddMenuItemIngredients.Location = new System.Drawing.Point(86, 191);
+            this.AddMenuItemIngredients.Multiline = true;
+            this.AddMenuItemIngredients.Name = "AddMenuItemIngredients";
+            this.AddMenuItemIngredients.Size = new System.Drawing.Size(245, 107);
+            this.AddMenuItemIngredients.TabIndex = 12;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(20, 194);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(59, 13);
+            this.label24.TabIndex = 13;
+            this.label24.Text = "Ingredients";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.PropertyChangePanel);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.ReportPanel);
-            this.Controls.Add(this.PropertyChangePanel);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
             this.Text = "Form1";
@@ -1046,6 +1087,10 @@
         private System.Windows.Forms.DataGridView MostOrderedFoodOutputTable;
         private System.Windows.Forms.DataGridView EotMOutputTable;
         private System.Windows.Forms.Button ClockButton;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.TextBox AddIngredientCost;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox AddMenuItemIngredients;
     }
 }
 

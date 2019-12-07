@@ -83,27 +83,62 @@ namespace WindowsFormsApp1
             PropertyChangePanel.Hide();
         }
 
+        // ------------------- PROPERTY QUERY FUNCTIONS
+
+        // Complete. 
         private void HireWaiterSubmitButton_Click(object sender, EventArgs e)
         {
             string Name = HireWaiterNameInput.Text;
-            decimal Wage = decimal.Parse(HireWaiterWageInput.Text);
+            string FirstName;
+            string LastName;
+            decimal Wage;
+            try
+            {
+                Wage = decimal.Parse(HireWaiterWageInput.Text);
 
-            string FirstName = Name.Substring(0, Name.IndexOf(' '));
-            string LastName = Name.Substring(Name.IndexOf(' ') + 1);
-
-            waiterRepository.AddWaiter(FirstName, LastName, Wage);
+                FirstName = Name.Substring(0, Name.IndexOf(' '));
+                LastName = Name.Substring(Name.IndexOf(' ') + 1);
+            } catch(Exception ex)
+            {
+                return;
+            }
+            
+            try
+            {
+                waiterRepository.AddWaiter(FirstName, LastName, Wage);
+            } catch(Exception ex)
+            {
+                return;
+            }
+            
 
             FireWaiterList.Items.Clear();
             FireWaiterListLoad();
         }
 
+        // Complete.
         private void FireSelectedWaiterButton_Click(object sender, EventArgs e)
         {
             string Name = FireWaiterList.SelectedItem.ToString();
-            string FirstName = Name.Substring(0, Name.IndexOf(' '));
-            string LastName = Name.Substring(Name.IndexOf(' ') + 1);
+            string FirstName;
+            string LastName;
+            try
+            {
+                FirstName = Name.Substring(0, Name.IndexOf(' '));
+                LastName = Name.Substring(Name.IndexOf(' ') + 1);
+            } catch(Exception ex)
+            {
+                return;
+            }
 
-            waiterRepository.FireWaiter(FirstName, LastName);
+            try
+            {
+                waiterRepository.FireWaiter(FirstName, LastName);
+            } catch(Exception ex)
+            {
+                return;
+            }
+            
 
             FireWaiterList.Items.Clear();
             FireWaiterListLoad();
@@ -111,31 +146,90 @@ namespace WindowsFormsApp1
 
         private void AddMenuItemButton_Click(object sender, EventArgs e)
         {
-            // TODO Add ability to add ingredients. 
-            string Name = AddMenuItemName.Text;
-            decimal Price = decimal.Parse(AddMenuItemPrice.Text);
-            string Description = AddMenuItemDescription.Text;
+            // todo test.
+            string Name;
+            decimal Price;
+            string Description;
+            List<Ingredient> Ingredients;
 
-            menuItemsRepository.AddMenuItem(Name, Description, Price, null);
 
+            try
+            {
+                Name = AddMenuItemName.Text;
+                Price = decimal.Parse(AddMenuItemPrice.Text);
+                Description = AddMenuItemDescription.Text;
+                Ingredients = new List<Ingredient>();
+
+                foreach(string line in AddMenuItemIngredients.Text.Split('\n'))
+                {
+                    string IngName = line.Substring(line.IndexOf(',')).Trim();
+                    decimal IngAmt = decimal.Parse(line.Substring(line.IndexOf(',') + 1).Trim());
+                    Ingredients.Add(new Ingredient(IngName, IngAmt));
+                }
+            } catch(Exception ex)
+            {
+                return;
+            }
+
+            try
+            {
+                menuItemsRepository.AddMenuItem(Name, Description, Price, Ingredients);
+            } catch(Exception ex)
+            {
+                return;
+            }
             
+
+            RemoveMenuItemList.Items.Clear();
             RemoveMenuItemListLoad();
         }
 
+        // Complete.
         private void RemoveSelectedItemButton_Click(object sender, EventArgs e)
         {
             string RemovedMenuItem = RemoveMenuItemList.SelectedItem.ToString();
 
-            menuItemsRepository.RemoveMenuItem(RemovedMenuItem);
+            try
+            {
+                menuItemsRepository.RemoveMenuItem(RemovedMenuItem);
+            } catch(Exception ex)
+            {
+                return;
+            }
+            
+            RemoveMenuItemList.Items.Clear();
+            RemoveMenuItemListLoad();
         }
 
         private void AddIngredientButton_Click(object sender, EventArgs e)
         {
-            string Name = AddIngredientName.Text;
-            string Amount = AddIngredientAmount.Text;
-            string Units = AddIngredientUnits.Text;
+            string Name;
+            decimal Amount;
+            string Units;
+            decimal Cost;
+            try
+            {
+                Name = AddIngredientName.Text;
+                Amount = decimal.Parse(AddIngredientAmount.Text);
+                Units = AddIngredientUnits.Text;
+                Cost = decimal.Parse(AddIngredientCost.Text);
+            } catch(Exception ex)
+            {
+                return;
+            }
 
-            // TODO Fill.
+            try
+            {
+                orderRepository.AddIngredient(Name, Amount, Units, Cost);
+            } catch(Exception ex)
+            {
+                return;
+            }
+
+            RestockIngredientsList.Items.Clear();
+            RestockIngredientListLoad();
+            
+            // TODO test.
         }
 
         private void RestockIngredientButton_Click(object sender, EventArgs e)
@@ -145,6 +239,7 @@ namespace WindowsFormsApp1
             // TODO Fill.
         }
 
+        // Complete.
         private void FireWaiterListLoad()
         {
             foreach (Waiter waiter in waiterRepository.FetchAllWaiters())
@@ -153,6 +248,7 @@ namespace WindowsFormsApp1
             }
         }
 
+        // Complete.
         private void RemoveMenuItemListLoad()
         {
             foreach (DatabaseData.Models.MenuItem item in menuItemsRepository.FetchActiveMenuItems())
@@ -163,7 +259,7 @@ namespace WindowsFormsApp1
 
         private void RestockIngredientListLoad()
         {
-
+            // TODO complete.
         }
 
         // ------------------- REPORTS

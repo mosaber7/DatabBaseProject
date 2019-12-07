@@ -50,5 +50,15 @@ namespace DatabaseData
 
             return menuItems;
         }
+
+        public IReadOnlyList<IngredientInformation> FetchAllIngredients()
+        {
+            return executor.ExecuteReader(new FetchAllIngredientsDelegate());
+        }
+
+        public decimal RestockIngredient(string ingredientName, decimal amountToRestock)
+        {
+            return executor.ExecuteNonQuery(new RestockIngredientDelegate(ingredientName, amountToRestock));
+        }
     }
 }

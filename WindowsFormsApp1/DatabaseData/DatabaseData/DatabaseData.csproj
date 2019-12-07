@@ -33,6 +33,9 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -61,6 +64,9 @@
     <Compile Include="DataDelegates\Query\MenuItems\FetchAllIngredientsFromActiveMenuItemDelegate.cs" />
     <Compile Include="DataDelegates\Query\Orders\FetchAllFoodsFromOrderDelegate.cs" />
     <Compile Include="DataDelegates\Query\Orders\FetchAllIngredientsFromFoodDelegate.cs" />
+    <Compile Include="DataDelegates\Query\Orders\GetEmployeeShiftDelegate.cs" />
+    <Compile Include="DataDelegates\Query\Orders\GetOrdersDelegate.cs" />
+    <Compile Include="DataDelegates\Query\Orders\GetShiftsDelegate.cs" />
     <Compile Include="DataDelegates\Query\Waiters\FetchAllCurrentlyWorkingWaitersDelegate.cs" />
     <Compile Include="DataDelegates\Query\Waiters\FetchAllWaitersDelegate.cs" />
     <Compile Include="DataDelegates\ReportQuery\SalesFromDayDelegate.cs" />
@@ -78,10 +84,15 @@
     <Compile Include="SqlStatisticsRepository.cs" />
     <Compile Include="SqlWaiterRepository.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Sql\Creation\SchemaCreation.sql" />
     <Content Include="Sql\Creation\Table Creation.sql" />
+    <Content Include="Sql\Procedures\ReadData\GetEmployeeShift.sql" />
+    <Content Include="Sql\Procedures\ReadData\GetOrders.sql" />
+    <Content Include="Sql\Procedures\ReadData\GetShifts.sql" />
     <Content Include="Sql\Procedures\ReadData\FetchAllActiveMenuItems.sql" />
     <Content Include="Sql\Procedures\ReadData\FetchAllCurrentlyWorkingWaiters.sql" />
     <Content Include="Sql\Procedures\ReadData\FetchAllFoodsFromOrder.sql" />

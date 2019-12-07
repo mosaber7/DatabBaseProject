@@ -15,3 +15,20 @@ D:\Documents\Sadness\SQL Class\Project SQL Repo\WindowsFormsApp1\WindowsFormsApp
 D:\Documents\Sadness\SQL Class\Project SQL Repo\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\RestaurantApp.csproj.CopyComplete
 D:\Documents\Sadness\SQL Class\Project SQL Repo\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 D:\Documents\Sadness\SQL Class\Project SQL Repo\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\DatabaseData.dll
+D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\DataAccess.dll
+D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\DatabaseData.pdb
+D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\DataAccess.pdb
+D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\RestaurantApp.csprojAssemblyReference.cache
+D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Foodpick.resources
+D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.MainForm.resources
+D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Tables.resources
+D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\RestaurantApp.csproj.GenerateResource.cache
+D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\RestaurantApp.csproj.CoreCompileInputs.cache
+D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\RestaurantApp.csproj.CopyComplete
+D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb

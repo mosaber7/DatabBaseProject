@@ -7,3 +7,12 @@ D:\Documents\Sadness\SQL Class\Project SQL Repo\WindowsFormsApp1\DatabaseData\Da
 D:\Documents\Sadness\SQL Class\Project SQL Repo\WindowsFormsApp1\DatabaseData\DatabaseData\obj\Debug\DatabaseData.csproj.CopyComplete
 D:\Documents\Sadness\SQL Class\Project SQL Repo\WindowsFormsApp1\DatabaseData\DatabaseData\obj\Debug\DatabaseData.dll
 D:\Documents\Sadness\SQL Class\Project SQL Repo\WindowsFormsApp1\DatabaseData\DatabaseData\obj\Debug\DatabaseData.pdb
+D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\DatabaseData\DatabaseData\bin\Debug\DatabaseData.dll
+D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\DatabaseData\DatabaseData\bin\Debug\DatabaseData.pdb
+D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\DatabaseData\DatabaseData\bin\Debug\DataAccess.dll
+D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\DatabaseData\DatabaseData\bin\Debug\DataAccess.pdb
+D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\DatabaseData\DatabaseData\obj\Debug\DatabaseData.csprojAssemblyReference.cache
+D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\DatabaseData\DatabaseData\obj\Debug\DatabaseData.csproj.CoreCompileInputs.cache
+D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\DatabaseData\DatabaseData\obj\Debug\DatabaseData.csproj.CopyComplete
+D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\DatabaseData\DatabaseData\obj\Debug\DatabaseData.dll
+D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\DatabaseData\DatabaseData\obj\Debug\DatabaseData.pdb

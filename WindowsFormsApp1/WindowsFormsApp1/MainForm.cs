@@ -76,6 +76,13 @@ namespace WindowsFormsApp1
             }
 
             ordersDataManager.CancelOrder(order.OrderID);*/
+
+            waitersDataManager.FireWaiter("Kevin", "Johnson");
+            waitersDataManager.AddWaiter("Kevin", "Johnson", 7.5m);
+            DateTime start = new DateTime(2019, 12, 7, 7, 0, 0);
+            DateTime end = new DateTime(2019, 12, 7, 18, 30, 0);
+
+            waitersDataManager.AddShift("Kevin", "Johnson", start, end);
         }
     }
 }

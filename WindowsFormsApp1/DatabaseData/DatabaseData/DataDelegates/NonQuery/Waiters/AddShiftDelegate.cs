@@ -25,7 +25,7 @@ namespace DatabaseData.DataDelegates.NonQuery.Waiters
 
             command.Parameters.AddWithValue("WaiterFirstName", waiterFirstName);
             command.Parameters.AddWithValue("WaiterLastName", waiterLastName);
-            command.Parameters.AddWithValue("ClockIn", clockIn);
+            command.Parameters.AddWithValue("@ClockIn", clockIn);
         }
 
         public override DateTimeOffset Translate(SqlCommand command)

@@ -90,6 +90,7 @@
     <Content Include="Sql\Procedures\ReadData\FetchAllOrdersOfTable.sql" />
     <Content Include="Sql\Procedures\ReadData\FetchAllWaiters.sql" />
     <Content Include="Sql\Procedures\ReadData\SalesFromDay.sql" />
+    <Content Include="Sql\Procedures\ReadData\WaitersWorkOnDay.sql" />
     <Content Include="Sql\Procedures\UsefulFunctions.sql" />
     <Content Include="Sql\Procedures\WriteData\AddFood.sql" />
     <Content Include="Sql\Procedures\WriteData\AddFoodIngredientIntoLastFood.sql" />

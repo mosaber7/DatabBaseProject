@@ -15,6 +15,11 @@ namespace DatabaseData
             executor = new SqlCommandExecutor(connectionString);
         }
 
+        public IngredientInformation AddIngredient(string ingredientName, decimal amount, string measurementUnits, decimal costPerUnit)
+        {
+            return executor.ExecuteNonQuery(new AddIngredientDelegate(ingredientName, amount, measurementUnits, costPerUnit));
+        }
+
         public Order AddOrder(string waiterFirstName, string waiterLastName, int tableNumber)
         {
             return executor.ExecuteNonQuery(new AddOrderDelegate(waiterFirstName, waiterLastName, tableNumber));

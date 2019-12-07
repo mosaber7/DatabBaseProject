@@ -29,6 +29,11 @@ namespace DatabaseData
             return mi;
         }
 
+        public void RemoveMenuItem(string menuItemName)
+        {
+            executor.ExecuteNonQuery(new RemoveMenuItemDelegate(menuItemName));
+        }
+
         public IngredientInformation AddIngredient(string name, decimal amount, string units, decimal costPerUnit)
         {
             return executor.ExecuteNonQuery(new AddIngredientDelegate(name, amount, units, costPerUnit));

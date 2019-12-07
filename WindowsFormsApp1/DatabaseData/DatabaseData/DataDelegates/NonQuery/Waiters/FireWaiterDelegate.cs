@@ -21,8 +21,8 @@ namespace DatabaseData.DataDelegates.NonQuery.Waiters
         {
             base.PrepareCommand(command);
 
-            command.Parameters.AddWithValue("FirstName", firstName);
-            command.Parameters.AddWithValue("LastName", lastName);
+            command.Parameters.AddWithValue("WaiterFirstName", firstName);
+            command.Parameters.AddWithValue("WaiterLastName", lastName);
         }
 
         public override Waiter Translate(SqlCommand command)

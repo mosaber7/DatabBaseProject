@@ -52,7 +52,6 @@ namespace WindowsFormsApp1
 
         private void HireWaiterSubmitButton_Click(object sender, EventArgs e)
         {
-            // TODO test
             string Name = HireWaiterNameInput.Text;
             decimal Wage = decimal.Parse(HireWaiterWageInput.Text);
 
@@ -61,13 +60,22 @@ namespace WindowsFormsApp1
 
             SqlWaiterRepository sql = new SqlWaiterRepository(connectionString);
             sql.AddWaiter(FirstName, LastName, Wage);
+
+            FireWaiterList.Items.Clear();
+            FireWaiterListLoad(null, null);
         }
 
         private void FireSelectedWaiterButton_Click(object sender, EventArgs e)
         {
-            string FiredWaiters = FireWaiterList.SelectedItem.ToString();
+            string Name = FireWaiterList.SelectedItem.ToString();
+            string FirstName = Name.Substring(0, Name.IndexOf(' '));
+            string LastName = Name.Substring(Name.IndexOf(' ') + 1);
+
             SqlWaiterRepository sql = new SqlWaiterRepository(connectionString);
-            // TODO implement FireWaiterDelegate()
+            sql.FireWaiter(FirstName, LastName);
+
+            FireWaiterList.Items.Clear();
+            FireWaiterListLoad(null, null);
         }
 
         private void AddMenuItemButton_Click(object sender, EventArgs e)
@@ -79,6 +87,8 @@ namespace WindowsFormsApp1
 
             SqlMenuItemsRepository sql = new SqlMenuItemsRepository(connectionString);
             sql.AddMenuItem(Name, Description, Price, null);
+
+            
             RemoveMenuItemListLoad(null, null);
         }
 
@@ -111,7 +121,7 @@ namespace WindowsFormsApp1
         {
             // TODO test.
             SqlWaiterRepository sql = new SqlWaiterRepository(connectionString);
-            foreach (Waiter waiter in sql.FetchAllCurrentylWorkingWaiters())
+            foreach (Waiter waiter in sql.FetchAllWaiters())
             {
                 FireWaiterList.Items.Add(waiter.FirstName + " " + waiter.LastName);
             }

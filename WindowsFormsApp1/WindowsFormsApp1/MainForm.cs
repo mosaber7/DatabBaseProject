@@ -10,15 +10,25 @@ namespace WindowsFormsApp1
 {
     public partial class MainForm : Form
     {
-        private string connectionString = "Server=mssql.cs.ksu.edu;Database=santiagoscavone;UID=santiagoscavone;Password=Sqlpassword1!";
+        private readonly string connectionString = "Server=mssql.cs.ksu.edu;Database=santiagoscavone;UID=santiagoscavone;Password=Sqlpassword1!";
         private System.Windows.Forms.Panel[] PropertiesDict;
         private System.Windows.Forms.Panel[] ReportsDict;
         private int ActivePane = 0;
         private int ActiveReportsPane = 0;
 
+        SqlMenuItemsRepository menuItemsRepository;
+        SqlOrderRepository orderRepository;
+        SqlWaiterRepository waiterRepository;
+        SqlStatisticsRepository statisticsRepository;
+
         public MainForm()
         {
             InitializeComponent();
+
+            menuItemsRepository = new SqlMenuItemsRepository(connectionString);
+            orderRepository = new SqlOrderRepository(connectionString);
+            waiterRepository = new SqlWaiterRepository(connectionString);
+            statisticsRepository = new SqlStatisticsRepository(connectionString);
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -73,8 +83,7 @@ namespace WindowsFormsApp1
             string FirstName = Name.Substring(0, Name.IndexOf(' '));
             string LastName = Name.Substring(Name.IndexOf(' ') + 1);
 
-            SqlWaiterRepository sql = new SqlWaiterRepository(connectionString);
-            sql.AddWaiter(FirstName, LastName, Wage);
+            waiterRepository.AddWaiter(FirstName, LastName, Wage);
 
             FireWaiterList.Items.Clear();
             FireWaiterListLoad(null, null);
@@ -86,8 +95,7 @@ namespace WindowsFormsApp1
             string FirstName = Name.Substring(0, Name.IndexOf(' '));
             string LastName = Name.Substring(Name.IndexOf(' ') + 1);
 
-            SqlWaiterRepository sql = new SqlWaiterRepository(connectionString);
-            sql.FireWaiter(FirstName, LastName);
+            waiterRepository.FireWaiter(FirstName, LastName);
 
             FireWaiterList.Items.Clear();
             FireWaiterListLoad(null, null);
@@ -100,8 +108,7 @@ namespace WindowsFormsApp1
             decimal Price = decimal.Parse(AddMenuItemPrice.Text);
             string Description = AddMenuItemDescription.Text;
 
-            SqlMenuItemsRepository sql = new SqlMenuItemsRepository(connectionString);
-            sql.AddMenuItem(Name, Description, Price, null);
+            menuItemsRepository.AddMenuItem(Name, Description, Price, null);
 
             
             RemoveMenuItemListLoad(null, null);
@@ -111,8 +118,7 @@ namespace WindowsFormsApp1
         {
             string RemovedMenuItem = RemoveMenuItemList.SelectedItem.ToString();
 
-            SqlMenuItemsRepository sql = new SqlMenuItemsRepository(connectionString);
-            sql.RemoveMenuItem(RemovedMenuItem);
+            menuItemsRepository.RemoveMenuItem(RemovedMenuItem);
         }
 
         private void AddIngredientButton_Click(object sender, EventArgs e)
@@ -134,8 +140,7 @@ namespace WindowsFormsApp1
         private void FireWaiterListLoad(object sender, EventArgs e)
         {
             // TODO test.
-            SqlWaiterRepository sql = new SqlWaiterRepository(connectionString);
-            foreach (Waiter waiter in sql.FetchAllWaiters())
+            foreach (Waiter waiter in waiterRepository.FetchAllWaiters())
             {
                 FireWaiterList.Items.Add(waiter.FirstName + " " + waiter.LastName);
             }
@@ -144,8 +149,7 @@ namespace WindowsFormsApp1
         private void RemoveMenuItemListLoad(object sender, EventArgs e)
         {
             // TODO test.
-            SqlMenuItemsRepository sql = new SqlMenuItemsRepository(connectionString);
-            foreach (DatabaseData.Models.MenuItem item in sql.FetchActiveMenuItems())
+            foreach (DatabaseData.Models.MenuItem item in menuItemsRepository.FetchActiveMenuItems())
             {
                 RemoveMenuItemList.Items.Add(item.Name);
             }

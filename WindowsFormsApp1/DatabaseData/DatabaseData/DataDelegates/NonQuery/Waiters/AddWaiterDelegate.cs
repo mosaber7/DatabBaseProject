@@ -2,7 +2,7 @@
 using DataAccess;
 using System.Data.SqlClient;
 
-namespace DatabaseData.DataDelegates
+namespace DatabaseData.DataDelegates.NonQuery.Waiters
 {
     internal class AddWaiterDelegate : NonQueryDataDelegate<Waiter>
     {

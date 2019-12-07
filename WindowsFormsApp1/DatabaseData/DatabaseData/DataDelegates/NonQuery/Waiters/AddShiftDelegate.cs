@@ -3,20 +3,20 @@ using DatabaseData.Models;
 using System;
 using System.Data.SqlClient;
 
-namespace DatabaseData.DataDelegates.NonQuery
+namespace DatabaseData.DataDelegates.NonQuery.Waiters
 {
-    internal class CloseShiftDelegate : NonQueryDataDelegate<DateTimeOffset>
+    internal class AddShiftDelegate : NonQueryDataDelegate<DateTimeOffset>
     {
         private readonly string waiterFirstName;
         private readonly string waiterLastName;
-        private readonly DateTimeOffset clockOut;
+        private readonly DateTimeOffset clockIn;
 
-        public CloseShiftDelegate(string waiterFirstName, string waiterLastName, DateTimeOffset clockOut)
+        public AddShiftDelegate(string waiterFirstName, string waiterLastName, DateTimeOffset clockIn)
             : base("Restaurant.AddShift")
         {
             this.waiterFirstName = waiterFirstName;
             this.waiterLastName = waiterLastName;
-            this.clockOut = clockOut;
+            this.clockIn = clockIn;
         }
 
         public override void PrepareCommand(SqlCommand command)
@@ -25,12 +25,12 @@ namespace DatabaseData.DataDelegates.NonQuery
 
             command.Parameters.AddWithValue("WaiterFirstName", waiterFirstName);
             command.Parameters.AddWithValue("WaiterLastName", waiterLastName);
-            command.Parameters.AddWithValue("ClockOut", clockOut);
+            command.Parameters.AddWithValue("ClockIn", clockIn);
         }
 
         public override DateTimeOffset Translate(SqlCommand command)
         {
-            return clockOut;
+            return clockIn;
         }
     }
 }

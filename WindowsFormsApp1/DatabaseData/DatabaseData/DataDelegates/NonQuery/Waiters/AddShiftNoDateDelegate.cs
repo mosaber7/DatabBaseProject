@@ -3,7 +3,7 @@ using DatabaseData.Models;
 using System;
 using System.Data.SqlClient;
 
-namespace DatabaseData.DataDelegates.NonQuery.Waiter
+namespace DatabaseData.DataDelegates.NonQuery.Waiters
 {
     internal class AddShiftNoDateDelegate : NonQueryDataDelegate<DateTimeOffset>
     {

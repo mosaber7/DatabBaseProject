@@ -1,6 +1,6 @@
 CREATE OR ALTER PROCEDURE Restaurant.AddMenuItem
 	@MenuItemName NVARCHAR (32),
-	@Price INT,
+	@Price DECIMAL,
 	@Description NVARCHAR(1024)
 AS
 	---Checks to see if a Menu Item with that name already exists

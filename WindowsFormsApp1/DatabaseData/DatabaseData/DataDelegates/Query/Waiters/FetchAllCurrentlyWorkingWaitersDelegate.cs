@@ -3,7 +3,7 @@ using DatabaseData.Models;
 using System.Data.SqlClient;
 using System.Collections.Generic;
 
-namespace DatabaseData.DataDelegates.Query
+namespace DatabaseData.DataDelegates.Query.Waiters
 {
     internal class FetchAllCurrentlyWorkingWaitersDelegate : DataReaderDelegate<IReadOnlyList<Waiter>>
     {

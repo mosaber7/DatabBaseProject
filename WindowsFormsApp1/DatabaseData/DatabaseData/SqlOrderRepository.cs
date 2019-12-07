@@ -2,9 +2,7 @@
 using DataAccess;
 using DatabaseData.Models;
 using DatabaseData.DataDelegates.NonQuery.Orders;
-using DatabaseData.DataDelegates;
-using System;
-using DatabaseData.DataDelegates.Query;
+using DatabaseData.DataDelegates.Query.Orders;
 
 namespace DatabaseData
 {
@@ -22,13 +20,25 @@ namespace DatabaseData
             return executor.ExecuteNonQuery(new AddOrderDelegate(waiterFirstName, waiterLastName, tableNumber));
         }
 
-        public void AddFood(int orderID, string menuItemName, int quantity, Ingredient[] ingredientsUsedInFood)
+        public void AddFood(int orderID, string menuItemName, int quantity, IReadOnlyList<Ingredient> ingredientsUsedInFood)
         {
             Food food = executor.ExecuteNonQuery(new AddFoodDelegate(orderID, menuItemName, quantity));
             foreach(Ingredient i in ingredientsUsedInFood)
             {
                 executor.ExecuteNonQuery(new AddFoodIngredientDelegate(food.ID, i.Name, i.AmountUsed));
             }
+        }
+
+        public IReadOnlyList<Food> GetFoodsFromOrder(int orderID)
+        {
+            IReadOnlyList<Food> foods = executor.ExecuteReader(new FetchAllFoodsFromOrderDelegate(orderID));
+
+            foreach(Food f in foods)
+            {
+                f.IngredientsUsed = executor.ExecuteReader(new FetchAllIngredientsFromFoodDelegate(f.ID));
+            }
+
+            return foods;
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace DatabaseData.Models
+﻿using System.Collections.Generic;
+
+namespace DatabaseData.Models
 {
     public class MenuItem
     {
@@ -8,14 +10,13 @@
 
         public decimal Price { get; }
 
-        public Ingredient[] Ingredients { get; }
+        public IReadOnlyList<Ingredient> Ingredients { get; set; }
 
-        public MenuItem(string name, string descr, decimal price, Ingredient[] listOfIngredients)
+        public MenuItem(string name, string descr, decimal price)
         {
             Name = name;
             Description = descr;
             Price = price;
-            Ingredients = listOfIngredients;
         }
     }
 }

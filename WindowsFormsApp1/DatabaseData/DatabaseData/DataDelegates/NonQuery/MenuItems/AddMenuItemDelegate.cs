@@ -3,7 +3,7 @@ using DatabaseData.Models;
 using System;
 using System.Data.SqlClient;
 
-namespace DatabaseData.DataDelegates.NonQuery
+namespace DatabaseData.DataDelegates.NonQuery.MenuItems
 {
     internal class AddMenuItemDelegate : NonQueryDataDelegate<MenuItem>
     {
@@ -30,7 +30,7 @@ namespace DatabaseData.DataDelegates.NonQuery
 
         public override MenuItem Translate(SqlCommand command)
         {
-            return new MenuItem(name, description, price, null);
+            return new MenuItem(name, description, price);
         }
     }
 }

@@ -25,3 +25,13 @@ D:\Documents\Sadness\SQL Class\Restaurant Repo\WindowsFormsApp1\DatabaseData\Dat
 D:\Documents\Sadness\SQL Class\Restaurant Repo\WindowsFormsApp1\DatabaseData\DatabaseData\obj\Debug\DatabaseData.csproj.CopyComplete
 D:\Documents\Sadness\SQL Class\Restaurant Repo\WindowsFormsApp1\DatabaseData\DatabaseData\obj\Debug\DatabaseData.dll
 D:\Documents\Sadness\SQL Class\Restaurant Repo\WindowsFormsApp1\DatabaseData\DatabaseData\obj\Debug\DatabaseData.pdb
+C:\Users\vortix\DatabBaseProject\WindowsFormsApp1\DatabaseData\DatabaseData\obj\Debug\DatabaseData.csprojAssemblyReference.cache
+C:\Users\vortix\DatabBaseProject\WindowsFormsApp1\DatabaseData\DatabaseData\obj\Debug\DatabaseData.dll
+C:\Users\vortix\DatabBaseProject\WindowsFormsApp1\DatabaseData\DatabaseData\obj\Debug\DatabaseData.pdb
+C:\Users\vortix\DatabBaseProject\WindowsFormsApp1\DatabaseData\DatabaseData\bin\Debug\DatabaseData.dll
+C:\Users\vortix\DatabBaseProject\WindowsFormsApp1\DatabaseData\DatabaseData\bin\Debug\DatabaseData.pdb
+C:\Users\vortix\DatabBaseProject\WindowsFormsApp1\DatabaseData\DatabaseData\bin\Debug\DataAccess.dll
+C:\Users\vortix\DatabBaseProject\WindowsFormsApp1\DatabaseData\DatabaseData\bin\Debug\System.ValueTuple.dll
+C:\Users\vortix\DatabBaseProject\WindowsFormsApp1\DatabaseData\DatabaseData\bin\Debug\DataAccess.pdb
+C:\Users\vortix\DatabBaseProject\WindowsFormsApp1\DatabaseData\DatabaseData\bin\Debug\System.ValueTuple.xml
+C:\Users\vortix\DatabBaseProject\WindowsFormsApp1\DatabaseData\DatabaseData\obj\Debug\DatabaseData.csproj.CopyComplete

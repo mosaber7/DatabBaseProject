@@ -145,5 +145,21 @@ namespace WindowsFormsApp1
         {
             // TODO SQL query to populate list.
         }
+        IReadOnlyList<Order> Orders;
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            string connectionString = "Server=mssql.cs.ksu.edu;Database=santiagoscavone;UID=santiagoscavone;Pwd=Sqlpassword1!";
+
+            SqlWaiterRepository sql = new SqlWaiterRepository(connectionString);
+
+            Orders = sql.GetOrders();
+            /// x = "thiss";
+            textBox1.Text = Orders.ToString();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

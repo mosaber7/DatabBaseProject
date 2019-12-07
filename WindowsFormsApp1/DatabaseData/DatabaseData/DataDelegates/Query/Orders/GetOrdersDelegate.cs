@@ -23,9 +23,9 @@ namespace DatabaseData.DataDelegates.Query
 
             while (reader.Read())
             {
-                Orders.Add(new Order(
-                    new Waiter(reader.GetString("FirstName"), reader.GetString("LastName")),
-                    reader.GetInt32("TableID"), reader.GetDateTimeOffset("OrderedOn")));
+                Orders.Add(new Order(reader.GetInt32("TableID"),
+                    new Waiter(reader.GetString("FirstName"), reader.GetString("LastName")), reader.GetInt32("TableID"),
+                  reader.GetDateTimeOffset("OrderedOn")));
             }
 
             return Orders;

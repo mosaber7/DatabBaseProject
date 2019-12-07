@@ -49,3 +49,21 @@ D:\Documents\Sadness\SQL Class\Restaurant Repo\WindowsFormsApp1\WindowsFormsApp1
 D:\Documents\Sadness\SQL Class\Restaurant Repo\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\RestaurantApp.csproj.CopyComplete
 D:\Documents\Sadness\SQL Class\Restaurant Repo\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 D:\Documents\Sadness\SQL Class\Restaurant Repo\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\vortix\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\vortix\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\vortix\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\vortix\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\DatabaseData.dll
+C:\Users\vortix\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\DataAccess.dll
+C:\Users\vortix\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.ValueTuple.dll
+C:\Users\vortix\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\DatabaseData.pdb
+C:\Users\vortix\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\DataAccess.pdb
+C:\Users\vortix\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\System.ValueTuple.xml
+C:\Users\vortix\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\RestaurantApp.csprojAssemblyReference.cache
+C:\Users\vortix\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Foodpick.resources
+C:\Users\vortix\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.MainForm.resources
+C:\Users\vortix\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Tables.resources
+C:\Users\vortix\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\vortix\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\RestaurantApp.csproj.GenerateResource.cache
+C:\Users\vortix\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\RestaurantApp.csproj.CopyComplete
+C:\Users\vortix\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\vortix\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb

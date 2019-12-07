@@ -19,5 +19,15 @@ namespace DatabaseData
         {
             return executor.ExecuteReader(new SalesFromDayDelegate(date));
         }
+
+        public IReadOnlyList<FoodYearInfo> MostOrderedFoodInYear(int year)
+        {
+            return executor.ExecuteReader(new MostOrderedFoodInYearDelegate(year));
+        }
+
+        public IReadOnlyList<WaitersWork> WaitersWorkOnDate (DateTimeOffset date)
+        {
+            return executor.ExecuteReader(new WaitersWorkOnDayDelegate(date));
+        }
     }
 }

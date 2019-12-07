@@ -11,12 +11,12 @@ namespace DatabaseData.DataDelegates.NonQuery.Waiters
         private readonly string waiterLastName;
         private readonly DateTimeOffset clockIn;
 
-        public AddShiftDelegate(string waiterFirstName, string waiterLastName, DateTimeOffset clockIn)
+        public AddShiftDelegate(string waiterFirstName, string waiterLastName, DateTimeOffset clockInTime)
             : base("Restaurant.AddShift")
         {
             this.waiterFirstName = waiterFirstName;
             this.waiterLastName = waiterLastName;
-            this.clockIn = clockIn;
+            clockIn = clockInTime;
         }
 
         public override void PrepareCommand(SqlCommand command)
@@ -25,7 +25,7 @@ namespace DatabaseData.DataDelegates.NonQuery.Waiters
 
             command.Parameters.AddWithValue("WaiterFirstName", waiterFirstName);
             command.Parameters.AddWithValue("WaiterLastName", waiterLastName);
-            command.Parameters.AddWithValue("@ClockIn", clockIn);
+            command.Parameters.AddWithValue("ClockIn", clockIn);
         }
 
         public override DateTimeOffset Translate(SqlCommand command)

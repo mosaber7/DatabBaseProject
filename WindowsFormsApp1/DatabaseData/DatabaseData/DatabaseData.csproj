@@ -63,13 +63,17 @@
     <Compile Include="DataDelegates\Query\Orders\FetchAllIngredientsFromFoodDelegate.cs" />
     <Compile Include="DataDelegates\Query\Waiters\FetchAllCurrentlyWorkingWaitersDelegate.cs" />
     <Compile Include="DataDelegates\Query\Waiters\FetchAllWaitersDelegate.cs" />
+    <Compile Include="DataDelegates\ReportQuery\MostOrderedFoodInYearDelegate.cs" />
     <Compile Include="DataDelegates\ReportQuery\SalesFromDayDelegate.cs" />
+    <Compile Include="DataDelegates\ReportQuery\WaitersWorkOnDayDelegate.cs" />
     <Compile Include="Models\Food.cs" />
     <Compile Include="Models\Ingredient.cs" />
     <Compile Include="Models\IngredientInformation.cs" />
     <Compile Include="Models\MenuItem.cs" />
     <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\Report\FoodYearInfo.cs" />
     <Compile Include="Models\Report\ItemSale.cs" />
+    <Compile Include="Models\Report\WaitersWork.cs" />
     <Compile Include="Models\Shift.cs" />
     <Compile Include="Models\Waiter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -89,6 +93,7 @@
     <Content Include="Sql\Procedures\ReadData\FetchAllIngredientsFromFood.sql" />
     <Content Include="Sql\Procedures\ReadData\FetchAllOrdersOfTable.sql" />
     <Content Include="Sql\Procedures\ReadData\FetchAllWaiters.sql" />
+    <Content Include="Sql\Procedures\ReadData\MostOrderedFoodInYear.sql" />
     <Content Include="Sql\Procedures\ReadData\SalesFromDay.sql" />
     <Content Include="Sql\Procedures\ReadData\WaitersWorkOnDay.sql" />
     <Content Include="Sql\Procedures\UsefulFunctions.sql" />

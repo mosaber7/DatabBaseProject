@@ -59,6 +59,10 @@ namespace WindowsFormsApp1
                 EotMPanel,
                 CustSatPanel
             };
+
+            FireWaiterListLoad();
+            RemoveMenuItemListLoad();
+            RestockIngredientListLoad();
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -86,7 +90,7 @@ namespace WindowsFormsApp1
             waiterRepository.AddWaiter(FirstName, LastName, Wage);
 
             FireWaiterList.Items.Clear();
-            FireWaiterListLoad(null, null);
+            FireWaiterListLoad();
         }
 
         private void FireSelectedWaiterButton_Click(object sender, EventArgs e)
@@ -98,12 +102,12 @@ namespace WindowsFormsApp1
             waiterRepository.FireWaiter(FirstName, LastName);
 
             FireWaiterList.Items.Clear();
-            FireWaiterListLoad(null, null);
+            FireWaiterListLoad();
         }
 
         private void AddMenuItemButton_Click(object sender, EventArgs e)
         {
-            // TODO test.
+            // TODO Add ability to add ingredients. 
             string Name = AddMenuItemName.Text;
             decimal Price = decimal.Parse(AddMenuItemPrice.Text);
             string Description = AddMenuItemDescription.Text;
@@ -111,7 +115,7 @@ namespace WindowsFormsApp1
             menuItemsRepository.AddMenuItem(Name, Description, Price, null);
 
             
-            RemoveMenuItemListLoad(null, null);
+            RemoveMenuItemListLoad();
         }
 
         private void RemoveSelectedItemButton_Click(object sender, EventArgs e)
@@ -137,27 +141,25 @@ namespace WindowsFormsApp1
             // TODO Fill.
         }
 
-        private void FireWaiterListLoad(object sender, EventArgs e)
+        private void FireWaiterListLoad()
         {
-            // TODO test.
             foreach (Waiter waiter in waiterRepository.FetchAllWaiters())
             {
                 FireWaiterList.Items.Add(waiter.FirstName + " " + waiter.LastName);
             }
         }
 
-        private void RemoveMenuItemListLoad(object sender, EventArgs e)
+        private void RemoveMenuItemListLoad()
         {
-            // TODO test.
             foreach (DatabaseData.Models.MenuItem item in menuItemsRepository.FetchActiveMenuItems())
             {
                 RemoveMenuItemList.Items.Add(item.Name);
             }
         }
 
-        private void RestockIngredientListLoad(object sender, EventArgs e)
+        private void RestockIngredientListLoad()
         {
-            // TODO SQL query to populate list.
+
         }
 
         // ------------------- REPORTS
@@ -184,26 +186,23 @@ namespace WindowsFormsApp1
 
         private void MostOrderedFoodSubmit_Click(object sender, EventArgs e)
         {
-            // TODO Most Ordered Food Query.
-
-            Console.WriteLine(2);
+            string yearString = MostOrderedFoodInput.Text;
         }
 
         private void DailySalesSubmit_Click(object sender, EventArgs e)
         {
+            // TODO test query, and fill output.
             string dateString = DailySalesInput.Text;
             DateTimeOffset date = new DateTimeOffset(DateTime.Parse(dateString + " 8:00:00 AM"));
-            // TODO SQL query.
+            
             SqlStatisticsRepository sql = new SqlStatisticsRepository(connectionString);
             sql.GetDaySales(date);
-            Console.WriteLine(1);
         }
 
         private void EotMSubmit_Click(object sender, EventArgs e)
         {
             string monthString = EotMInput.Text;
             // TODO SQL query.
-            Console.WriteLine(3);
         }
 
         private void CustSatSubmit_Click(object sender, EventArgs e)
@@ -211,9 +210,14 @@ namespace WindowsFormsApp1
             string startDateString = CustSatStartDateInput.Text;
             string endDateString = CustSatEndDateInput.Text;
             // TODO SQL query.
-            Console.WriteLine(4);
         }
 
-        
+        // ----------------- CLOCK
+
+        private void ClockButton_Click(object sender, EventArgs e)
+        {
+            ClockInOut test = new ClockInOut();
+            test.Show();
+        }
     }
 }

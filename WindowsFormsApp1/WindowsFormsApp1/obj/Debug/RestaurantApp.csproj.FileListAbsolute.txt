@@ -49,3 +49,4 @@ D:\Documents\Sadness\SQL Class\Restaurant Repo\WindowsFormsApp1\WindowsFormsApp1
 D:\Documents\Sadness\SQL Class\Restaurant Repo\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\RestaurantApp.csproj.CopyComplete
 D:\Documents\Sadness\SQL Class\Restaurant Repo\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
 D:\Documents\Sadness\SQL Class\Restaurant Repo\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ClockInOut.resources

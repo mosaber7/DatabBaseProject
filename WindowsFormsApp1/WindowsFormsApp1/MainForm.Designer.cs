@@ -31,6 +31,7 @@
             this.order = new System.Windows.Forms.Button();
             this.Waiter = new System.Windows.Forms.Button();
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.ClockButton = new System.Windows.Forms.Button();
             this.ReportsButton = new System.Windows.Forms.Button();
             this.PropertyChangePanel = new System.Windows.Forms.Panel();
             this.PropertiesReturnButton = new System.Windows.Forms.Button();
@@ -78,12 +79,14 @@
             this.ReportsReturnButton = new System.Windows.Forms.Button();
             this.ReportQueriesList = new System.Windows.Forms.ListBox();
             this.DailySalesPanel = new System.Windows.Forms.Panel();
+            this.DailySalesOutputTable = new System.Windows.Forms.DataGridView();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.DailySalesInput = new System.Windows.Forms.TextBox();
             this.DailySalesSubmit = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.CustSatPanel = new System.Windows.Forms.Panel();
+            this.CustSatOutputTable = new System.Windows.Forms.DataGridView();
             this.CustSatLabel_3 = new System.Windows.Forms.Label();
             this.CustSatEndDateInput = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
@@ -92,21 +95,19 @@
             this.CustSatSubmit = new System.Windows.Forms.Button();
             this.CustSatLabel_1 = new System.Windows.Forms.Label();
             this.MostOrderedFoodPanel = new System.Windows.Forms.Panel();
+            this.MostOrderedFoodOutputTable = new System.Windows.Forms.DataGridView();
             this.DailySalesLabel = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.MostOrderedFoodInput = new System.Windows.Forms.TextBox();
             this.MostOrderedFoodSubmit = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.EotMPanel = new System.Windows.Forms.Panel();
+            this.EotMOutputTable = new System.Windows.Forms.DataGridView();
             this.label21 = new System.Windows.Forms.Label();
             this.EotMLabel_2 = new System.Windows.Forms.Label();
             this.EotMInput = new System.Windows.Forms.TextBox();
             this.EotMSubmit = new System.Windows.Forms.Button();
             this.EotMLabel_1 = new System.Windows.Forms.Label();
-            this.DailySalesOutputTable = new System.Windows.Forms.DataGridView();
-            this.CustSatOutputTable = new System.Windows.Forms.DataGridView();
-            this.MostOrderedFoodOutputTable = new System.Windows.Forms.DataGridView();
-            this.EotMOutputTable = new System.Windows.Forms.DataGridView();
             this.MainPanel.SuspendLayout();
             this.PropertyChangePanel.SuspendLayout();
             this.RemoveMenuItemPanel.SuspendLayout();
@@ -117,12 +118,12 @@
             this.AddMenuItemPanel.SuspendLayout();
             this.ReportPanel.SuspendLayout();
             this.DailySalesPanel.SuspendLayout();
-            this.CustSatPanel.SuspendLayout();
-            this.MostOrderedFoodPanel.SuspendLayout();
-            this.EotMPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DailySalesOutputTable)).BeginInit();
+            this.CustSatPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CustSatOutputTable)).BeginInit();
+            this.MostOrderedFoodPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MostOrderedFoodOutputTable)).BeginInit();
+            this.EotMPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EotMOutputTable)).BeginInit();
             this.SuspendLayout();
             // 
@@ -150,6 +151,7 @@
             // 
             // MainPanel
             // 
+            this.MainPanel.Controls.Add(this.ClockButton);
             this.MainPanel.Controls.Add(this.ReportsButton);
             this.MainPanel.Controls.Add(this.order);
             this.MainPanel.Controls.Add(this.Waiter);
@@ -158,9 +160,20 @@
             this.MainPanel.Size = new System.Drawing.Size(576, 342);
             this.MainPanel.TabIndex = 2;
             // 
+            // ClockButton
+            // 
+            this.ClockButton.Location = new System.Drawing.Point(320, 204);
+            this.ClockButton.Margin = new System.Windows.Forms.Padding(2);
+            this.ClockButton.Name = "ClockButton";
+            this.ClockButton.Size = new System.Drawing.Size(164, 84);
+            this.ClockButton.TabIndex = 3;
+            this.ClockButton.Text = "Employee Clock In/Out";
+            this.ClockButton.UseVisualStyleBackColor = true;
+            this.ClockButton.Click += new System.EventHandler(this.ClockButton_Click);
+            // 
             // ReportsButton
             // 
-            this.ReportsButton.Location = new System.Drawing.Point(192, 207);
+            this.ReportsButton.Location = new System.Drawing.Point(67, 204);
             this.ReportsButton.Margin = new System.Windows.Forms.Padding(2);
             this.ReportsButton.Name = "ReportsButton";
             this.ReportsButton.Size = new System.Drawing.Size(152, 84);
@@ -593,6 +606,7 @@
             this.ReportPanel.Name = "ReportPanel";
             this.ReportPanel.Size = new System.Drawing.Size(576, 342);
             this.ReportPanel.TabIndex = 4;
+            this.ReportPanel.Visible = false;
             // 
             // ReportsReturnButton
             // 
@@ -631,6 +645,14 @@
             this.DailySalesPanel.Size = new System.Drawing.Size(436, 331);
             this.DailySalesPanel.TabIndex = 5;
             this.DailySalesPanel.Visible = false;
+            // 
+            // DailySalesOutputTable
+            // 
+            this.DailySalesOutputTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DailySalesOutputTable.Location = new System.Drawing.Point(19, 110);
+            this.DailySalesOutputTable.Name = "DailySalesOutputTable";
+            this.DailySalesOutputTable.Size = new System.Drawing.Size(240, 150);
+            this.DailySalesOutputTable.TabIndex = 5;
             // 
             // label18
             // 
@@ -692,6 +714,14 @@
             this.CustSatPanel.Size = new System.Drawing.Size(436, 331);
             this.CustSatPanel.TabIndex = 6;
             this.CustSatPanel.Visible = false;
+            // 
+            // CustSatOutputTable
+            // 
+            this.CustSatOutputTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.CustSatOutputTable.Location = new System.Drawing.Point(19, 139);
+            this.CustSatOutputTable.Name = "CustSatOutputTable";
+            this.CustSatOutputTable.Size = new System.Drawing.Size(240, 150);
+            this.CustSatOutputTable.TabIndex = 7;
             // 
             // CustSatLabel_3
             // 
@@ -769,6 +799,14 @@
             this.MostOrderedFoodPanel.TabIndex = 1;
             this.MostOrderedFoodPanel.Visible = false;
             // 
+            // MostOrderedFoodOutputTable
+            // 
+            this.MostOrderedFoodOutputTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.MostOrderedFoodOutputTable.Location = new System.Drawing.Point(19, 116);
+            this.MostOrderedFoodOutputTable.Name = "MostOrderedFoodOutputTable";
+            this.MostOrderedFoodOutputTable.Size = new System.Drawing.Size(240, 150);
+            this.MostOrderedFoodOutputTable.TabIndex = 5;
+            // 
             // DailySalesLabel
             // 
             this.DailySalesLabel.AutoSize = true;
@@ -829,6 +867,14 @@
             this.EotMPanel.TabIndex = 5;
             this.EotMPanel.Visible = false;
             // 
+            // EotMOutputTable
+            // 
+            this.EotMOutputTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.EotMOutputTable.Location = new System.Drawing.Point(16, 116);
+            this.EotMOutputTable.Name = "EotMOutputTable";
+            this.EotMOutputTable.Size = new System.Drawing.Size(240, 150);
+            this.EotMOutputTable.TabIndex = 5;
+            // 
             // label21
             // 
             this.label21.AutoSize = true;
@@ -875,46 +921,14 @@
             this.EotMLabel_1.TabIndex = 0;
             this.EotMLabel_1.Text = "Employee of the Month";
             // 
-            // DailySalesOutputTable
-            // 
-            this.DailySalesOutputTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DailySalesOutputTable.Location = new System.Drawing.Point(19, 110);
-            this.DailySalesOutputTable.Name = "DailySalesOutputTable";
-            this.DailySalesOutputTable.Size = new System.Drawing.Size(240, 150);
-            this.DailySalesOutputTable.TabIndex = 5;
-            // 
-            // CustSatOutputTable
-            // 
-            this.CustSatOutputTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CustSatOutputTable.Location = new System.Drawing.Point(19, 139);
-            this.CustSatOutputTable.Name = "CustSatOutputTable";
-            this.CustSatOutputTable.Size = new System.Drawing.Size(240, 150);
-            this.CustSatOutputTable.TabIndex = 7;
-            // 
-            // MostOrderedFoodOutputTable
-            // 
-            this.MostOrderedFoodOutputTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.MostOrderedFoodOutputTable.Location = new System.Drawing.Point(19, 116);
-            this.MostOrderedFoodOutputTable.Name = "MostOrderedFoodOutputTable";
-            this.MostOrderedFoodOutputTable.Size = new System.Drawing.Size(240, 150);
-            this.MostOrderedFoodOutputTable.TabIndex = 5;
-            // 
-            // EotMOutputTable
-            // 
-            this.EotMOutputTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.EotMOutputTable.Location = new System.Drawing.Point(16, 116);
-            this.EotMOutputTable.Name = "EotMOutputTable";
-            this.EotMOutputTable.Size = new System.Drawing.Size(240, 150);
-            this.EotMOutputTable.TabIndex = 5;
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.ReportPanel);
             this.Controls.Add(this.PropertyChangePanel);
-            this.Controls.Add(this.MainPanel);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
             this.Text = "Form1";
@@ -936,15 +950,15 @@
             this.ReportPanel.ResumeLayout(false);
             this.DailySalesPanel.ResumeLayout(false);
             this.DailySalesPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DailySalesOutputTable)).EndInit();
             this.CustSatPanel.ResumeLayout(false);
             this.CustSatPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CustSatOutputTable)).EndInit();
             this.MostOrderedFoodPanel.ResumeLayout(false);
             this.MostOrderedFoodPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MostOrderedFoodOutputTable)).EndInit();
             this.EotMPanel.ResumeLayout(false);
             this.EotMPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DailySalesOutputTable)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.CustSatOutputTable)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MostOrderedFoodOutputTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EotMOutputTable)).EndInit();
             this.ResumeLayout(false);
 
@@ -1031,6 +1045,7 @@
         private System.Windows.Forms.DataGridView CustSatOutputTable;
         private System.Windows.Forms.DataGridView MostOrderedFoodOutputTable;
         private System.Windows.Forms.DataGridView EotMOutputTable;
+        private System.Windows.Forms.Button ClockButton;
     }
 }
 

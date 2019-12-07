@@ -52,6 +52,7 @@
     <Compile Include="DataDelegates\NonQuery\Waiters\AddWaiterDelegate.cs" />
     <Compile Include="DataDelegates\NonQuery\Waiters\CloseShiftDelegate.cs" />
     <Compile Include="DataDelegates\Query\MenuItems\FetchAllActiveMenuItemsDelegate.cs" />
+    <Compile Include="DataDelegates\Query\MenuItems\FetchAllIngredientsFromActiveMenuItemDelegate.cs" />
     <Compile Include="DataDelegates\Query\Orders\FetchAllFoodsFromOrderDelegate.cs" />
     <Compile Include="DataDelegates\Query\Orders\FetchAllIngredientsFromFoodDelegate.cs" />
     <Compile Include="DataDelegates\Query\Waiters\FetchAllCurrentlyWorkingWaitersDelegate.cs" />

@@ -36,7 +36,14 @@ namespace DatabaseData
 
         public IReadOnlyList<MenuItem> FetchActiveMenuItems()
         {
-            return executor.ExecuteReader(new FetchAllActiveMenuItemsDelegate());
+            IReadOnlyList<MenuItem> menuItems = executor.ExecuteReader(new FetchAllActiveMenuItemsDelegate());
+
+            foreach(MenuItem mi in menuItems)
+            {
+                mi.Ingredients = executor.ExecuteReader(new FetchAllIngredientsFromActiveMenuItemDelegate(mi.Name));
+            }
+
+            return menuItems;
         }
     }
 }

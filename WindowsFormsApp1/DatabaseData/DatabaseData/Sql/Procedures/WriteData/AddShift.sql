@@ -20,8 +20,8 @@ AS
 GO
 
 CREATE OR ALTER PROCEDURE Restaurant.AddShiftNoDate
-	@WaiterFirstName NVARCHAR (32),
-	@WaiterLastName NVARCHAR (32)
+	@WaiterFirstName NVARCHAR (64),
+	@WaiterLastName NVARCHAR (64)
 AS
 	DECLARE @WaiterID INT = Restaurant.RetrieveWaiter(@WaiterFirstName, @WaiterLastName);
 	---If that waiter doesn't have an open shift already

@@ -1,4 +1,14 @@
 CREATE OR ALTER PROCEDURE Restaurant.FetchAllFoodsFromOrder
+	@OrderID INT
+AS
+	SELECT F.FoodID, MI.[Name], F.Quantity, MI.Price
+	FROM Restaurant.Foods F
+		INNER JOIN Restaurant.MenuItems MI ON F.MenuItemID = MI.MenuItemID
+	WHERE F.OrderID = @OrderID
+GO
+
+
+CREATE OR ALTER PROCEDURE Restaurant.FetchAllFoodsFromOrderWithWaiterTableDate
 	@WaiterFirstName NVARCHAR(64),
 	@WaiterLastName NVARCHAR(64),
 	@TableNumber INT,

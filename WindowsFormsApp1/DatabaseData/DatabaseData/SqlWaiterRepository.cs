@@ -1,10 +1,9 @@
 ﻿using System.Collections.Generic;
 using DataAccess;
 using DatabaseData.Models;
-using DatabaseData.DataDelegates.NonQuery;
-using DatabaseData.DataDelegates;
+using DatabaseData.DataDelegates.NonQuery.Waiters;
 using System;
-using DatabaseData.DataDelegates.Query;
+using DatabaseData.DataDelegates.Query.Waiters;
 
 namespace DatabaseData
 {

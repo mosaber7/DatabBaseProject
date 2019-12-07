@@ -8,11 +8,9 @@ namespace DatabaseData.DataDelegates.NonQuery.Orders
 {
     internal class AddOrderDelegate : NonQueryDataDelegate<Order>
     {
-        private readonly int orderID;
         private readonly string waiterFirstName;
         private readonly string waiterLastName;
         private readonly int tableNumber;
-        private readonly DateTimeOffset orderdedOn;
 
         public AddOrderDelegate(string waiterFirstName, string waiterLastName, int tableNumber)
             : base("Restaurant.AddOrderNoDate")
@@ -33,7 +31,7 @@ namespace DatabaseData.DataDelegates.NonQuery.Orders
             var id = command.Parameters.Add("OrderID", SqlDbType.Int);
             id.Direction = ParameterDirection.Output;
 
-            var date = command.Parameters.Add("OrderID", SqlDbType.DateTimeOffset);
+            var date = command.Parameters.Add("OrderDate", SqlDbType.DateTimeOffset);
             date.Direction = ParameterDirection.Output;
         }
 

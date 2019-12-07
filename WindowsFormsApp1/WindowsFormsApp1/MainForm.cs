@@ -6,9 +6,19 @@ namespace WindowsFormsApp1
 {
     public partial class MainForm : Form
     {
+        SqlMenuItemsRepository menuItemsDataManager;
+        SqlOrderRepository ordersDataManager;
+        SqlWaiterRepository waitersDataManager;
+
         public MainForm()
         {
             InitializeComponent();
+
+            string connectionString = "Server=mssql.cs.ksu.edu;Database=santiagoscavone;UID=santiagoscavone;Pwd=Sqlpassword1!";
+
+            menuItemsDataManager = new SqlMenuItemsRepository(connectionString);
+            ordersDataManager = new SqlOrderRepository(connectionString);
+            waitersDataManager = new SqlWaiterRepository(connectionString);
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -29,10 +39,7 @@ namespace WindowsFormsApp1
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            string connectionString = "Server=mssql.cs.ksu.edu;Database=santiagoscavone;UID=santiagoscavone;Pwd=Sqlpassword1!";
-
-            SqlWaiterRepository sql = new SqlWaiterRepository(connectionString);
-            sql.AddShift("ww", "ss", )
+            //menuItemsDataManager.AddIngredient("")
         }
     }
 }

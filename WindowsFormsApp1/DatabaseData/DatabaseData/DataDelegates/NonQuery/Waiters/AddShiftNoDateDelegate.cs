@@ -1,6 +1,6 @@
 ﻿using DataAccess;
-using DatabaseData.Models;
 using System;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace DatabaseData.DataDelegates.NonQuery.Waiters
@@ -9,7 +9,6 @@ namespace DatabaseData.DataDelegates.NonQuery.Waiters
     {
         private readonly string waiterFirstName;
         private readonly string waiterLastName;
-        private readonly DateTimeOffset clockIn;
 
         public AddShiftNoDateDelegate(string waiterFirstName, string waiterLastName)
             : base("Restaurant.AddShiftNoDate")
@@ -25,12 +24,13 @@ namespace DatabaseData.DataDelegates.NonQuery.Waiters
             command.Parameters.AddWithValue("WaiterFirstName", waiterFirstName);
             command.Parameters.AddWithValue("WaiterLastName", waiterLastName);
 
-
+            var date = command.Parameters.Add("ClockIn", SqlDbType.DateTimeOffset);
+            date.Direction = ParameterDirection.Output;
         }
 
         public override DateTimeOffset Translate(SqlCommand command)
         {
-            return clockIn;
+            return (DateTimeOffset)command.Parameters["ClockIn"].Value;
         }
     }
 }

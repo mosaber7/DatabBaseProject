@@ -67,10 +67,14 @@ namespace WindowsFormsApp1
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            PropertiesDict[ActivePane].Hide();
-            PropertiesDict[PropertiesList.SelectedIndex].BringToFront();
-            PropertiesDict[PropertiesList.SelectedIndex].Show();
-            ActivePane = PropertiesList.SelectedIndex;
+            try
+            {
+                PropertiesDict[ActivePane].Hide();
+                PropertiesDict[PropertiesList.SelectedIndex].BringToFront();
+                PropertiesDict[PropertiesList.SelectedIndex].Show();
+                ActivePane = PropertiesList.SelectedIndex;
+            }
+            catch { }
         }
 
         private void PropertiesReturnButton_Click(object sender, EventArgs e)
@@ -299,10 +303,14 @@ namespace WindowsFormsApp1
 
         private void ReportQueriesList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ReportsDict[ActiveReportsPane].Hide();
-            ReportsDict[ReportQueriesList.SelectedIndex].BringToFront();
-            ReportsDict[ReportQueriesList.SelectedIndex].Show();
-            ActiveReportsPane = ReportQueriesList.SelectedIndex;
+            try
+            {
+                ReportsDict[ActiveReportsPane].Hide();
+                ReportsDict[ReportQueriesList.SelectedIndex].BringToFront();
+                ReportsDict[ReportQueriesList.SelectedIndex].Show();
+                ActiveReportsPane = ReportQueriesList.SelectedIndex;
+            }
+            catch { }
         }
 
         private void MostOrderedFoodSubmit_Click(object sender, EventArgs e)

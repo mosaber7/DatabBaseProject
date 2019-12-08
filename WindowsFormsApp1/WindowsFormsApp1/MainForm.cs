@@ -63,7 +63,8 @@ namespace WindowsFormsApp1
                 DailySalesPanel,
                 MostOrderedFoodPanel,
                 EotMPanel,
-                EmployeeShiftsPanel
+                EmployeeShiftsPanel,
+                ProfitMadePanel
             };
 
             FireWaiterListLoad();
@@ -87,6 +88,22 @@ namespace WindowsFormsApp1
             MostOrderedFoodOutputTable.Columns[0].Name = "Name";
             MostOrderedFoodOutputTable.Columns[1].Name = "Amount Sold";
             MostOrderedFoodOutputTable.Columns[2].Name = "Total Earnings";
+
+            EmployeeShiftsOutputTable.ColumnCount = 5;
+            EmployeeShiftsOutputTable.Columns[0].Name = "First Name";
+            EmployeeShiftsOutputTable.Columns[1].Name = "Last Name";
+            EmployeeShiftsOutputTable.Columns[2].Name = "Hours Worked";
+            EmployeeShiftsOutputTable.Columns[3].Name = "Employee Earnings";
+            EmployeeShiftsOutputTable.Columns[4].Name = "Orders Served";
+
+            ProfitMadeOutput.ColumnCount = 7;
+            ProfitMadeOutput.Columns[0].Name = "Year";
+            ProfitMadeOutput.Columns[1].Name = "Month";
+            ProfitMadeOutput.Columns[2].Name = "Total Earnings";
+            ProfitMadeOutput.Columns[3].Name = "Employee Cost";
+            ProfitMadeOutput.Columns[4].Name = "Ingredient Cost";
+            ProfitMadeOutput.Columns[5].Name = "Month Profit";
+            ProfitMadeOutput.Columns[6].Name = "Total Profit";
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -406,23 +423,51 @@ namespace WindowsFormsApp1
             }
         }
 
+        // Complete. TODO test
         private void EmployeeShiftsSubmit_Click(object sender, EventArgs e)
         {
             DateTimeOffset Date;
-            // TODO SQL query.
-
-            Date = new DateTimeOffset(DateTime.Parse(EmployeeShiftsStartDateInput.Text + " 8:00:00 AM"));
-
-            Console.WriteLine(statisticsRepository.WaitersWorkOnDate(Date).Count());
 
             try
             {
-                
+                Date = new DateTimeOffset(DateTime.Parse(EmployeeShiftsStartDateInput.Text + " 8:00:00 AM"));
+
+                List<WaitersWork> work = (List<WaitersWork>)statisticsRepository.WaitersWorkOnDate(Date);
+
+                EmployeeShiftsOutputTable.Rows.Clear();
+                foreach(WaitersWork shifts in work)
+                {
+                    EmployeeShiftsOutputTable.Rows.Add(shifts.FirstName, shifts.LastName, shifts.MinutesWorked, shifts.WorkerEarnings, shifts.OrdersServed);
+                }
             } catch(Exception ex)
             {
                 return;
             }
-            
+        }
+
+        // Complete.
+        private void ProfitMadeSubmit_Click(object sender, EventArgs e)
+        {
+            DateTimeOffset fromDate;
+            DateTimeOffset toDate;
+
+            try
+            {
+                fromDate = new DateTimeOffset(DateTime.Parse(ProfitMadeFromInput.Text + " 8:00:00 AM"));
+                toDate = new DateTimeOffset(DateTime.Parse(ProfitMadeToInput.Text + " 8:00:00 AM"));
+
+                List<MonthProfitReport> profits = (List<MonthProfitReport>)statisticsRepository.ProfitMade(fromDate, toDate);
+
+                ProfitMadeOutput.Rows.Clear();
+                foreach(MonthProfitReport profit in profits)
+                {
+                    ProfitMadeOutput.Rows.Add(profit.Year, profit.Month, profit.TotalEarnings, profit.WorkersWagesLoss,
+                        profit.IngredientsLoss, profit.MonthProfit, profit.TotalProfitUpToThatMonth);
+                }
+            } catch(Exception ex)
+            {
+
+            }
         }
 
         // ----------------- CLOCK

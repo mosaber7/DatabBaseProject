@@ -5,6 +5,7 @@ using System.Linq;
 using System.Windows.Forms;
 using DatabaseData;
 using DatabaseData.Models;
+using DatabaseData.Models.Report;
 
 namespace WindowsFormsApp1
 {
@@ -57,12 +58,30 @@ namespace WindowsFormsApp1
                 DailySalesPanel,
                 MostOrderedFoodPanel,
                 EotMPanel,
-                CustSatPanel
+                EmployeeShiftsPanel
             };
 
             FireWaiterListLoad();
             RemoveMenuItemListLoad();
             RestockIngredientListLoad();
+
+            DailySalesOutputTable.ColumnCount = 3;
+            DailySalesOutputTable.Columns[0].Name = "Product Name";
+            DailySalesOutputTable.Columns[1].Name = "Total Sales";
+            DailySalesOutputTable.Columns[2].Name = "Times Ordered";
+
+            EotMOutputTable.ColumnCount = 6;
+            EotMOutputTable.Columns[0].Name = "First Name";
+            EotMOutputTable.Columns[1].Name = "Last Name";
+            EotMOutputTable.Columns[2].Name = "Hours Worked";
+            EotMOutputTable.Columns[3].Name = "Orders Served";
+            EotMOutputTable.Columns[4].Name = "Tips Earned";
+            EotMOutputTable.Columns[5].Name = "Average Tip per Order";
+
+            MostOrderedFoodOutputTable.ColumnCount = 3;
+            MostOrderedFoodOutputTable.Columns[0].Name = "Name";
+            MostOrderedFoodOutputTable.Columns[1].Name = "Amount Sold";
+            MostOrderedFoodOutputTable.Columns[2].Name = "Total Earnings";
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -144,10 +163,9 @@ namespace WindowsFormsApp1
             FireWaiterListLoad();
         }
 
+        // Complete.
         private void AddMenuItemButton_Click(object sender, EventArgs e)
         {
-            // Cannot insert the value NULL into column 'IngredientID', table 'santiagoscavone.Restaurant.MenuItemIngredient'; column does not allow nulls. INSERT fails.
-            // TODO fix
             string Name;
             decimal Price;
             string Description;
@@ -162,7 +180,7 @@ namespace WindowsFormsApp1
 
                 foreach(string line in AddMenuItemIngredients.Text.Split('\n'))
                 {
-                    string IngName = line.Substring(line.IndexOf(',')).Trim();
+                    string IngName = line.Substring(0, line.IndexOf(',')).Trim();
                     decimal IngAmt = decimal.Parse(line.Substring(line.IndexOf(',') + 1).Trim());
                     Ingredients.Add(new Ingredient(IngName, IngAmt));
                 }
@@ -313,32 +331,93 @@ namespace WindowsFormsApp1
             catch { }
         }
 
+        // TODO
         private void MostOrderedFoodSubmit_Click(object sender, EventArgs e)
         {
-            string yearString = MostOrderedFoodInput.Text;
+            int Year;
+            
+            try
+            {
+                Year = int.Parse(MostOrderedFoodInput.Text);
+
+                List<FoodYearInfo> foods = (List<FoodYearInfo>)statisticsRepository.MostOrderedFoodInYear(Year);
+
+                MostOrderedFoodOutputTable.Rows.Clear();
+                foreach(FoodYearInfo food in foods)
+                {
+                    MostOrderedFoodOutputTable.Rows.Add(food.Name, food.AmountSoldInYear, food.TotalEarnings);
+                }
+            } catch(Exception ex)
+            {
+
+            }
         }
 
+        // Complete.
         private void DailySalesSubmit_Click(object sender, EventArgs e)
         {
-            // TODO test query, and fill output.
-            string dateString = DailySalesInput.Text;
-            DateTimeOffset date = new DateTimeOffset(DateTime.Parse(dateString + " 8:00:00 AM"));
+            string DateString = DailySalesInput.Text;
+
+            try
+            {
+                DateTimeOffset date = new DateTimeOffset(DateTime.Parse(DateString + " 8:00:00 AM"));
             
-            SqlStatisticsRepository sql = new SqlStatisticsRepository(connectionString);
-            sql.GetDaySales(date);
+                statisticsRepository.GetDaySales(date);
+                List<ItemSale> daysales = (List<ItemSale>)statisticsRepository.GetDaySales(date);
+
+                DailySalesOutputTable.Rows.Clear();
+                foreach(ItemSale sale in daysales)
+                {
+                    DailySalesOutputTable.Rows.Add(sale.Name, sale.TotalSale, sale.AmountSold);
+                }
+            } catch(Exception ex)
+            {
+                return;
+            }
+            
         }
 
+        // Complete.
         private void EotMSubmit_Click(object sender, EventArgs e)
         {
-            string monthString = EotMInput.Text;
-            // TODO SQL query.
+            int Month;
+            int Year;
+
+            try
+            {
+                Month = int.Parse(EotMMonthInput.Text);
+                Year = int.Parse(EotMYearInput.Text);
+
+                List<EmployeePerformanceReport> eotm = (List<EmployeePerformanceReport>)statisticsRepository.EmployeesPerformance(Year, Month);
+
+                EotMOutputTable.Rows.Clear();
+                foreach(EmployeePerformanceReport report in eotm)
+                {
+                    EotMOutputTable.Rows.Add(report.FirstName, report.LastName, report.HoursWorked, report.OrdersServed, report.TotalTipEarnings, report.AverageTipPerOrder);
+                }
+            } catch(Exception ex)
+            {
+                return;
+            }
         }
 
-        private void CustSatSubmit_Click(object sender, EventArgs e)
+        private void EmployeeShiftsSubmit_Click(object sender, EventArgs e)
         {
-            string startDateString = CustSatStartDateInput.Text;
-            string endDateString = CustSatEndDateInput.Text;
+            DateTimeOffset Date;
             // TODO SQL query.
+
+            Date = new DateTimeOffset(DateTime.Parse(EmployeeShiftsStartDateInput.Text + " 8:00:00 AM"));
+
+            Console.WriteLine(statisticsRepository.WaitersWorkOnDate(Date).Count());
+
+            try
+            {
+                
+            } catch(Exception ex)
+            {
+                return;
+            }
+            
         }
 
         // ----------------- CLOCK

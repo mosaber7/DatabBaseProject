@@ -36,6 +36,12 @@
             this.PropertyChangePanel = new System.Windows.Forms.Panel();
             this.PropertiesReturnButton = new System.Windows.Forms.Button();
             this.PropertiesList = new System.Windows.Forms.ListBox();
+            this.RestockIngredientPanel = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.RestockIngredientAmount = new System.Windows.Forms.TextBox();
+            this.RestockIngredientsList = new System.Windows.Forms.ListBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.RestockIngredientButton = new System.Windows.Forms.Button();
             this.AddMenuItemPanel = new System.Windows.Forms.Panel();
             this.label24 = new System.Windows.Forms.Label();
             this.AddMenuItemIngredients = new System.Windows.Forms.TextBox();
@@ -73,31 +79,16 @@
             this.AddIngredientName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.AddIngredientButton = new System.Windows.Forms.Button();
-            this.RestockIngredientPanel = new System.Windows.Forms.Panel();
-            this.label15 = new System.Windows.Forms.Label();
-            this.RestockIngredientAmount = new System.Windows.Forms.TextBox();
-            this.RestockIngredientsList = new System.Windows.Forms.ListBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.RestockIngredientButton = new System.Windows.Forms.Button();
             this.ReportPanel = new System.Windows.Forms.Panel();
             this.ReportsReturnButton = new System.Windows.Forms.Button();
             this.ReportQueriesList = new System.Windows.Forms.ListBox();
-            this.DailySalesPanel = new System.Windows.Forms.Panel();
-            this.DailySalesOutputTable = new System.Windows.Forms.DataGridView();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.DailySalesInput = new System.Windows.Forms.TextBox();
-            this.DailySalesSubmit = new System.Windows.Forms.Button();
-            this.label20 = new System.Windows.Forms.Label();
-            this.CustSatPanel = new System.Windows.Forms.Panel();
-            this.CustSatOutputTable = new System.Windows.Forms.DataGridView();
-            this.CustSatLabel_3 = new System.Windows.Forms.Label();
-            this.CustSatEndDateInput = new System.Windows.Forms.TextBox();
+            this.EmployeeShiftsPanel = new System.Windows.Forms.Panel();
+            this.EmployeeShiftsOutputTable = new System.Windows.Forms.DataGridView();
             this.label22 = new System.Windows.Forms.Label();
-            this.CustSatLabel_2 = new System.Windows.Forms.Label();
-            this.CustSatStartDateInput = new System.Windows.Forms.TextBox();
-            this.CustSatSubmit = new System.Windows.Forms.Button();
-            this.CustSatLabel_1 = new System.Windows.Forms.Label();
+            this.EmployeeShiftsLabel_2 = new System.Windows.Forms.Label();
+            this.EmployeeShiftsStartDateInput = new System.Windows.Forms.TextBox();
+            this.EmployeeShiftsSubmit = new System.Windows.Forms.Button();
+            this.EmployeeShiftsLabel_1 = new System.Windows.Forms.Label();
             this.MostOrderedFoodPanel = new System.Windows.Forms.Panel();
             this.MostOrderedFoodOutputTable = new System.Windows.Forms.DataGridView();
             this.DailySalesLabel = new System.Windows.Forms.Label();
@@ -106,29 +97,38 @@
             this.MostOrderedFoodSubmit = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.EotMPanel = new System.Windows.Forms.Panel();
+            this.EotMYearInput = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
             this.EotMOutputTable = new System.Windows.Forms.DataGridView();
             this.label21 = new System.Windows.Forms.Label();
             this.EotMLabel_2 = new System.Windows.Forms.Label();
-            this.EotMInput = new System.Windows.Forms.TextBox();
+            this.EotMMonthInput = new System.Windows.Forms.TextBox();
             this.EotMSubmit = new System.Windows.Forms.Button();
             this.EotMLabel_1 = new System.Windows.Forms.Label();
+            this.DailySalesPanel = new System.Windows.Forms.Panel();
+            this.DailySalesOutputTable = new System.Windows.Forms.DataGridView();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.DailySalesInput = new System.Windows.Forms.TextBox();
+            this.DailySalesSubmit = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
             this.MainPanel.SuspendLayout();
             this.PropertyChangePanel.SuspendLayout();
+            this.RestockIngredientPanel.SuspendLayout();
             this.AddMenuItemPanel.SuspendLayout();
             this.RemoveMenuItemPanel.SuspendLayout();
             this.HireWaiterPanel.SuspendLayout();
             this.FireWaiterPanel.SuspendLayout();
             this.AddIngredientPanel.SuspendLayout();
-            this.RestockIngredientPanel.SuspendLayout();
             this.ReportPanel.SuspendLayout();
-            this.DailySalesPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DailySalesOutputTable)).BeginInit();
-            this.CustSatPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CustSatOutputTable)).BeginInit();
+            this.EmployeeShiftsPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeeShiftsOutputTable)).BeginInit();
             this.MostOrderedFoodPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MostOrderedFoodOutputTable)).BeginInit();
             this.EotMPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EotMOutputTable)).BeginInit();
+            this.DailySalesPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DailySalesOutputTable)).BeginInit();
             this.SuspendLayout();
             // 
             // order
@@ -227,6 +227,63 @@
             this.PropertiesList.Size = new System.Drawing.Size(120, 303);
             this.PropertiesList.TabIndex = 0;
             this.PropertiesList.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // RestockIngredientPanel
+            // 
+            this.RestockIngredientPanel.Controls.Add(this.label15);
+            this.RestockIngredientPanel.Controls.Add(this.RestockIngredientAmount);
+            this.RestockIngredientPanel.Controls.Add(this.RestockIngredientsList);
+            this.RestockIngredientPanel.Controls.Add(this.label8);
+            this.RestockIngredientPanel.Controls.Add(this.RestockIngredientButton);
+            this.RestockIngredientPanel.Location = new System.Drawing.Point(129, 3);
+            this.RestockIngredientPanel.Name = "RestockIngredientPanel";
+            this.RestockIngredientPanel.Size = new System.Drawing.Size(444, 336);
+            this.RestockIngredientPanel.TabIndex = 8;
+            this.RestockIngredientPanel.Visible = false;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(14, 254);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(43, 13);
+            this.label15.TabIndex = 8;
+            this.label15.Text = "Amount";
+            // 
+            // RestockIngredientAmount
+            // 
+            this.RestockIngredientAmount.Location = new System.Drawing.Point(63, 251);
+            this.RestockIngredientAmount.Name = "RestockIngredientAmount";
+            this.RestockIngredientAmount.Size = new System.Drawing.Size(120, 20);
+            this.RestockIngredientAmount.TabIndex = 7;
+            // 
+            // RestockIngredientsList
+            // 
+            this.RestockIngredientsList.FormattingEnabled = true;
+            this.RestockIngredientsList.Location = new System.Drawing.Point(63, 33);
+            this.RestockIngredientsList.Name = "RestockIngredientsList";
+            this.RestockIngredientsList.Size = new System.Drawing.Size(240, 212);
+            this.RestockIngredientsList.TabIndex = 6;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.label8.Location = new System.Drawing.Point(3, 8);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(159, 22);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Restock Ingredient";
+            // 
+            // RestockIngredientButton
+            // 
+            this.RestockIngredientButton.Location = new System.Drawing.Point(63, 291);
+            this.RestockIngredientButton.Name = "RestockIngredientButton";
+            this.RestockIngredientButton.Size = new System.Drawing.Size(121, 23);
+            this.RestockIngredientButton.TabIndex = 2;
+            this.RestockIngredientButton.Text = "Restock Ingredient";
+            this.RestockIngredientButton.UseVisualStyleBackColor = true;
+            this.RestockIngredientButton.Click += new System.EventHandler(this.RestockIngredientButton_Click);
             // 
             // AddMenuItemPanel
             // 
@@ -578,71 +635,14 @@
             this.AddIngredientButton.UseVisualStyleBackColor = true;
             this.AddIngredientButton.Click += new System.EventHandler(this.AddIngredientButton_Click);
             // 
-            // RestockIngredientPanel
-            // 
-            this.RestockIngredientPanel.Controls.Add(this.label15);
-            this.RestockIngredientPanel.Controls.Add(this.RestockIngredientAmount);
-            this.RestockIngredientPanel.Controls.Add(this.RestockIngredientsList);
-            this.RestockIngredientPanel.Controls.Add(this.label8);
-            this.RestockIngredientPanel.Controls.Add(this.RestockIngredientButton);
-            this.RestockIngredientPanel.Location = new System.Drawing.Point(129, 3);
-            this.RestockIngredientPanel.Name = "RestockIngredientPanel";
-            this.RestockIngredientPanel.Size = new System.Drawing.Size(444, 336);
-            this.RestockIngredientPanel.TabIndex = 8;
-            this.RestockIngredientPanel.Visible = false;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(14, 254);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(43, 13);
-            this.label15.TabIndex = 8;
-            this.label15.Text = "Amount";
-            // 
-            // RestockIngredientAmount
-            // 
-            this.RestockIngredientAmount.Location = new System.Drawing.Point(63, 251);
-            this.RestockIngredientAmount.Name = "RestockIngredientAmount";
-            this.RestockIngredientAmount.Size = new System.Drawing.Size(120, 20);
-            this.RestockIngredientAmount.TabIndex = 7;
-            // 
-            // RestockIngredientsList
-            // 
-            this.RestockIngredientsList.FormattingEnabled = true;
-            this.RestockIngredientsList.Location = new System.Drawing.Point(63, 33);
-            this.RestockIngredientsList.Name = "RestockIngredientsList";
-            this.RestockIngredientsList.Size = new System.Drawing.Size(240, 212);
-            this.RestockIngredientsList.TabIndex = 6;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.label8.Location = new System.Drawing.Point(3, 8);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(159, 22);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "Restock Ingredient";
-            // 
-            // RestockIngredientButton
-            // 
-            this.RestockIngredientButton.Location = new System.Drawing.Point(63, 291);
-            this.RestockIngredientButton.Name = "RestockIngredientButton";
-            this.RestockIngredientButton.Size = new System.Drawing.Size(121, 23);
-            this.RestockIngredientButton.TabIndex = 2;
-            this.RestockIngredientButton.Text = "Restock Ingredient";
-            this.RestockIngredientButton.UseVisualStyleBackColor = true;
-            this.RestockIngredientButton.Click += new System.EventHandler(this.RestockIngredientButton_Click);
-            // 
             // ReportPanel
             // 
             this.ReportPanel.Controls.Add(this.ReportsReturnButton);
             this.ReportPanel.Controls.Add(this.ReportQueriesList);
-            this.ReportPanel.Controls.Add(this.DailySalesPanel);
-            this.ReportPanel.Controls.Add(this.CustSatPanel);
+            this.ReportPanel.Controls.Add(this.EmployeeShiftsPanel);
             this.ReportPanel.Controls.Add(this.MostOrderedFoodPanel);
             this.ReportPanel.Controls.Add(this.EotMPanel);
+            this.ReportPanel.Controls.Add(this.DailySalesPanel);
             this.ReportPanel.Location = new System.Drawing.Point(12, 12);
             this.ReportPanel.Name = "ReportPanel";
             this.ReportPanel.Size = new System.Drawing.Size(576, 342);
@@ -666,119 +666,34 @@
             "Daily Sales",
             "Most Ordered Food",
             "Employee of the Month",
-            "Customer Satisfaction"});
+            "Employee Shifts"});
             this.ReportQueriesList.Location = new System.Drawing.Point(6, 11);
             this.ReportQueriesList.Name = "ReportQueriesList";
             this.ReportQueriesList.Size = new System.Drawing.Size(121, 290);
             this.ReportQueriesList.TabIndex = 0;
             this.ReportQueriesList.SelectedIndexChanged += new System.EventHandler(this.ReportQueriesList_SelectedIndexChanged);
             // 
-            // DailySalesPanel
+            // EmployeeShiftsPanel
             // 
-            this.DailySalesPanel.Controls.Add(this.DailySalesOutputTable);
-            this.DailySalesPanel.Controls.Add(this.label18);
-            this.DailySalesPanel.Controls.Add(this.label19);
-            this.DailySalesPanel.Controls.Add(this.DailySalesInput);
-            this.DailySalesPanel.Controls.Add(this.DailySalesSubmit);
-            this.DailySalesPanel.Controls.Add(this.label20);
-            this.DailySalesPanel.Location = new System.Drawing.Point(136, 8);
-            this.DailySalesPanel.Name = "DailySalesPanel";
-            this.DailySalesPanel.Size = new System.Drawing.Size(436, 331);
-            this.DailySalesPanel.TabIndex = 5;
-            this.DailySalesPanel.Visible = false;
+            this.EmployeeShiftsPanel.Controls.Add(this.EmployeeShiftsOutputTable);
+            this.EmployeeShiftsPanel.Controls.Add(this.label22);
+            this.EmployeeShiftsPanel.Controls.Add(this.EmployeeShiftsLabel_2);
+            this.EmployeeShiftsPanel.Controls.Add(this.EmployeeShiftsStartDateInput);
+            this.EmployeeShiftsPanel.Controls.Add(this.EmployeeShiftsSubmit);
+            this.EmployeeShiftsPanel.Controls.Add(this.EmployeeShiftsLabel_1);
+            this.EmployeeShiftsPanel.Location = new System.Drawing.Point(136, 8);
+            this.EmployeeShiftsPanel.Name = "EmployeeShiftsPanel";
+            this.EmployeeShiftsPanel.Size = new System.Drawing.Size(436, 331);
+            this.EmployeeShiftsPanel.TabIndex = 6;
+            this.EmployeeShiftsPanel.Visible = false;
             // 
-            // DailySalesOutputTable
+            // EmployeeShiftsOutputTable
             // 
-            this.DailySalesOutputTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DailySalesOutputTable.Location = new System.Drawing.Point(19, 110);
-            this.DailySalesOutputTable.Name = "DailySalesOutputTable";
-            this.DailySalesOutputTable.Size = new System.Drawing.Size(240, 150);
-            this.DailySalesOutputTable.TabIndex = 5;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
-            this.label18.Location = new System.Drawing.Point(9, 289);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(0, 36);
-            this.label18.TabIndex = 4;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(27, 51);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(26, 13);
-            this.label19.TabIndex = 3;
-            this.label19.Text = "Day";
-            // 
-            // DailySalesInput
-            // 
-            this.DailySalesInput.Location = new System.Drawing.Point(59, 48);
-            this.DailySalesInput.Name = "DailySalesInput";
-            this.DailySalesInput.Size = new System.Drawing.Size(100, 20);
-            this.DailySalesInput.TabIndex = 2;
-            // 
-            // DailySalesSubmit
-            // 
-            this.DailySalesSubmit.Location = new System.Drawing.Point(59, 74);
-            this.DailySalesSubmit.Name = "DailySalesSubmit";
-            this.DailySalesSubmit.Size = new System.Drawing.Size(100, 23);
-            this.DailySalesSubmit.TabIndex = 1;
-            this.DailySalesSubmit.Text = "Get Daily Sales";
-            this.DailySalesSubmit.UseVisualStyleBackColor = true;
-            this.DailySalesSubmit.Click += new System.EventHandler(this.DailySalesSubmit_Click);
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
-            this.label20.Location = new System.Drawing.Point(4, 4);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(163, 36);
-            this.label20.TabIndex = 0;
-            this.label20.Text = "Daily Sales";
-            // 
-            // CustSatPanel
-            // 
-            this.CustSatPanel.Controls.Add(this.CustSatOutputTable);
-            this.CustSatPanel.Controls.Add(this.CustSatLabel_3);
-            this.CustSatPanel.Controls.Add(this.CustSatEndDateInput);
-            this.CustSatPanel.Controls.Add(this.label22);
-            this.CustSatPanel.Controls.Add(this.CustSatLabel_2);
-            this.CustSatPanel.Controls.Add(this.CustSatStartDateInput);
-            this.CustSatPanel.Controls.Add(this.CustSatSubmit);
-            this.CustSatPanel.Controls.Add(this.CustSatLabel_1);
-            this.CustSatPanel.Location = new System.Drawing.Point(136, 8);
-            this.CustSatPanel.Name = "CustSatPanel";
-            this.CustSatPanel.Size = new System.Drawing.Size(436, 331);
-            this.CustSatPanel.TabIndex = 6;
-            this.CustSatPanel.Visible = false;
-            // 
-            // CustSatOutputTable
-            // 
-            this.CustSatOutputTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.CustSatOutputTable.Location = new System.Drawing.Point(19, 139);
-            this.CustSatOutputTable.Name = "CustSatOutputTable";
-            this.CustSatOutputTable.Size = new System.Drawing.Size(240, 150);
-            this.CustSatOutputTable.TabIndex = 7;
-            // 
-            // CustSatLabel_3
-            // 
-            this.CustSatLabel_3.AutoSize = true;
-            this.CustSatLabel_3.Location = new System.Drawing.Point(16, 77);
-            this.CustSatLabel_3.Name = "CustSatLabel_3";
-            this.CustSatLabel_3.Size = new System.Drawing.Size(52, 13);
-            this.CustSatLabel_3.TabIndex = 6;
-            this.CustSatLabel_3.Text = "End Date";
-            // 
-            // CustSatEndDateInput
-            // 
-            this.CustSatEndDateInput.Location = new System.Drawing.Point(71, 74);
-            this.CustSatEndDateInput.Name = "CustSatEndDateInput";
-            this.CustSatEndDateInput.Size = new System.Drawing.Size(100, 20);
-            this.CustSatEndDateInput.TabIndex = 5;
+            this.EmployeeShiftsOutputTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.EmployeeShiftsOutputTable.Location = new System.Drawing.Point(3, 139);
+            this.EmployeeShiftsOutputTable.Name = "EmployeeShiftsOutputTable";
+            this.EmployeeShiftsOutputTable.Size = new System.Drawing.Size(430, 192);
+            this.EmployeeShiftsOutputTable.TabIndex = 7;
             // 
             // label22
             // 
@@ -789,42 +704,42 @@
             this.label22.Size = new System.Drawing.Size(0, 36);
             this.label22.TabIndex = 4;
             // 
-            // CustSatLabel_2
+            // EmployeeShiftsLabel_2
             // 
-            this.CustSatLabel_2.AutoSize = true;
-            this.CustSatLabel_2.Location = new System.Drawing.Point(16, 51);
-            this.CustSatLabel_2.Name = "CustSatLabel_2";
-            this.CustSatLabel_2.Size = new System.Drawing.Size(55, 13);
-            this.CustSatLabel_2.TabIndex = 3;
-            this.CustSatLabel_2.Text = "Start Date";
+            this.EmployeeShiftsLabel_2.AutoSize = true;
+            this.EmployeeShiftsLabel_2.Location = new System.Drawing.Point(38, 51);
+            this.EmployeeShiftsLabel_2.Name = "EmployeeShiftsLabel_2";
+            this.EmployeeShiftsLabel_2.Size = new System.Drawing.Size(30, 13);
+            this.EmployeeShiftsLabel_2.TabIndex = 3;
+            this.EmployeeShiftsLabel_2.Text = "Date";
             // 
-            // CustSatStartDateInput
+            // EmployeeShiftsStartDateInput
             // 
-            this.CustSatStartDateInput.Location = new System.Drawing.Point(71, 48);
-            this.CustSatStartDateInput.Name = "CustSatStartDateInput";
-            this.CustSatStartDateInput.Size = new System.Drawing.Size(100, 20);
-            this.CustSatStartDateInput.TabIndex = 2;
-            this.CustSatStartDateInput.UseWaitCursor = true;
+            this.EmployeeShiftsStartDateInput.Location = new System.Drawing.Point(71, 48);
+            this.EmployeeShiftsStartDateInput.Name = "EmployeeShiftsStartDateInput";
+            this.EmployeeShiftsStartDateInput.Size = new System.Drawing.Size(100, 20);
+            this.EmployeeShiftsStartDateInput.TabIndex = 2;
+            this.EmployeeShiftsStartDateInput.UseWaitCursor = true;
             // 
-            // CustSatSubmit
+            // EmployeeShiftsSubmit
             // 
-            this.CustSatSubmit.Location = new System.Drawing.Point(71, 102);
-            this.CustSatSubmit.Name = "CustSatSubmit";
-            this.CustSatSubmit.Size = new System.Drawing.Size(184, 23);
-            this.CustSatSubmit.TabIndex = 1;
-            this.CustSatSubmit.Text = "Get Customer Satisfaction Data";
-            this.CustSatSubmit.UseVisualStyleBackColor = true;
-            this.CustSatSubmit.Click += new System.EventHandler(this.CustSatSubmit_Click);
+            this.EmployeeShiftsSubmit.Location = new System.Drawing.Point(71, 77);
+            this.EmployeeShiftsSubmit.Name = "EmployeeShiftsSubmit";
+            this.EmployeeShiftsSubmit.Size = new System.Drawing.Size(123, 23);
+            this.EmployeeShiftsSubmit.TabIndex = 1;
+            this.EmployeeShiftsSubmit.Text = "Get Employee Shifts";
+            this.EmployeeShiftsSubmit.UseVisualStyleBackColor = true;
+            this.EmployeeShiftsSubmit.Click += new System.EventHandler(this.EmployeeShiftsSubmit_Click);
             // 
-            // CustSatLabel_1
+            // EmployeeShiftsLabel_1
             // 
-            this.CustSatLabel_1.AutoSize = true;
-            this.CustSatLabel_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
-            this.CustSatLabel_1.Location = new System.Drawing.Point(4, 4);
-            this.CustSatLabel_1.Name = "CustSatLabel_1";
-            this.CustSatLabel_1.Size = new System.Drawing.Size(304, 36);
-            this.CustSatLabel_1.TabIndex = 0;
-            this.CustSatLabel_1.Text = "Customer Satisfaction";
+            this.EmployeeShiftsLabel_1.AutoSize = true;
+            this.EmployeeShiftsLabel_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.EmployeeShiftsLabel_1.Location = new System.Drawing.Point(4, 4);
+            this.EmployeeShiftsLabel_1.Name = "EmployeeShiftsLabel_1";
+            this.EmployeeShiftsLabel_1.Size = new System.Drawing.Size(229, 36);
+            this.EmployeeShiftsLabel_1.TabIndex = 0;
+            this.EmployeeShiftsLabel_1.Text = "Employee Shifts";
             // 
             // MostOrderedFoodPanel
             // 
@@ -843,9 +758,9 @@
             // MostOrderedFoodOutputTable
             // 
             this.MostOrderedFoodOutputTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.MostOrderedFoodOutputTable.Location = new System.Drawing.Point(19, 116);
+            this.MostOrderedFoodOutputTable.Location = new System.Drawing.Point(3, 116);
             this.MostOrderedFoodOutputTable.Name = "MostOrderedFoodOutputTable";
-            this.MostOrderedFoodOutputTable.Size = new System.Drawing.Size(240, 150);
+            this.MostOrderedFoodOutputTable.Size = new System.Drawing.Size(430, 209);
             this.MostOrderedFoodOutputTable.TabIndex = 5;
             // 
             // DailySalesLabel
@@ -896,10 +811,12 @@
             // 
             // EotMPanel
             // 
+            this.EotMPanel.Controls.Add(this.EotMYearInput);
+            this.EotMPanel.Controls.Add(this.label25);
             this.EotMPanel.Controls.Add(this.EotMOutputTable);
             this.EotMPanel.Controls.Add(this.label21);
             this.EotMPanel.Controls.Add(this.EotMLabel_2);
-            this.EotMPanel.Controls.Add(this.EotMInput);
+            this.EotMPanel.Controls.Add(this.EotMMonthInput);
             this.EotMPanel.Controls.Add(this.EotMSubmit);
             this.EotMPanel.Controls.Add(this.EotMLabel_1);
             this.EotMPanel.Location = new System.Drawing.Point(136, 8);
@@ -908,12 +825,28 @@
             this.EotMPanel.TabIndex = 5;
             this.EotMPanel.Visible = false;
             // 
+            // EotMYearInput
+            // 
+            this.EotMYearInput.Location = new System.Drawing.Point(59, 74);
+            this.EotMYearInput.Name = "EotMYearInput";
+            this.EotMYearInput.Size = new System.Drawing.Size(100, 20);
+            this.EotMYearInput.TabIndex = 7;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(24, 79);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(29, 13);
+            this.label25.TabIndex = 6;
+            this.label25.Text = "Year";
+            // 
             // EotMOutputTable
             // 
             this.EotMOutputTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.EotMOutputTable.Location = new System.Drawing.Point(16, 116);
+            this.EotMOutputTable.Location = new System.Drawing.Point(3, 159);
             this.EotMOutputTable.Name = "EotMOutputTable";
-            this.EotMOutputTable.Size = new System.Drawing.Size(240, 150);
+            this.EotMOutputTable.Size = new System.Drawing.Size(430, 168);
             this.EotMOutputTable.TabIndex = 5;
             // 
             // label21
@@ -928,23 +861,23 @@
             // EotMLabel_2
             // 
             this.EotMLabel_2.AutoSize = true;
-            this.EotMLabel_2.Location = new System.Drawing.Point(16, 51);
+            this.EotMLabel_2.Location = new System.Drawing.Point(19, 51);
             this.EotMLabel_2.Name = "EotMLabel_2";
             this.EotMLabel_2.Size = new System.Drawing.Size(37, 13);
             this.EotMLabel_2.TabIndex = 3;
             this.EotMLabel_2.Text = "Month";
             // 
-            // EotMInput
+            // EotMMonthInput
             // 
-            this.EotMInput.Location = new System.Drawing.Point(59, 48);
-            this.EotMInput.Name = "EotMInput";
-            this.EotMInput.Size = new System.Drawing.Size(100, 20);
-            this.EotMInput.TabIndex = 2;
-            this.EotMInput.UseWaitCursor = true;
+            this.EotMMonthInput.Location = new System.Drawing.Point(59, 48);
+            this.EotMMonthInput.Name = "EotMMonthInput";
+            this.EotMMonthInput.Size = new System.Drawing.Size(100, 20);
+            this.EotMMonthInput.TabIndex = 2;
+            this.EotMMonthInput.UseWaitCursor = true;
             // 
             // EotMSubmit
             // 
-            this.EotMSubmit.Location = new System.Drawing.Point(59, 74);
+            this.EotMSubmit.Location = new System.Drawing.Point(59, 102);
             this.EotMSubmit.Name = "EotMSubmit";
             this.EotMSubmit.Size = new System.Drawing.Size(157, 23);
             this.EotMSubmit.TabIndex = 1;
@@ -962,20 +895,89 @@
             this.EotMLabel_1.TabIndex = 0;
             this.EotMLabel_1.Text = "Employee of the Month";
             // 
+            // DailySalesPanel
+            // 
+            this.DailySalesPanel.Controls.Add(this.DailySalesOutputTable);
+            this.DailySalesPanel.Controls.Add(this.label18);
+            this.DailySalesPanel.Controls.Add(this.label19);
+            this.DailySalesPanel.Controls.Add(this.DailySalesInput);
+            this.DailySalesPanel.Controls.Add(this.DailySalesSubmit);
+            this.DailySalesPanel.Controls.Add(this.label20);
+            this.DailySalesPanel.Location = new System.Drawing.Point(136, 8);
+            this.DailySalesPanel.Name = "DailySalesPanel";
+            this.DailySalesPanel.Size = new System.Drawing.Size(436, 331);
+            this.DailySalesPanel.TabIndex = 5;
+            this.DailySalesPanel.Visible = false;
+            // 
+            // DailySalesOutputTable
+            // 
+            this.DailySalesOutputTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DailySalesOutputTable.Location = new System.Drawing.Point(3, 110);
+            this.DailySalesOutputTable.Name = "DailySalesOutputTable";
+            this.DailySalesOutputTable.Size = new System.Drawing.Size(430, 218);
+            this.DailySalesOutputTable.TabIndex = 5;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.label18.Location = new System.Drawing.Point(9, 289);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(0, 36);
+            this.label18.TabIndex = 4;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(27, 51);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(30, 13);
+            this.label19.TabIndex = 3;
+            this.label19.Text = "Date";
+            // 
+            // DailySalesInput
+            // 
+            this.DailySalesInput.Location = new System.Drawing.Point(59, 48);
+            this.DailySalesInput.Name = "DailySalesInput";
+            this.DailySalesInput.Size = new System.Drawing.Size(100, 20);
+            this.DailySalesInput.TabIndex = 2;
+            // 
+            // DailySalesSubmit
+            // 
+            this.DailySalesSubmit.Location = new System.Drawing.Point(59, 74);
+            this.DailySalesSubmit.Name = "DailySalesSubmit";
+            this.DailySalesSubmit.Size = new System.Drawing.Size(100, 23);
+            this.DailySalesSubmit.TabIndex = 1;
+            this.DailySalesSubmit.Text = "Get Daily Sales";
+            this.DailySalesSubmit.UseVisualStyleBackColor = true;
+            this.DailySalesSubmit.Click += new System.EventHandler(this.DailySalesSubmit_Click);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F);
+            this.label20.Location = new System.Drawing.Point(4, 4);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(163, 36);
+            this.label20.TabIndex = 0;
+            this.label20.Text = "Daily Sales";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.ReportPanel);
             this.Controls.Add(this.PropertyChangePanel);
             this.Controls.Add(this.MainPanel);
-            this.Controls.Add(this.ReportPanel);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "MainForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MainPanel.ResumeLayout(false);
             this.PropertyChangePanel.ResumeLayout(false);
+            this.RestockIngredientPanel.ResumeLayout(false);
+            this.RestockIngredientPanel.PerformLayout();
             this.AddMenuItemPanel.ResumeLayout(false);
             this.AddMenuItemPanel.PerformLayout();
             this.RemoveMenuItemPanel.ResumeLayout(false);
@@ -986,21 +988,19 @@
             this.FireWaiterPanel.PerformLayout();
             this.AddIngredientPanel.ResumeLayout(false);
             this.AddIngredientPanel.PerformLayout();
-            this.RestockIngredientPanel.ResumeLayout(false);
-            this.RestockIngredientPanel.PerformLayout();
             this.ReportPanel.ResumeLayout(false);
-            this.DailySalesPanel.ResumeLayout(false);
-            this.DailySalesPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DailySalesOutputTable)).EndInit();
-            this.CustSatPanel.ResumeLayout(false);
-            this.CustSatPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.CustSatOutputTable)).EndInit();
+            this.EmployeeShiftsPanel.ResumeLayout(false);
+            this.EmployeeShiftsPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.EmployeeShiftsOutputTable)).EndInit();
             this.MostOrderedFoodPanel.ResumeLayout(false);
             this.MostOrderedFoodPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MostOrderedFoodOutputTable)).EndInit();
             this.EotMPanel.ResumeLayout(false);
             this.EotMPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.EotMOutputTable)).EndInit();
+            this.DailySalesPanel.ResumeLayout(false);
+            this.DailySalesPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DailySalesOutputTable)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1070,20 +1070,18 @@
         private System.Windows.Forms.Panel EotMPanel;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label EotMLabel_2;
-        private System.Windows.Forms.TextBox EotMInput;
+        private System.Windows.Forms.TextBox EotMMonthInput;
         private System.Windows.Forms.Button EotMSubmit;
         private System.Windows.Forms.Label EotMLabel_1;
-        private System.Windows.Forms.Panel CustSatPanel;
+        private System.Windows.Forms.Panel EmployeeShiftsPanel;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label CustSatLabel_2;
-        private System.Windows.Forms.TextBox CustSatStartDateInput;
-        private System.Windows.Forms.Button CustSatSubmit;
-        private System.Windows.Forms.Label CustSatLabel_1;
-        private System.Windows.Forms.Label CustSatLabel_3;
-        private System.Windows.Forms.TextBox CustSatEndDateInput;
+        private System.Windows.Forms.Label EmployeeShiftsLabel_2;
+        private System.Windows.Forms.TextBox EmployeeShiftsStartDateInput;
+        private System.Windows.Forms.Button EmployeeShiftsSubmit;
+        private System.Windows.Forms.Label EmployeeShiftsLabel_1;
         private System.Windows.Forms.Button PropertiesReturnButton;
         private System.Windows.Forms.DataGridView DailySalesOutputTable;
-        private System.Windows.Forms.DataGridView CustSatOutputTable;
+        private System.Windows.Forms.DataGridView EmployeeShiftsOutputTable;
         private System.Windows.Forms.DataGridView MostOrderedFoodOutputTable;
         private System.Windows.Forms.DataGridView EotMOutputTable;
         private System.Windows.Forms.Button ClockButton;
@@ -1091,6 +1089,8 @@
         private System.Windows.Forms.TextBox AddIngredientCost;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox AddMenuItemIngredients;
+        private System.Windows.Forms.TextBox EotMYearInput;
+        private System.Windows.Forms.Label label25;
     }
 }
 

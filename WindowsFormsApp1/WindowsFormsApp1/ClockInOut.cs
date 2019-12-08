@@ -23,11 +23,26 @@ namespace WindowsFormsApp1
         private void ClockInSubmit_Click(object sender, EventArgs e)
         {
             string name = ClockInOutInput.Text;
-            string firstName = name.Substring(0, name.IndexOf(' '));
-            string lastName = name.Substring(name.IndexOf(' ') + 1);
-
-            SqlWaiterRepository sql = new SqlWaiterRepository(connectionString);
-            sql.OpenShift(firstName, lastName);
+            string firstName;
+            string lastName;
+            try
+            {
+                firstName = name.Substring(0, name.IndexOf(' '));
+                lastName = name.Substring(name.IndexOf(' ') + 1);
+            } catch(ArgumentOutOfRangeException aoore)
+            {
+                return;
+            }
+            
+            try
+            {
+                SqlWaiterRepository sql = new SqlWaiterRepository(connectionString);
+                sql.OpenShift(firstName, lastName);
+            } catch(Exception ex)
+            {
+                ClockInOutResultsLabel.Text = name + " is already clocked in.";
+                return;
+            }
 
             ClockInOutResultsLabel.Text = name + " clocked in!";
         }
@@ -35,11 +50,29 @@ namespace WindowsFormsApp1
         private void ClockOutSubmit_Click(object sender, EventArgs e)
         {
             string name = ClockInOutInput.Text;
-            string firstName = name.Substring(0, name.IndexOf(' '));
-            string lastName = name.Substring(name.IndexOf(' ') + 1);
 
-            SqlWaiterRepository sql = new SqlWaiterRepository(connectionString);
-            sql.CloseShift(firstName, lastName);
+            string firstName;
+            string lastName;
+            try
+            {
+                firstName = name.Substring(0, name.IndexOf(' '));
+                lastName = name.Substring(name.IndexOf(' ') + 1);
+            }
+            catch (ArgumentOutOfRangeException aoore)
+            {
+                return;
+            }
+
+            try
+            {
+                SqlWaiterRepository sql = new SqlWaiterRepository(connectionString);
+                sql.CloseShift(firstName, lastName);
+            }
+            catch (Exception ex)
+            {
+                ClockInOutResultsLabel.Text = name + " is already clocked out.";
+                return;
+            }
 
             ClockInOutResultsLabel.Text = name + " clocked out!";
         }

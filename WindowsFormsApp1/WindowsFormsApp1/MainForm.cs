@@ -30,18 +30,11 @@ namespace WindowsFormsApp1
             orderRepository = new SqlOrderRepository(connectionString);
             waiterRepository = new SqlWaiterRepository(connectionString);
             statisticsRepository = new SqlStatisticsRepository(connectionString);
-
-            DateTime start = new DateTime(2019, 12, 8, 7, 0, 0);
-            DateTime end = new DateTime(2019, 12, 8, 17, 0, 0);
-
-            waiterRepository.AddShift("name", "last", start, end);
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            Tables t = new Tables();
-            this.Hide();
-            t.Show();
+
         }
 
         private void Waiter_Click(object sender, EventArgs e)
@@ -425,29 +418,33 @@ namespace WindowsFormsApp1
             }
         }
 
-        // Complete. TODO test
         private void EmployeeShiftsSubmit_Click(object sender, EventArgs e)
         {
             DateTimeOffset Date;
+            // TODO SQL query.
+
+            Date = new DateTimeOffset(DateTime.Parse(EmployeeShiftsStartDateInput.Text + " 8:00:00 AM"));
+
+            Console.WriteLine(statisticsRepository.WaitersWorkOnDate(Date).Count());
 
             try
             {
-                Date = new DateTimeOffset(DateTime.Parse(EmployeeShiftsStartDateInput.Text + " 8:00:00 AM"));
-
-                List<WaitersWork> work = (List<WaitersWork>)statisticsRepository.WaitersWorkOnDate(Date);
-
-                EmployeeShiftsOutputTable.Rows.Clear();
-                foreach(WaitersWork shifts in work)
-                {
-                    EmployeeShiftsOutputTable.Rows.Add(shifts.FirstName, shifts.LastName, shifts.MinutesWorked, shifts.WorkerEarnings, shifts.OrdersServed);
-                }
+                
             } catch(Exception ex)
             {
                 return;
             }
+            
         }
 
-        // Complete.
+        // ----------------- CLOCK
+
+        private void ClockButton_Click(object sender, EventArgs e)
+        {
+            ClockInOut test = new ClockInOut();
+            test.Show();
+        }
+
         private void ProfitMadeSubmit_Click(object sender, EventArgs e)
         {
             DateTimeOffset fromDate;
@@ -461,23 +458,16 @@ namespace WindowsFormsApp1
                 List<MonthProfitReport> profits = (List<MonthProfitReport>)statisticsRepository.ProfitMade(fromDate, toDate);
 
                 ProfitMadeOutput.Rows.Clear();
-                foreach(MonthProfitReport profit in profits)
+                foreach (MonthProfitReport profit in profits)
                 {
                     ProfitMadeOutput.Rows.Add(profit.Year, profit.Month, profit.TotalEarnings, profit.WorkersWagesLoss,
                         profit.IngredientsLoss, profit.MonthProfit, profit.TotalProfitUpToThatMonth);
                 }
-            } catch(Exception ex)
+            }
+            catch (Exception ex)
             {
 
             }
-        }
-
-        // ----------------- CLOCK
-
-        private void ClockButton_Click(object sender, EventArgs e)
-        {
-            ClockInOut test = new ClockInOut();
-            test.Show();
         }
     }
 }

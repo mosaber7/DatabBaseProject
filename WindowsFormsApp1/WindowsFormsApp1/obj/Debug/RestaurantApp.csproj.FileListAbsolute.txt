@@ -39,7 +39,6 @@ D:\Documents\Sadness\SQL Class\Restaurant Repo\WindowsFormsApp1\WindowsFormsApp1
 D:\Documents\Sadness\SQL Class\Restaurant Repo\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\DatabaseData.pdb
 D:\Documents\Sadness\SQL Class\Restaurant Repo\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\DataAccess.pdb
 D:\Documents\Sadness\SQL Class\Restaurant Repo\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\RestaurantApp.csprojAssemblyReference.cache
-D:\Documents\Sadness\SQL Class\Restaurant Repo\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Foodpick.resources
 D:\Documents\Sadness\SQL Class\Restaurant Repo\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.MainForm.resources
 D:\Documents\Sadness\SQL Class\Restaurant Repo\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Tables.resources
 D:\Documents\Sadness\SQL Class\Restaurant Repo\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
@@ -69,3 +68,4 @@ C:\Users\dell\Desktop\New folder\DatabBaseProject\WindowsFormsApp1\WindowsFormsA
 C:\Users\dell\Desktop\New folder\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\DataAccess.pdb
 C:\Users\dell\Desktop\New folder\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\RestaurantApp.csproj.CopyComplete
 D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Order.resources
+D:\Documents\Sadness\SQL Class\Restaurant Repo\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Order.resources

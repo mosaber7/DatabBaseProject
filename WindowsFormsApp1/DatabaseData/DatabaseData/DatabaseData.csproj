@@ -67,6 +67,7 @@
     <Compile Include="DataDelegates\Query\Waiters\FetchAllWaitersDelegate.cs" />
     <Compile Include="DataDelegates\ReportQuery\EmployeePerformanceDelegate.cs" />
     <Compile Include="DataDelegates\ReportQuery\MostOrderedFoodInYearDelegate.cs" />
+    <Compile Include="DataDelegates\ReportQuery\ProfitMadeDelegate.cs" />
     <Compile Include="DataDelegates\ReportQuery\SalesFromDayDelegate.cs" />
     <Compile Include="DataDelegates\ReportQuery\WaitersWorkOnDayDelegate.cs" />
     <Compile Include="Models\Food.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="Models\Report\EmployeePerformanceReport.cs" />
     <Compile Include="Models\Report\FoodYearInfo.cs" />
     <Compile Include="Models\Report\ItemSale.cs" />
+    <Compile Include="Models\Report\MonthProfitReport.cs" />
     <Compile Include="Models\Report\WaitersWork.cs" />
     <Compile Include="Models\Shift.cs" />
     <Compile Include="Models\Waiter.cs" />
@@ -90,6 +92,7 @@
   <ItemGroup>
     <Content Include="Sql\Creation\SchemaCreation.sql" />
     <Content Include="Sql\Creation\Table Creation.sql" />
+    <Content Include="Sql\Procedures\ReadData\EmployeePerformance.sql" />
     <Content Include="Sql\Procedures\ReadData\FetchAllActiveMenuItems.sql" />
     <Content Include="Sql\Procedures\ReadData\FetchAllCurrentlyWorkingWaiters.sql" />
     <Content Include="Sql\Procedures\ReadData\FetchAllFoodsFromOrder.sql" />
@@ -99,6 +102,7 @@
     <Content Include="Sql\Procedures\ReadData\FetchAllOrdersOfTable.sql" />
     <Content Include="Sql\Procedures\ReadData\FetchAllWaiters.sql" />
     <Content Include="Sql\Procedures\ReadData\MostOrderedFoodInYear.sql" />
+    <Content Include="Sql\Procedures\ReadData\ProfitMadeBetweenDates.sql" />
     <Content Include="Sql\Procedures\ReadData\SalesFromDay.sql" />
     <Content Include="Sql\Procedures\ReadData\WaitersWorkOnDay.sql" />
     <Content Include="Sql\Procedures\UsefulFunctions.sql" />

@@ -71,8 +71,8 @@ GO
 
 CREATE OR ALTER FUNCTION Restaurant.RetrieveWaiter
 (
-	@WaiterFirstName NVARCHAR(32),
-	@WaiterLastName NVARCHAR(32)
+	@WaiterFirstName NVARCHAR(64),
+	@WaiterLastName NVARCHAR(64)
 )
 RETURNS INT
 AS

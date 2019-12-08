@@ -34,5 +34,10 @@ namespace DatabaseData
         {
             return executor.ExecuteReader(new EmployeePerformanceDelegate(year, month));
         }
+
+        public IReadOnlyList<MonthProfitReport> ProfitMade (DateTimeOffset startingDate, DateTimeOffset endingDate)
+        {
+            return executor.ExecuteReader(new ProfitMadeDelegate(startingDate, endingDate));
+        }
     }
 }

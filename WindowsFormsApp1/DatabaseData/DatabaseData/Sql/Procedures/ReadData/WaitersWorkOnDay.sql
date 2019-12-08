@@ -6,7 +6,7 @@ AS
 	DECLARE @DayOfDate INT = DAY(@Date);
 
 	SELECT W.FirstName, W.LastName,
-		DATEDIFF(minute, S.ClockInTime, S.ClockOutTime) AS HoursWorked,
+		DATEDIFF(minute, S.ClockInTime, S.ClockOutTime) / 60 AS HoursWorked,
 		DATEDIFF(minute, S.ClockInTime, S.ClockOutTime) * W.Salary / 60 AS WorkersEarnings,
 		COUNT(DISTINCT O.OrderID) AS OrdersServed
 	FROM Restaurant.Waiters W
@@ -15,6 +15,5 @@ AS
 	WHERE YEAR(S.ClockInTime) = @YearOfDate AND
 		MONTH(S.ClockInTime) = @MonthOfDate AND
 		DAY(S.ClockInTime) = @DayOfDate AND
-		O.[Status] = 2 AND
-		W.TerminationDate IS NOT NULL
+		O.[Status] = 2
 	GROUP BY W.FirstName, W.LastName, W.Salary, S.ClockInTime, S.ClockOutTime

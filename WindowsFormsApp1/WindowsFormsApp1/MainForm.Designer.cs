@@ -36,6 +36,17 @@
             this.PropertyChangePanel = new System.Windows.Forms.Panel();
             this.PropertiesReturnButton = new System.Windows.Forms.Button();
             this.PropertiesList = new System.Windows.Forms.ListBox();
+            this.AddMenuItemPanel = new System.Windows.Forms.Panel();
+            this.label24 = new System.Windows.Forms.Label();
+            this.AddMenuItemIngredients = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.AddMenuItemDescription = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.AddMenuItemPrice = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.AddMenuItemName = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.AddMenuItemButton = new System.Windows.Forms.Button();
             this.RemoveMenuItemPanel = new System.Windows.Forms.Panel();
             this.RemoveMenuItemList = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -52,6 +63,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.FireSelectedWaiterButton = new System.Windows.Forms.Button();
             this.AddIngredientPanel = new System.Windows.Forms.Panel();
+            this.label23 = new System.Windows.Forms.Label();
+            this.AddIngredientCost = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
@@ -66,15 +79,6 @@
             this.RestockIngredientsList = new System.Windows.Forms.ListBox();
             this.label8 = new System.Windows.Forms.Label();
             this.RestockIngredientButton = new System.Windows.Forms.Button();
-            this.AddMenuItemPanel = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.AddMenuItemDescription = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.AddMenuItemPrice = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.AddMenuItemName = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.AddMenuItemButton = new System.Windows.Forms.Button();
             this.ReportPanel = new System.Windows.Forms.Panel();
             this.ReportsReturnButton = new System.Windows.Forms.Button();
             this.ReportQueriesList = new System.Windows.Forms.ListBox();
@@ -108,18 +112,14 @@
             this.EotMInput = new System.Windows.Forms.TextBox();
             this.EotMSubmit = new System.Windows.Forms.Button();
             this.EotMLabel_1 = new System.Windows.Forms.Label();
-            this.AddIngredientCost = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.AddMenuItemIngredients = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
             this.MainPanel.SuspendLayout();
             this.PropertyChangePanel.SuspendLayout();
+            this.AddMenuItemPanel.SuspendLayout();
             this.RemoveMenuItemPanel.SuspendLayout();
             this.HireWaiterPanel.SuspendLayout();
             this.FireWaiterPanel.SuspendLayout();
             this.AddIngredientPanel.SuspendLayout();
             this.RestockIngredientPanel.SuspendLayout();
-            this.AddMenuItemPanel.SuspendLayout();
             this.ReportPanel.SuspendLayout();
             this.DailySalesPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DailySalesOutputTable)).BeginInit();
@@ -190,12 +190,12 @@
             // 
             this.PropertyChangePanel.Controls.Add(this.PropertiesReturnButton);
             this.PropertyChangePanel.Controls.Add(this.PropertiesList);
+            this.PropertyChangePanel.Controls.Add(this.RestockIngredientPanel);
             this.PropertyChangePanel.Controls.Add(this.AddMenuItemPanel);
             this.PropertyChangePanel.Controls.Add(this.RemoveMenuItemPanel);
             this.PropertyChangePanel.Controls.Add(this.HireWaiterPanel);
             this.PropertyChangePanel.Controls.Add(this.FireWaiterPanel);
             this.PropertyChangePanel.Controls.Add(this.AddIngredientPanel);
-            this.PropertyChangePanel.Controls.Add(this.RestockIngredientPanel);
             this.PropertyChangePanel.Location = new System.Drawing.Point(12, 12);
             this.PropertyChangePanel.Name = "PropertyChangePanel";
             this.PropertyChangePanel.Size = new System.Drawing.Size(576, 342);
@@ -227,6 +227,110 @@
             this.PropertiesList.Size = new System.Drawing.Size(120, 303);
             this.PropertiesList.TabIndex = 0;
             this.PropertiesList.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
+            // 
+            // AddMenuItemPanel
+            // 
+            this.AddMenuItemPanel.Controls.Add(this.label24);
+            this.AddMenuItemPanel.Controls.Add(this.AddMenuItemIngredients);
+            this.AddMenuItemPanel.Controls.Add(this.label11);
+            this.AddMenuItemPanel.Controls.Add(this.AddMenuItemDescription);
+            this.AddMenuItemPanel.Controls.Add(this.label10);
+            this.AddMenuItemPanel.Controls.Add(this.AddMenuItemPrice);
+            this.AddMenuItemPanel.Controls.Add(this.label9);
+            this.AddMenuItemPanel.Controls.Add(this.AddMenuItemName);
+            this.AddMenuItemPanel.Controls.Add(this.label6);
+            this.AddMenuItemPanel.Controls.Add(this.AddMenuItemButton);
+            this.AddMenuItemPanel.Location = new System.Drawing.Point(129, 3);
+            this.AddMenuItemPanel.Name = "AddMenuItemPanel";
+            this.AddMenuItemPanel.Size = new System.Drawing.Size(444, 336);
+            this.AddMenuItemPanel.TabIndex = 7;
+            this.AddMenuItemPanel.Visible = false;
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(20, 194);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(59, 13);
+            this.label24.TabIndex = 13;
+            this.label24.Text = "Ingredients";
+            // 
+            // AddMenuItemIngredients
+            // 
+            this.AddMenuItemIngredients.Location = new System.Drawing.Point(86, 191);
+            this.AddMenuItemIngredients.Multiline = true;
+            this.AddMenuItemIngredients.Name = "AddMenuItemIngredients";
+            this.AddMenuItemIngredients.Size = new System.Drawing.Size(245, 107);
+            this.AddMenuItemIngredients.TabIndex = 12;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(20, 91);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(60, 13);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "Description";
+            // 
+            // AddMenuItemDescription
+            // 
+            this.AddMenuItemDescription.Location = new System.Drawing.Point(86, 91);
+            this.AddMenuItemDescription.Multiline = true;
+            this.AddMenuItemDescription.Name = "AddMenuItemDescription";
+            this.AddMenuItemDescription.Size = new System.Drawing.Size(245, 88);
+            this.AddMenuItemDescription.TabIndex = 10;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(49, 66);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(31, 13);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "Price";
+            // 
+            // AddMenuItemPrice
+            // 
+            this.AddMenuItemPrice.Location = new System.Drawing.Point(86, 63);
+            this.AddMenuItemPrice.Name = "AddMenuItemPrice";
+            this.AddMenuItemPrice.Size = new System.Drawing.Size(137, 20);
+            this.AddMenuItemPrice.TabIndex = 8;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(45, 37);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(35, 13);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Name";
+            // 
+            // AddMenuItemName
+            // 
+            this.AddMenuItemName.Location = new System.Drawing.Point(86, 33);
+            this.AddMenuItemName.Name = "AddMenuItemName";
+            this.AddMenuItemName.Size = new System.Drawing.Size(137, 20);
+            this.AddMenuItemName.TabIndex = 6;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.label6.Location = new System.Drawing.Point(3, 8);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(129, 22);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Add Menu Item";
+            // 
+            // AddMenuItemButton
+            // 
+            this.AddMenuItemButton.Location = new System.Drawing.Point(86, 304);
+            this.AddMenuItemButton.Name = "AddMenuItemButton";
+            this.AddMenuItemButton.Size = new System.Drawing.Size(137, 23);
+            this.AddMenuItemButton.TabIndex = 2;
+            this.AddMenuItemButton.Text = "Add Menu Item";
+            this.AddMenuItemButton.UseVisualStyleBackColor = true;
+            this.AddMenuItemButton.Click += new System.EventHandler(this.AddMenuItemButton_Click);
             // 
             // RemoveMenuItemPanel
             // 
@@ -390,6 +494,22 @@
             this.AddIngredientPanel.TabIndex = 7;
             this.AddIngredientPanel.Visible = false;
             // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(7, 118);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(68, 13);
+            this.label23.TabIndex = 13;
+            this.label23.Text = "Cost per Unit";
+            // 
+            // AddIngredientCost
+            // 
+            this.AddIngredientCost.Location = new System.Drawing.Point(83, 115);
+            this.AddIngredientCost.Name = "AddIngredientCost";
+            this.AddIngredientCost.Size = new System.Drawing.Size(100, 20);
+            this.AddIngredientCost.TabIndex = 12;
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -492,7 +612,7 @@
             this.RestockIngredientsList.FormattingEnabled = true;
             this.RestockIngredientsList.Location = new System.Drawing.Point(63, 33);
             this.RestockIngredientsList.Name = "RestockIngredientsList";
-            this.RestockIngredientsList.Size = new System.Drawing.Size(120, 212);
+            this.RestockIngredientsList.Size = new System.Drawing.Size(240, 212);
             this.RestockIngredientsList.TabIndex = 6;
             // 
             // label8
@@ -514,93 +634,6 @@
             this.RestockIngredientButton.Text = "Restock Ingredient";
             this.RestockIngredientButton.UseVisualStyleBackColor = true;
             this.RestockIngredientButton.Click += new System.EventHandler(this.RestockIngredientButton_Click);
-            // 
-            // AddMenuItemPanel
-            // 
-            this.AddMenuItemPanel.Controls.Add(this.label24);
-            this.AddMenuItemPanel.Controls.Add(this.AddMenuItemIngredients);
-            this.AddMenuItemPanel.Controls.Add(this.label11);
-            this.AddMenuItemPanel.Controls.Add(this.AddMenuItemDescription);
-            this.AddMenuItemPanel.Controls.Add(this.label10);
-            this.AddMenuItemPanel.Controls.Add(this.AddMenuItemPrice);
-            this.AddMenuItemPanel.Controls.Add(this.label9);
-            this.AddMenuItemPanel.Controls.Add(this.AddMenuItemName);
-            this.AddMenuItemPanel.Controls.Add(this.label6);
-            this.AddMenuItemPanel.Controls.Add(this.AddMenuItemButton);
-            this.AddMenuItemPanel.Location = new System.Drawing.Point(129, 3);
-            this.AddMenuItemPanel.Name = "AddMenuItemPanel";
-            this.AddMenuItemPanel.Size = new System.Drawing.Size(444, 336);
-            this.AddMenuItemPanel.TabIndex = 7;
-            this.AddMenuItemPanel.Visible = false;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(20, 91);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(60, 13);
-            this.label11.TabIndex = 11;
-            this.label11.Text = "Description";
-            // 
-            // AddMenuItemDescription
-            // 
-            this.AddMenuItemDescription.Location = new System.Drawing.Point(86, 91);
-            this.AddMenuItemDescription.Multiline = true;
-            this.AddMenuItemDescription.Name = "AddMenuItemDescription";
-            this.AddMenuItemDescription.Size = new System.Drawing.Size(245, 88);
-            this.AddMenuItemDescription.TabIndex = 10;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(49, 66);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(31, 13);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "Price";
-            // 
-            // AddMenuItemPrice
-            // 
-            this.AddMenuItemPrice.Location = new System.Drawing.Point(86, 63);
-            this.AddMenuItemPrice.Name = "AddMenuItemPrice";
-            this.AddMenuItemPrice.Size = new System.Drawing.Size(137, 20);
-            this.AddMenuItemPrice.TabIndex = 8;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(45, 37);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 13);
-            this.label9.TabIndex = 7;
-            this.label9.Text = "Name";
-            // 
-            // AddMenuItemName
-            // 
-            this.AddMenuItemName.Location = new System.Drawing.Point(86, 33);
-            this.AddMenuItemName.Name = "AddMenuItemName";
-            this.AddMenuItemName.Size = new System.Drawing.Size(137, 20);
-            this.AddMenuItemName.TabIndex = 6;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.label6.Location = new System.Drawing.Point(3, 8);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(129, 22);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Add Menu Item";
-            // 
-            // AddMenuItemButton
-            // 
-            this.AddMenuItemButton.Location = new System.Drawing.Point(86, 304);
-            this.AddMenuItemButton.Name = "AddMenuItemButton";
-            this.AddMenuItemButton.Size = new System.Drawing.Size(137, 23);
-            this.AddMenuItemButton.TabIndex = 2;
-            this.AddMenuItemButton.Text = "Add Menu Item";
-            this.AddMenuItemButton.UseVisualStyleBackColor = true;
-            this.AddMenuItemButton.Click += new System.EventHandler(this.AddMenuItemButton_Click);
             // 
             // ReportPanel
             // 
@@ -929,39 +962,6 @@
             this.EotMLabel_1.TabIndex = 0;
             this.EotMLabel_1.Text = "Employee of the Month";
             // 
-            // AddIngredientCost
-            // 
-            this.AddIngredientCost.Location = new System.Drawing.Point(83, 115);
-            this.AddIngredientCost.Name = "AddIngredientCost";
-            this.AddIngredientCost.Size = new System.Drawing.Size(100, 20);
-            this.AddIngredientCost.TabIndex = 12;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(7, 118);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(68, 13);
-            this.label23.TabIndex = 13;
-            this.label23.Text = "Cost per Unit";
-            // 
-            // AddMenuItemIngredients
-            // 
-            this.AddMenuItemIngredients.Location = new System.Drawing.Point(86, 191);
-            this.AddMenuItemIngredients.Multiline = true;
-            this.AddMenuItemIngredients.Name = "AddMenuItemIngredients";
-            this.AddMenuItemIngredients.Size = new System.Drawing.Size(245, 107);
-            this.AddMenuItemIngredients.TabIndex = 12;
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(20, 194);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(59, 13);
-            this.label24.TabIndex = 13;
-            this.label24.Text = "Ingredients";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -976,6 +976,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MainPanel.ResumeLayout(false);
             this.PropertyChangePanel.ResumeLayout(false);
+            this.AddMenuItemPanel.ResumeLayout(false);
+            this.AddMenuItemPanel.PerformLayout();
             this.RemoveMenuItemPanel.ResumeLayout(false);
             this.RemoveMenuItemPanel.PerformLayout();
             this.HireWaiterPanel.ResumeLayout(false);
@@ -986,8 +988,6 @@
             this.AddIngredientPanel.PerformLayout();
             this.RestockIngredientPanel.ResumeLayout(false);
             this.RestockIngredientPanel.PerformLayout();
-            this.AddMenuItemPanel.ResumeLayout(false);
-            this.AddMenuItemPanel.PerformLayout();
             this.ReportPanel.ResumeLayout(false);
             this.DailySalesPanel.ResumeLayout(false);
             this.DailySalesPanel.PerformLayout();

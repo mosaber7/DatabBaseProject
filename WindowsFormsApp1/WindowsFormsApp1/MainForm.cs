@@ -142,12 +142,12 @@ namespace WindowsFormsApp1
 
         private void AddMenuItemButton_Click(object sender, EventArgs e)
         {
-            // todo test.
+            // Cannot insert the value NULL into column 'IngredientID', table 'santiagoscavone.Restaurant.MenuItemIngredient'; column does not allow nulls. INSERT fails.
+            // TODO fix
             string Name;
             decimal Price;
             string Description;
             List<Ingredient> Ingredients;
-
 
             try
             {
@@ -172,6 +172,7 @@ namespace WindowsFormsApp1
                 menuItemsRepository.AddMenuItem(Name, Description, Price, Ingredients);
             } catch(Exception ex)
             {
+                Console.WriteLine(ex.Message);
                 return;
             }
             
@@ -197,6 +198,7 @@ namespace WindowsFormsApp1
             RemoveMenuItemListLoad();
         }
 
+        // Complete.
         private void AddIngredientButton_Click(object sender, EventArgs e)
         {
             string Name;
@@ -224,15 +226,34 @@ namespace WindowsFormsApp1
 
             RestockIngredientsList.Items.Clear();
             RestockIngredientListLoad();
-            
-            // TODO test.
         }
 
+        // Complete.
         private void RestockIngredientButton_Click(object sender, EventArgs e)
         {
-            string NewAmount = RestockIngredientAmount.Text;
+            string Name;
+            decimal NewAmount;
 
-            // TODO Fill.
+            try
+            {
+                Name = RestockIngredientsList.SelectedItem.ToString();
+                Name = Name.Substring(0, Name.IndexOf(','));
+                NewAmount = decimal.Parse(RestockIngredientAmount.Text);
+            } catch(Exception ex)
+            {
+                return;
+            }
+
+            try
+            {
+                menuItemsRepository.RestockIngredient(Name, NewAmount);
+            } catch(Exception ex)
+            {
+                return;
+            }
+
+            RestockIngredientsList.Items.Clear();
+            RestockIngredientListLoad();
         }
 
         // Complete.
@@ -253,9 +274,13 @@ namespace WindowsFormsApp1
             }
         }
 
+        // Complete.
         private void RestockIngredientListLoad()
         {
-            // TODO complete.
+            foreach(IngredientInformation ingredient in menuItemsRepository.FetchAllIngredients())
+            {
+                RestockIngredientsList.Items.Add(ingredient.Name + ", " + ingredient.Amount + " " + ingredient.Units);
+            }
         }
 
         // ------------------- REPORTS

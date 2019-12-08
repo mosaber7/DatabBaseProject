@@ -29,5 +29,10 @@ namespace DatabaseData
         {
             return executor.ExecuteReader(new WaitersWorkOnDayDelegate(date));
         }
+
+        public IReadOnlyList<EmployeePerformanceReport> EmployeesPerformance (int year, int month)
+        {
+            return executor.ExecuteReader(new EmployeePerformanceDelegate(year, month));
+        }
     }
 }

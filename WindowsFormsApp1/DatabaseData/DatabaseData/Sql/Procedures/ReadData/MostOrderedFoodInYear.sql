@@ -7,6 +7,6 @@ AS
 		INNER JOIN Restaurant.Foods F ON F.OrderID = O.OrderID
 		INNER JOIN Restaurant.MenuItems MI ON MI.MenuItemID = F.MenuItemID
 	WHERE YEAR(O.OrderedOn) = @YEAR
-	GROUP BY MI.[Name], MI.Price
+	GROUP BY MI.[Name]
 	ORDER BY AmountSoldInYear DESC, TotalEarnings DESC
 		

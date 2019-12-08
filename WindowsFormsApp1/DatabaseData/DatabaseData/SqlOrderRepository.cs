@@ -86,5 +86,15 @@ namespace DatabaseData
         {
             executor.ExecuteNonQuery(new DeliveredOrderDelegate(orderID, tip));
         }
+
+        /// <summary>
+        /// Gets the list of orders from a table
+        /// </summary>
+        /// <param name="tableNumber">Table Number</param>
+        /// <returns>List of orders</returns>
+        public IReadOnlyList<Order> FetchAllOrdersFromTable(int tableNumber)
+        {
+            return executor.ExecuteReader(new FetchAllOrdersFromTableDelegate(tableNumber));
+        }
     }
 }

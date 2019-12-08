@@ -65,6 +65,7 @@
     <Compile Include="DataDelegates\Query\Orders\FetchAllIngredientsFromFoodDelegate.cs" />
     <Compile Include="DataDelegates\Query\Waiters\FetchAllCurrentlyWorkingWaitersDelegate.cs" />
     <Compile Include="DataDelegates\Query\Waiters\FetchAllWaitersDelegate.cs" />
+    <Compile Include="DataDelegates\ReportQuery\EmployeePerformanceDelegate.cs" />
     <Compile Include="DataDelegates\ReportQuery\MostOrderedFoodInYearDelegate.cs" />
     <Compile Include="DataDelegates\ReportQuery\SalesFromDayDelegate.cs" />
     <Compile Include="DataDelegates\ReportQuery\WaitersWorkOnDayDelegate.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="Models\IngredientInformation.cs" />
     <Compile Include="Models\MenuItem.cs" />
     <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\Report\EmployeePerformanceReport.cs" />
     <Compile Include="Models\Report\FoodYearInfo.cs" />
     <Compile Include="Models\Report\ItemSale.cs" />
     <Compile Include="Models\Report\WaitersWork.cs" />

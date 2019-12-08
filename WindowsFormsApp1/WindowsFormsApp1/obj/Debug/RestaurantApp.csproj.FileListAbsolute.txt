@@ -23,7 +23,6 @@ D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\D
 D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\DatabaseData.pdb
 D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\DataAccess.pdb
 D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\RestaurantApp.csprojAssemblyReference.cache
-D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Foodpick.resources
 D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.MainForm.resources
 D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Tables.resources
 D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources

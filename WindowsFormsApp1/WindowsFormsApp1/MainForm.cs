@@ -264,7 +264,7 @@ namespace WindowsFormsApp1
 
             try
             {
-                orderRepository.AddIngredient(Name, Amount, Units, Cost);
+                menuItemsRepository.AddIngredient(Name, Amount, Units, Cost);
             } catch(Exception ex)
             {
                 return;

@@ -19,48 +19,73 @@ namespace WindowsFormsApp1
 
         private void Button7_Click(object sender, EventArgs e)
         {
-            Foodpick f1 = new Foodpick();
-            f1.Show();
+            Order o = new Order();
+            this.Hide();
+            o.Show();
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
+            Order o = new Order();
+            this.Hide();
+            o.Show();
 
         }
 
         private void Table2_Click(object sender, EventArgs e)
         {
 
+            Order o = new Order();
+            this.Hide();
+            o.Show();
         }
 
         private void Table3_Click(object sender, EventArgs e)
         {
 
+            Order o = new Order();
+            this.Hide();
+            o.Show();
         }
 
         private void Table4_Click(object sender, EventArgs e)
         {
 
+            Order o = new Order();
+            this.Hide();
+            o.Show();
         }
 
         private void Table6_Click(object sender, EventArgs e)
         {
 
+            Order o = new Order();
+            this.Hide();
+            o.Show();
         }
 
         private void Table7_Click(object sender, EventArgs e)
         {
 
+            Order o = new Order();
+            this.Hide();
+            o.Show();
         }
 
         private void Table8_Click(object sender, EventArgs e)
         {
 
+            Order o = new Order();
+            this.Hide();
+            o.Show();
         }
 
         private void Table9_Click(object sender, EventArgs e)
         {
 
+            Order o = new Order();
+            this.Hide();
+            o.Show();
         }
     }
 }

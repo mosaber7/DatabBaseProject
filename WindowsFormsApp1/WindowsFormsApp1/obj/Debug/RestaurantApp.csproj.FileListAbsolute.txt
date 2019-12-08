@@ -23,7 +23,6 @@ D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\D
 D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\DatabaseData.pdb
 D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\DataAccess.pdb
 D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\RestaurantApp.csprojAssemblyReference.cache
-D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Foodpick.resources
 D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.MainForm.resources
 D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Tables.resources
 D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
@@ -51,3 +50,22 @@ D:\Documents\Sadness\SQL Class\Restaurant Repo\WindowsFormsApp1\WindowsFormsApp1
 D:\Documents\Sadness\SQL Class\Restaurant Repo\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ClockInOut.resources
 D:\Documents\Sadness\SQL Class\Restaurant Repo\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ClockInOut.resources
+C:\Users\dell\Desktop\New folder\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\RestaurantApp.csprojAssemblyReference.cache
+C:\Users\dell\Desktop\New folder\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ClockInOut.resources
+C:\Users\dell\Desktop\New folder\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Order.resources
+C:\Users\dell\Desktop\New folder\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.MainForm.resources
+C:\Users\dell\Desktop\New folder\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Tables.resources
+C:\Users\dell\Desktop\New folder\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\dell\Desktop\New folder\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\RestaurantApp.csproj.GenerateResource.cache
+C:\Users\dell\Desktop\New folder\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\RestaurantApp.csproj.CoreCompileInputs.cache
+C:\Users\dell\Desktop\New folder\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\dell\Desktop\New folder\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\dell\Desktop\New folder\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\dell\Desktop\New folder\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\dell\Desktop\New folder\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\dell\Desktop\New folder\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\DatabaseData.dll
+C:\Users\dell\Desktop\New folder\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\DataAccess.dll
+C:\Users\dell\Desktop\New folder\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\DatabaseData.pdb
+C:\Users\dell\Desktop\New folder\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\DataAccess.pdb
+C:\Users\dell\Desktop\New folder\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\RestaurantApp.csproj.CopyComplete
+D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Order.resources

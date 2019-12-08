@@ -69,3 +69,4 @@ C:\Users\dell\Desktop\New folder\DatabBaseProject\WindowsFormsApp1\WindowsFormsA
 C:\Users\dell\Desktop\New folder\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\DatabaseData.pdb
 C:\Users\dell\Desktop\New folder\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\DataAccess.pdb
 C:\Users\dell\Desktop\New folder\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\RestaurantApp.csproj.CopyComplete
+D:\DatabasesFinal\DatabBaseProject\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Order.resources

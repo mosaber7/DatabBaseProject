@@ -80,6 +80,14 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show(ex.ToString());
             }
+
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            Order o = new Order(tableNumber);
+            Hide();
+            o.Show();
         }
     }
 }

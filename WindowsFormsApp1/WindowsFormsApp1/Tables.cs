@@ -155,8 +155,6 @@ namespace WindowsFormsApp1
 
         private void Button14_Click(object sender, EventArgs e)
         {
-            MainForm mf = new MainForm();
-            mf.Show();
             Close();
         }
 

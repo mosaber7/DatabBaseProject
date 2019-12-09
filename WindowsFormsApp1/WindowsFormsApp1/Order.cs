@@ -97,6 +97,9 @@ namespace WindowsFormsApp1
                     Food added = sqlo.AddFood(o.OrderID, f.Name, f.Quantity, f.IngredientsUsed);
                 }
             }
+            View_Orders vo = new View_Orders(tableno);
+            this.Hide();
+            vo.Show();
 
         }
 
@@ -291,6 +294,13 @@ namespace WindowsFormsApp1
                     return menuItem.Ingredients;
             }
             return null;
+        }
+
+        private void Button3_Click(object sender, EventArgs e)
+        {
+            Tables t = new Tables();
+            Hide();
+            t.Show();
         }
     }
 

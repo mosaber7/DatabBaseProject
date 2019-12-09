@@ -79,21 +79,28 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(12, 188);
+            this.comboBox2.Location = new System.Drawing.Point(12, 132);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(381, 24);
             this.comboBox2.TabIndex = 4;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.Waiter_SelectedIndexChanged);
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.ComboBox2_SelectedIndexChanged);
+            this.comboBox2.SelectedValueChanged += new System.EventHandler(this.ComboBox2_SelectedIndexChanged);
+            this.comboBox2.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ComboBox2_MouseClick);
+            this.comboBox2.MouseCaptureChanged += new System.EventHandler(this.ComboBox2_MouseEnter);
+            this.comboBox2.MouseEnter += new System.EventHandler(this.ComboBox2_SelectedIndexChanged);
+            this.comboBox2.MouseHover += new System.EventHandler(this.ComboBox2_MouseEnter);
             // 
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(12, 133);
+            this.comboBox3.Location = new System.Drawing.Point(12, 188);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(381, 24);
             this.comboBox3.TabIndex = 5;
-            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.ComboBox2_SelectedIndexChanged);
-            this.comboBox3.MouseEnter += new System.EventHandler(this.ComboBox2_MouseEnter);
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.ComboBox3_SelectedValueChanged);
+            this.comboBox3.SelectedValueChanged += new System.EventHandler(this.ComboBox3_SelectedValueChanged);
+            this.comboBox3.MouseClick += new System.Windows.Forms.MouseEventHandler(this.ComboBox3_MouseClick);
+            this.comboBox3.MouseEnter += new System.EventHandler(this.ComboBox3_MouseEnter);
             // 
             // button2
             // 
@@ -113,7 +120,7 @@
             this.button3.Text = "cancel";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -126,7 +133,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
-            this.Name = "Form1";
+            this.Name = "Order";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();

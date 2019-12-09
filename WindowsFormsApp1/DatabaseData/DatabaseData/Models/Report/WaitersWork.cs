@@ -16,17 +16,14 @@ namespace DatabaseData.Models.Report
 
         public decimal WorkerEarnings { get; }
 
-        public decimal TipEarnings { get; }
-
         public int OrdersServed { get; }
 
-        public WaitersWork(string firstname, string lastname, int minutesWorked, decimal workersEarnings, decimal tipEarnings, int ordersServed)
+        public WaitersWork(string firstname, string lastname, int minutesWorked, decimal workersEarnings, int ordersServed)
         {
             FirstName = firstname;
             LastName = lastname;
             MinutesWorked = minutesWorked;
             WorkerEarnings = workersEarnings;
-            TipEarnings = tipEarnings;
             OrdersServed = ordersServed;
         }
     }

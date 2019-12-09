@@ -30,18 +30,11 @@ namespace WindowsFormsApp1
             orderRepository = new SqlOrderRepository(connectionString);
             waiterRepository = new SqlWaiterRepository(connectionString);
             statisticsRepository = new SqlStatisticsRepository(connectionString);
-
-            DateTime start = new DateTime(2019, 12, 8, 7, 0, 0);
-            DateTime end = new DateTime(2019, 12, 8, 17, 0, 0);
-
-            waiterRepository.AddShift("name", "last", start, end);
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            Tables t = new Tables();
-            this.Hide();
-            t.Show();
+
         }
 
         private void Waiter_Click(object sender, EventArgs e)
@@ -65,7 +58,8 @@ namespace WindowsFormsApp1
                 DailySalesPanel,
                 MostOrderedFoodPanel,
                 EotMPanel,
-                EmployeeShiftsPanel
+                EmployeeShiftsPanel,
+                ProfitMadePanel
             };
 
             FireWaiterListLoad();
@@ -89,6 +83,22 @@ namespace WindowsFormsApp1
             MostOrderedFoodOutputTable.Columns[0].Name = "Name";
             MostOrderedFoodOutputTable.Columns[1].Name = "Amount Sold";
             MostOrderedFoodOutputTable.Columns[2].Name = "Total Earnings";
+
+            EmployeeShiftsOutputTable.ColumnCount = 5;
+            EmployeeShiftsOutputTable.Columns[0].Name = "First Name";
+            EmployeeShiftsOutputTable.Columns[1].Name = "Last Name";
+            EmployeeShiftsOutputTable.Columns[2].Name = "Hours Worked";
+            EmployeeShiftsOutputTable.Columns[3].Name = "Employee Earnings";
+            EmployeeShiftsOutputTable.Columns[4].Name = "Orders Served";
+
+            ProfitMadeOutput.ColumnCount = 7;
+            ProfitMadeOutput.Columns[0].Name = "Year";
+            ProfitMadeOutput.Columns[1].Name = "Month";
+            ProfitMadeOutput.Columns[2].Name = "Total Earnings";
+            ProfitMadeOutput.Columns[3].Name = "Employee Cost";
+            ProfitMadeOutput.Columns[4].Name = "Ingredient Cost";
+            ProfitMadeOutput.Columns[5].Name = "Month Profit";
+            ProfitMadeOutput.Columns[6].Name = "Total Profit";
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -247,7 +257,11 @@ namespace WindowsFormsApp1
 
             try
             {
+<<<<<<< HEAD
          menuItemsRepository.AddIngredient(Name, Amount, Units, Cost);
+=======
+                menuItemsRepository.AddIngredient(Name, Amount, Units, Cost);
+>>>>>>> 69921d079b221942b1dd13c9f727133954323478
             } catch(Exception ex)
             {
                 return;
@@ -433,6 +447,31 @@ namespace WindowsFormsApp1
         {
             ClockInOut test = new ClockInOut();
             test.Show();
+        }
+
+        private void ProfitMadeSubmit_Click(object sender, EventArgs e)
+        {
+            DateTimeOffset fromDate;
+            DateTimeOffset toDate;
+
+            try
+            {
+                fromDate = new DateTimeOffset(DateTime.Parse(ProfitMadeFromInput.Text + " 8:00:00 AM"));
+                toDate = new DateTimeOffset(DateTime.Parse(ProfitMadeToInput.Text + " 8:00:00 AM"));
+
+                List<MonthProfitReport> profits = (List<MonthProfitReport>)statisticsRepository.ProfitMade(fromDate, toDate);
+
+                ProfitMadeOutput.Rows.Clear();
+                foreach (MonthProfitReport profit in profits)
+                {
+                    ProfitMadeOutput.Rows.Add(profit.Year, profit.Month, profit.TotalEarnings, profit.WorkersWagesLoss,
+                        profit.IngredientsLoss, profit.MonthProfit, profit.TotalProfitUpToThatMonth);
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
     }
 }

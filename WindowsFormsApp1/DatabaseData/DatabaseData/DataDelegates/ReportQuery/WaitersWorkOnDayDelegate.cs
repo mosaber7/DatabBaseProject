@@ -32,9 +32,8 @@ namespace DatabaseData.DataDelegates.ReportQuery
                 waitersWorks.Add(new WaitersWork(
                     reader.GetString("FirstName"),
                     reader.GetString("LastName"),
-                    reader.GetInt32("MinutesWorked"),
+                    reader.GetInt32("HoursWorked"),
                     reader.GetValue<decimal>("WorkersEarnings"),
-                    reader.GetValue<decimal>("TipEarnings"),
                     reader.GetInt32("OrdersServed")));
             }
 

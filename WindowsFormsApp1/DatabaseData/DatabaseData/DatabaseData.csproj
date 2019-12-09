@@ -63,6 +63,7 @@
     <Compile Include="DataDelegates\Query\MenuItems\FetchAllIngredientsFromActiveMenuItemDelegate.cs" />
     <Compile Include="DataDelegates\Query\Orders\FetchAllFoodsFromOrderDelegate.cs" />
     <Compile Include="DataDelegates\Query\Orders\FetchAllIngredientsFromFoodDelegate.cs" />
+    <Compile Include="DataDelegates\Query\Orders\FetchAllOrdersFromTableDelegate.cs" />
     <Compile Include="DataDelegates\Query\Waiters\FetchAllCurrentlyWorkingWaitersDelegate.cs" />
     <Compile Include="DataDelegates\Query\Waiters\FetchAllWaitersDelegate.cs" />
     <Compile Include="DataDelegates\ReportQuery\EmployeePerformanceDelegate.cs" />

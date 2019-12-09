@@ -5,10 +5,43 @@ AS
 	WITH MonthlyProfit ([Year], [Month], TotalEarnings, WorkersWagesLoss, IngredientsLoss, MonthProfit)
 	AS
 	(
-		SELECT YEAR(O.OrderedOn), MONTH(O.OrderedOn), SUM(MI.Price * F.Quantity) AS TotalEarnings,
-			SUM(DATEDIFF(MINUTE, S.ClockInTime, S.ClockOutTime) * W.Salary * 60)  / 60 AS WorkersWagesLoss,
-			SUM(I.CostPerUnit * FI.AmountUsed) AS IngredientsLoss,
-			SUM(MI.Price * F.Quantity) - SUM(DATEDIFF(MINUTE, S.ClockInTime, S.ClockOutTime) * W.Salary * 60) / 60 - SUM(I.CostPerUnit * FI.AmountUsed) AS MonthProfit
+		SELECT YEAR(O.OrderedOn), MONTH(O.OrderedOn),
+		(
+			SELECT SUM(F.Quantity * MI.Price)
+			FROM Restaurant.Orders OS
+				INNER JOIN Restaurant.Foods F ON F.OrderID = OS.OrderID
+				INNER JOIN Restaurant.MenuItems MI ON MI.MenuItemID = F.MenuItemID
+			WHERE YEAR(OS.OrderedOn) = YEAR(O.OrderedOn)
+				AND MONTH(OS.OrderedOn) = MONTH(O.OrderedOn)
+		) AS TotalEarnings,
+			SUM(DATEDIFF(MINUTE, S.ClockInTime, S.ClockOutTime) * W.Salary) / 60 AS WorkersWagesLoss,
+			(
+				SELECT SUM(I.CostPerUnit * FI.AmountUsed)
+				FROM Restaurant.Orders OS
+					INNER JOIN Restaurant.Foods F ON F.OrderID = OS.OrderID
+					INNER JOIN Restaurant.FoodIngredient FI ON FI.FoodID = F.FoodID
+					INNER JOIN Restaurant.Ingredients I ON I.IngredientID = FI.IngredientID
+				WHERE YEAR(OS.OrderedOn) = YEAR(O.OrderedOn)
+					AND MONTH(OS.OrderedOn) = MONTH(O.OrderedOn)
+			)
+			AS IngredientsLoss,
+			(
+				SELECT SUM(F.Quantity * MI.Price)
+				FROM Restaurant.Orders OS
+					INNER JOIN Restaurant.Foods F ON F.OrderID = OS.OrderID
+					INNER JOIN Restaurant.MenuItems MI ON MI.MenuItemID = F.MenuItemID
+				WHERE YEAR(OS.OrderedOn) = YEAR(O.OrderedOn)
+					AND MONTH(OS.OrderedOn) = MONTH(O.OrderedOn)
+			) - SUM(DATEDIFF(MINUTE, S.ClockInTime, S.ClockOutTime) * W.Salary) / 60 - 
+			(
+				SELECT SUM(I.CostPerUnit * FI.AmountUsed)
+				FROM Restaurant.Orders OS
+					INNER JOIN Restaurant.Foods F ON F.OrderID = OS.OrderID
+					INNER JOIN Restaurant.FoodIngredient FI ON FI.FoodID = F.FoodID
+					INNER JOIN Restaurant.Ingredients I ON I.IngredientID = FI.IngredientID
+				WHERE YEAR(OS.OrderedOn) = YEAR(O.OrderedOn)
+					AND MONTH(OS.OrderedOn) = MONTH(O.OrderedOn)
+			) AS MonthProfit
 		FROM Restaurant.Orders O
 			INNER JOIN Restaurant.Foods F ON F.OrderID = O.OrderID
 			INNER JOIN Restaurant.MenuItems MI ON F.MenuItemID = MI.MenuItemID

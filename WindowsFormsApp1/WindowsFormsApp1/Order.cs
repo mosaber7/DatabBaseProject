@@ -290,7 +290,7 @@ namespace WindowsFormsApp1
         {
             Tables t = new Tables();
             t.Show();
-            Close();
+            Hide();
         }
 
         private void Order_Load_1(object sender, EventArgs e)

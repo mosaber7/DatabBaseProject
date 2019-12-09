@@ -22,14 +22,14 @@ namespace WindowsFormsApp1
         private void Button7_Click(object sender, EventArgs e)
         {
             Order o = new Order(7);
-            Close();
+            Hide();
             o.Show();
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
             Order o = new Order(1);
-            Close();
+            Hide();
             o.Show();
 
         }
@@ -38,7 +38,7 @@ namespace WindowsFormsApp1
         {
 
             Order o = new Order(2);
-            Close();
+            Hide();
             o.Show();
         }
 
@@ -46,7 +46,7 @@ namespace WindowsFormsApp1
         {
 
             Order o = new Order(3);
-            Close();
+            Hide();
             o.Show();
         }
 
@@ -54,7 +54,7 @@ namespace WindowsFormsApp1
         {
 
             Order o = new Order(4);
-            Close();
+            Hide();
             o.Show();
         }
 
@@ -62,7 +62,7 @@ namespace WindowsFormsApp1
         {
 
             Order o = new Order(6);
-            Close();
+            Hide();
             o.Show();
         }
 
@@ -70,7 +70,7 @@ namespace WindowsFormsApp1
         {
 
             Order o = new Order(7);
-            Close();
+            Hide(); 
             o.Show();
         }
 
@@ -78,7 +78,7 @@ namespace WindowsFormsApp1
         {
 
             Order o = new Order(8);
-            Close();
+            Hide();
             o.Show();
         }
 
@@ -86,7 +86,7 @@ namespace WindowsFormsApp1
         {
 
             Order o = new Order(9);
-            this.Hide();
+            Hide();
             o.Show();
         }
 
@@ -94,75 +94,76 @@ namespace WindowsFormsApp1
         {
             View_Orders vw = new View_Orders(1);
             vw.Show();
-            Close();
+            Hide();
         }
 
         private void Button2_Click_1(object sender, EventArgs e)
         {
             View_Orders vw = new View_Orders(2);
+            Hide();
             vw.Show();
-            Close();
         }
 
         private void Button4_Click(object sender, EventArgs e)
         {
             View_Orders vw = new View_Orders(3);
+            Hide();
             vw.Show();
-            Close();
         }
 
         private void Button8_Click(object sender, EventArgs e)
         {
             View_Orders vw = new View_Orders(4);
+            Hide();
             vw.Show();
-            Close();
         }
 
         private void Button9_Click(object sender, EventArgs e)
         {
             View_Orders vw = new View_Orders(5);
+            Hide();
             vw.Show();
-            Close();
         }
 
         private void Button6_Click(object sender, EventArgs e)
         {
             View_Orders vw = new View_Orders(6);
+            Hide();
             vw.Show();
-            Close();
         }
 
         private void Button11_Click(object sender, EventArgs e)
         {
             View_Orders vw = new View_Orders(7);
             vw.Show();
-            Close();
+            Hide();
         }
 
         private void Button12_Click(object sender, EventArgs e)
         {
             View_Orders vw = new View_Orders(8);
+            Hide();
             vw.Show();
-            Close();
         }
 
         private void Button13_Click(object sender, EventArgs e)
         {
             View_Orders vw = new View_Orders(9);
+            Hide();
             vw.Show();
-            Close();
         }
 
         private void Button14_Click(object sender, EventArgs e)
         {
             MainForm mf = new MainForm();
+            Hide();
             mf.Show();
-            Close();
         }
 
         private void Tables_FormClosing(object sender, FormClosingEventArgs e)
         {
             MainForm mf = new MainForm();
+            Hide();
             mf.Show();
         }
     }

@@ -30,8 +30,8 @@ namespace WindowsFormsApp1
         private void Button1_Click(object sender, EventArgs e)
         {
             Tables t = new Tables();
-            this.Hide();
             t.Show();
+            this.Hide();
         }
 
         private void Waiter_Click(object sender, EventArgs e)

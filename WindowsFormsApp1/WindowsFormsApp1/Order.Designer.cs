@@ -31,20 +31,21 @@
             this.button1 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.AddFoodButton = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.QuantityNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.FoodList = new System.Windows.Forms.ListBox();
+            ((System.ComponentModel.ISupportInitialize)(this.QuantityNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 282);
+            this.button1.Location = new System.Drawing.Point(12, 367);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(381, 48);
             this.button1.TabIndex = 0;
@@ -71,15 +72,6 @@
             this.textBox1.TabIndex = 2;
             this.textBox1.Text = "Order";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(413, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(197, 448);
-            this.panel1.TabIndex = 3;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
             // 
             // comboBox2
             // 
@@ -111,21 +103,22 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(12, 393);
+            this.button3.Location = new System.Drawing.Point(12, 421);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(381, 48);
             this.button3.TabIndex = 7;
             this.button3.Text = "cancel";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // AddFoodButton
             // 
-            this.button2.Location = new System.Drawing.Point(12, 336);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(179, 48);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Add anotheer order";
-            this.button2.UseVisualStyleBackColor = true;
+            this.AddFoodButton.Location = new System.Drawing.Point(12, 313);
+            this.AddFoodButton.Name = "AddFoodButton";
+            this.AddFoodButton.Size = new System.Drawing.Size(381, 48);
+            this.AddFoodButton.TabIndex = 6;
+            this.AddFoodButton.Text = "Add Food Into Order";
+            this.AddFoodButton.UseVisualStyleBackColor = true;
+            this.AddFoodButton.Click += new System.EventHandler(this.AddFoodButton_Click);
             // 
             // textBox3
             // 
@@ -157,34 +150,52 @@
             this.textBox5.Text = "Remove";
             this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // button4
+            // QuantityNumericUpDown
             // 
-            this.button4.Location = new System.Drawing.Point(215, 336);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(178, 48);
-            this.button4.TabIndex = 12;
-            this.button4.Text = "Add the same order";
-            this.button4.UseVisualStyleBackColor = true;
+            this.QuantityNumericUpDown.Location = new System.Drawing.Point(249, 263);
+            this.QuantityNumericUpDown.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.QuantityNumericUpDown.Name = "QuantityNumericUpDown";
+            this.QuantityNumericUpDown.Size = new System.Drawing.Size(144, 22);
+            this.QuantityNumericUpDown.TabIndex = 12;
+            this.QuantityNumericUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // FoodList
+            // 
+            this.FoodList.FormattingEnabled = true;
+            this.FoodList.ItemHeight = 16;
+            this.FoodList.Location = new System.Drawing.Point(409, 12);
+            this.FoodList.Name = "FoodList";
+            this.FoodList.Size = new System.Drawing.Size(189, 452);
+            this.FoodList.TabIndex = 13;
             // 
             // Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(610, 450);
-            this.Controls.Add(this.button4);
+            this.ClientSize = new System.Drawing.Size(610, 481);
+            this.Controls.Add(this.FoodList);
+            this.Controls.Add(this.QuantityNumericUpDown);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.AddFoodButton);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
             this.Name = "Order";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.QuantityNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,14 +206,14 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button AddFoodButton;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.NumericUpDown QuantityNumericUpDown;
+        private System.Windows.Forms.ListBox FoodList;
     }
 }

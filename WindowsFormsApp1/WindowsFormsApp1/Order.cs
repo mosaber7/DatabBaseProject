@@ -17,7 +17,7 @@ namespace WindowsFormsApp1
         List<DatabaseData.Models.MenuItem> it =new List<DatabaseData.Models.MenuItem>() ;
         List<DatabaseData.Models.Waiter> mw = new List<DatabaseData.Models.Waiter>();
         int tableno;
-        List<DatabaseData.Models.MenuItem> orderItems = new List<DatabaseData.Models.MenuItem>();
+        List<DatabaseData.Models.Food> orderFoods = new List<DatabaseData.Models.Food>();
         List<DatabaseData.Models.Ingredient> removedIngredients = new List<DatabaseData.Models.Ingredient>();
         DatabaseData.Models.MenuItem m;
         public Order(int no)
@@ -48,11 +48,6 @@ namespace WindowsFormsApp1
 
                 }
             }
-        }
-
-        private void Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void Combo1_clicked(object sender, EventArgs e)
@@ -96,8 +91,11 @@ namespace WindowsFormsApp1
             SqlOrderRepository sqlo = new SqlOrderRepository(connectionString);
             if (selectedWaiter != null)
             {
-                Console.WriteLine("5555555");
-                sqlo.AddOrder(selectedWaiter.FirstName, selectedWaiter.LastName, tableno);
+                DatabaseData.Models.Order o = sqlo.AddOrder(selectedWaiter.FirstName, selectedWaiter.LastName, tableno);
+                foreach(Food f in orderFoods)
+                {
+                    Food added = sqlo.AddFood(o.OrderID, f.Name, f.Quantity, f.IngredientsUsed);
+                }
             }
 
         }
@@ -117,11 +115,12 @@ namespace WindowsFormsApp1
                     {
                         if (ig.Name == comboBox2.SelectedItem.ToString())
                         {
-                            removedIngredients.Add(ig);
-                            comboBox2.Items.Remove(comboBox2.SelectedItem);
+                            if (!removedIngredients.Contains(ig))
+                            {
+                                removedIngredients.Add(ig);
+                                comboBox2.Items.Remove(comboBox2.SelectedItem);
+                            }
                         }
-
-
                     }
                 }
 
@@ -215,6 +214,27 @@ namespace WindowsFormsApp1
 
         }
 
+        private void ComboBox2_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex >= 0)
+            {
+                foreach (DatabaseData.Models.Ingredient ig in ingredi)
+                {
+                    if (comboBox2.SelectedItem != null)
+                    {
+                        if (ig.Name == comboBox2.SelectedItem.ToString())
+                        {
+                            removedIngredients.Add(ig);
+                            comboBox2.Items.Remove(comboBox2.SelectedItem);
+                        }
+
+
+                    }
+                }
+
+            }
+        }
+
         private void ComboBox2_MouseClick(object sender, MouseEventArgs e)
         {
             if (comboBox1.SelectedIndex >= 0)
@@ -251,10 +271,15 @@ namespace WindowsFormsApp1
                     if (add)
                         ingredientsIntoFood.Add(ing);
                 }
-                DatabaseData.Models.MenuItem menuI = new DatabaseData.Models.MenuItem(m.Name, m.Description, m.Price);
-                menuI.Ingredients = ingredientsIntoFood;
-                orderItems.Add(menuI);
-                FoodList.Items.Add(menuI.Name + ",");
+                DatabaseData.Models.Food food = new Food(-1, m.Name, (int)QuantityNumericUpDown.Value);
+                food.IngredientsUsed = ingredientsIntoFood;
+                orderFoods.Add(food);
+                FoodList.Items.Add(food.Name + "," + food.Quantity);
+                foreach (DatabaseData.Models.Ingredient ingre in removedIngredients)
+                {
+                    FoodList.Items.Add("     " + ingre.Name);
+                }
+                removedIngredients = new List<Ingredient>();
             }
         }
 

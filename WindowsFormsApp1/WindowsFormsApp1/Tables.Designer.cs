@@ -37,6 +37,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.Table2 = new System.Windows.Forms.Button();
             this.Table3 = new System.Windows.Forms.Button();
+            this.OrderTable1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Table7
@@ -103,7 +104,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(64, 27);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(174, 75);
+            this.button1.Size = new System.Drawing.Size(174, 40);
             this.button1.TabIndex = 7;
             this.button1.Text = "Table 1";
             this.button1.UseVisualStyleBackColor = true;
@@ -129,11 +130,22 @@
             this.Table3.UseVisualStyleBackColor = true;
             this.Table3.Click += new System.EventHandler(this.Table3_Click);
             // 
+            // OrderTable1
+            // 
+            this.OrderTable1.Location = new System.Drawing.Point(64, 73);
+            this.OrderTable1.Name = "OrderTable1";
+            this.OrderTable1.Size = new System.Drawing.Size(174, 40);
+            this.OrderTable1.TabIndex = 10;
+            this.OrderTable1.Text = "Orders Table 1";
+            this.OrderTable1.UseVisualStyleBackColor = true;
+            this.OrderTable1.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Tables
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.OrderTable1);
             this.Controls.Add(this.Table3);
             this.Controls.Add(this.Table2);
             this.Controls.Add(this.button1);
@@ -160,5 +172,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button Table2;
         private System.Windows.Forms.Button Table3;
+        private System.Windows.Forms.Button OrderTable1;
     }
 }

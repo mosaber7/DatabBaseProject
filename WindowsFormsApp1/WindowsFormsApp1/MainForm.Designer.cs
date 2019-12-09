@@ -171,7 +171,7 @@
             this.MainPanel.Controls.Add(this.order);
             this.MainPanel.Controls.Add(this.Waiter);
             this.MainPanel.Location = new System.Drawing.Point(16, 15);
-            this.MainPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MainPanel.Margin = new System.Windows.Forms.Padding(4);
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(768, 421);
             this.MainPanel.TabIndex = 2;
@@ -209,7 +209,7 @@
             this.PropertyChangePanel.Controls.Add(this.FireWaiterPanel);
             this.PropertyChangePanel.Controls.Add(this.AddIngredientPanel);
             this.PropertyChangePanel.Location = new System.Drawing.Point(16, 15);
-            this.PropertyChangePanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PropertyChangePanel.Margin = new System.Windows.Forms.Padding(4);
             this.PropertyChangePanel.Name = "PropertyChangePanel";
             this.PropertyChangePanel.Size = new System.Drawing.Size(768, 421);
             this.PropertyChangePanel.TabIndex = 3;
@@ -218,7 +218,7 @@
             // PropertiesReturnButton
             // 
             this.PropertiesReturnButton.Location = new System.Drawing.Point(8, 384);
-            this.PropertiesReturnButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PropertiesReturnButton.Margin = new System.Windows.Forms.Padding(4);
             this.PropertiesReturnButton.Name = "PropertiesReturnButton";
             this.PropertiesReturnButton.Size = new System.Drawing.Size(160, 28);
             this.PropertiesReturnButton.TabIndex = 9;
@@ -238,7 +238,7 @@
             "Add Ingredient",
             "Restock Ingredient"});
             this.PropertiesList.Location = new System.Drawing.Point(8, 4);
-            this.PropertiesList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PropertiesList.Margin = new System.Windows.Forms.Padding(4);
             this.PropertiesList.Name = "PropertiesList";
             this.PropertiesList.Size = new System.Drawing.Size(159, 372);
             this.PropertiesList.TabIndex = 0;
@@ -252,7 +252,7 @@
             this.RestockIngredientPanel.Controls.Add(this.label8);
             this.RestockIngredientPanel.Controls.Add(this.RestockIngredientButton);
             this.RestockIngredientPanel.Location = new System.Drawing.Point(172, 4);
-            this.RestockIngredientPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RestockIngredientPanel.Margin = new System.Windows.Forms.Padding(4);
             this.RestockIngredientPanel.Name = "RestockIngredientPanel";
             this.RestockIngredientPanel.Size = new System.Drawing.Size(592, 414);
             this.RestockIngredientPanel.TabIndex = 8;
@@ -271,7 +271,7 @@
             // RestockIngredientAmount
             // 
             this.RestockIngredientAmount.Location = new System.Drawing.Point(84, 309);
-            this.RestockIngredientAmount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RestockIngredientAmount.Margin = new System.Windows.Forms.Padding(4);
             this.RestockIngredientAmount.Name = "RestockIngredientAmount";
             this.RestockIngredientAmount.Size = new System.Drawing.Size(159, 22);
             this.RestockIngredientAmount.TabIndex = 7;
@@ -281,7 +281,7 @@
             this.RestockIngredientsList.FormattingEnabled = true;
             this.RestockIngredientsList.ItemHeight = 16;
             this.RestockIngredientsList.Location = new System.Drawing.Point(84, 41);
-            this.RestockIngredientsList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RestockIngredientsList.Margin = new System.Windows.Forms.Padding(4);
             this.RestockIngredientsList.Name = "RestockIngredientsList";
             this.RestockIngredientsList.Size = new System.Drawing.Size(319, 260);
             this.RestockIngredientsList.TabIndex = 6;
@@ -300,7 +300,7 @@
             // RestockIngredientButton
             // 
             this.RestockIngredientButton.Location = new System.Drawing.Point(84, 358);
-            this.RestockIngredientButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RestockIngredientButton.Margin = new System.Windows.Forms.Padding(4);
             this.RestockIngredientButton.Name = "RestockIngredientButton";
             this.RestockIngredientButton.Size = new System.Drawing.Size(161, 28);
             this.RestockIngredientButton.TabIndex = 2;
@@ -321,7 +321,7 @@
             this.AddMenuItemPanel.Controls.Add(this.label6);
             this.AddMenuItemPanel.Controls.Add(this.AddMenuItemButton);
             this.AddMenuItemPanel.Location = new System.Drawing.Point(172, 4);
-            this.AddMenuItemPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddMenuItemPanel.Margin = new System.Windows.Forms.Padding(4);
             this.AddMenuItemPanel.Name = "AddMenuItemPanel";
             this.AddMenuItemPanel.Size = new System.Drawing.Size(592, 414);
             this.AddMenuItemPanel.TabIndex = 7;
@@ -340,7 +340,7 @@
             // AddMenuItemIngredients
             // 
             this.AddMenuItemIngredients.Location = new System.Drawing.Point(115, 235);
-            this.AddMenuItemIngredients.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddMenuItemIngredients.Margin = new System.Windows.Forms.Padding(4);
             this.AddMenuItemIngredients.Multiline = true;
             this.AddMenuItemIngredients.Name = "AddMenuItemIngredients";
             this.AddMenuItemIngredients.Size = new System.Drawing.Size(325, 131);
@@ -359,7 +359,7 @@
             // AddMenuItemDescription
             // 
             this.AddMenuItemDescription.Location = new System.Drawing.Point(115, 112);
-            this.AddMenuItemDescription.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddMenuItemDescription.Margin = new System.Windows.Forms.Padding(4);
             this.AddMenuItemDescription.Multiline = true;
             this.AddMenuItemDescription.Name = "AddMenuItemDescription";
             this.AddMenuItemDescription.Size = new System.Drawing.Size(325, 107);
@@ -378,7 +378,7 @@
             // AddMenuItemPrice
             // 
             this.AddMenuItemPrice.Location = new System.Drawing.Point(115, 78);
-            this.AddMenuItemPrice.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddMenuItemPrice.Margin = new System.Windows.Forms.Padding(4);
             this.AddMenuItemPrice.Name = "AddMenuItemPrice";
             this.AddMenuItemPrice.Size = new System.Drawing.Size(181, 22);
             this.AddMenuItemPrice.TabIndex = 8;
@@ -396,7 +396,7 @@
             // AddMenuItemName
             // 
             this.AddMenuItemName.Location = new System.Drawing.Point(115, 41);
-            this.AddMenuItemName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddMenuItemName.Margin = new System.Windows.Forms.Padding(4);
             this.AddMenuItemName.Name = "AddMenuItemName";
             this.AddMenuItemName.Size = new System.Drawing.Size(181, 22);
             this.AddMenuItemName.TabIndex = 6;
@@ -415,7 +415,7 @@
             // AddMenuItemButton
             // 
             this.AddMenuItemButton.Location = new System.Drawing.Point(115, 374);
-            this.AddMenuItemButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddMenuItemButton.Margin = new System.Windows.Forms.Padding(4);
             this.AddMenuItemButton.Name = "AddMenuItemButton";
             this.AddMenuItemButton.Size = new System.Drawing.Size(183, 28);
             this.AddMenuItemButton.TabIndex = 2;
@@ -429,7 +429,7 @@
             this.RemoveMenuItemPanel.Controls.Add(this.label5);
             this.RemoveMenuItemPanel.Controls.Add(this.RemoveSelectedItemButton);
             this.RemoveMenuItemPanel.Location = new System.Drawing.Point(172, 4);
-            this.RemoveMenuItemPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RemoveMenuItemPanel.Margin = new System.Windows.Forms.Padding(4);
             this.RemoveMenuItemPanel.Name = "RemoveMenuItemPanel";
             this.RemoveMenuItemPanel.Size = new System.Drawing.Size(592, 414);
             this.RemoveMenuItemPanel.TabIndex = 3;
@@ -440,7 +440,7 @@
             this.RemoveMenuItemList.FormattingEnabled = true;
             this.RemoveMenuItemList.ItemHeight = 16;
             this.RemoveMenuItemList.Location = new System.Drawing.Point(71, 42);
-            this.RemoveMenuItemList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RemoveMenuItemList.Margin = new System.Windows.Forms.Padding(4);
             this.RemoveMenuItemList.Name = "RemoveMenuItemList";
             this.RemoveMenuItemList.Size = new System.Drawing.Size(176, 308);
             this.RemoveMenuItemList.TabIndex = 6;
@@ -459,7 +459,7 @@
             // RemoveSelectedItemButton
             // 
             this.RemoveSelectedItemButton.Location = new System.Drawing.Point(71, 358);
-            this.RemoveSelectedItemButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.RemoveSelectedItemButton.Margin = new System.Windows.Forms.Padding(4);
             this.RemoveSelectedItemButton.Name = "RemoveSelectedItemButton";
             this.RemoveSelectedItemButton.Size = new System.Drawing.Size(177, 28);
             this.RemoveSelectedItemButton.TabIndex = 2;
@@ -476,7 +476,7 @@
             this.HireWaiterPanel.Controls.Add(this.HireWaiterNameInput);
             this.HireWaiterPanel.Controls.Add(this.HireWaiterWageInput);
             this.HireWaiterPanel.Location = new System.Drawing.Point(172, 4);
-            this.HireWaiterPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.HireWaiterPanel.Margin = new System.Windows.Forms.Padding(4);
             this.HireWaiterPanel.Name = "HireWaiterPanel";
             this.HireWaiterPanel.Size = new System.Drawing.Size(592, 414);
             this.HireWaiterPanel.TabIndex = 0;
@@ -516,7 +516,7 @@
             // HireWaiterSubmitButton
             // 
             this.HireWaiterSubmitButton.Location = new System.Drawing.Point(115, 106);
-            this.HireWaiterSubmitButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.HireWaiterSubmitButton.Margin = new System.Windows.Forms.Padding(4);
             this.HireWaiterSubmitButton.Name = "HireWaiterSubmitButton";
             this.HireWaiterSubmitButton.Size = new System.Drawing.Size(133, 28);
             this.HireWaiterSubmitButton.TabIndex = 2;
@@ -527,7 +527,7 @@
             // HireWaiterNameInput
             // 
             this.HireWaiterNameInput.Location = new System.Drawing.Point(115, 42);
-            this.HireWaiterNameInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.HireWaiterNameInput.Margin = new System.Windows.Forms.Padding(4);
             this.HireWaiterNameInput.Name = "HireWaiterNameInput";
             this.HireWaiterNameInput.Size = new System.Drawing.Size(132, 22);
             this.HireWaiterNameInput.TabIndex = 1;
@@ -535,7 +535,7 @@
             // HireWaiterWageInput
             // 
             this.HireWaiterWageInput.Location = new System.Drawing.Point(115, 74);
-            this.HireWaiterWageInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.HireWaiterWageInput.Margin = new System.Windows.Forms.Padding(4);
             this.HireWaiterWageInput.Name = "HireWaiterWageInput";
             this.HireWaiterWageInput.Size = new System.Drawing.Size(132, 22);
             this.HireWaiterWageInput.TabIndex = 0;
@@ -546,7 +546,7 @@
             this.FireWaiterPanel.Controls.Add(this.label4);
             this.FireWaiterPanel.Controls.Add(this.FireSelectedWaiterButton);
             this.FireWaiterPanel.Location = new System.Drawing.Point(172, 4);
-            this.FireWaiterPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FireWaiterPanel.Margin = new System.Windows.Forms.Padding(4);
             this.FireWaiterPanel.Name = "FireWaiterPanel";
             this.FireWaiterPanel.Size = new System.Drawing.Size(592, 414);
             this.FireWaiterPanel.TabIndex = 1;
@@ -557,7 +557,7 @@
             this.FireWaiterList.FormattingEnabled = true;
             this.FireWaiterList.ItemHeight = 16;
             this.FireWaiterList.Location = new System.Drawing.Point(71, 42);
-            this.FireWaiterList.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FireWaiterList.Margin = new System.Windows.Forms.Padding(4);
             this.FireWaiterList.Name = "FireWaiterList";
             this.FireWaiterList.Size = new System.Drawing.Size(176, 308);
             this.FireWaiterList.TabIndex = 6;
@@ -576,7 +576,7 @@
             // FireSelectedWaiterButton
             // 
             this.FireSelectedWaiterButton.Location = new System.Drawing.Point(71, 358);
-            this.FireSelectedWaiterButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FireSelectedWaiterButton.Margin = new System.Windows.Forms.Padding(4);
             this.FireSelectedWaiterButton.Name = "FireSelectedWaiterButton";
             this.FireSelectedWaiterButton.Size = new System.Drawing.Size(177, 28);
             this.FireSelectedWaiterButton.TabIndex = 2;
@@ -597,7 +597,7 @@
             this.AddIngredientPanel.Controls.Add(this.label7);
             this.AddIngredientPanel.Controls.Add(this.AddIngredientButton);
             this.AddIngredientPanel.Location = new System.Drawing.Point(172, 4);
-            this.AddIngredientPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddIngredientPanel.Margin = new System.Windows.Forms.Padding(4);
             this.AddIngredientPanel.Name = "AddIngredientPanel";
             this.AddIngredientPanel.Size = new System.Drawing.Size(592, 414);
             this.AddIngredientPanel.TabIndex = 7;
@@ -616,7 +616,7 @@
             // AddIngredientCost
             // 
             this.AddIngredientCost.Location = new System.Drawing.Point(111, 142);
-            this.AddIngredientCost.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddIngredientCost.Margin = new System.Windows.Forms.Padding(4);
             this.AddIngredientCost.Name = "AddIngredientCost";
             this.AddIngredientCost.Size = new System.Drawing.Size(132, 22);
             this.AddIngredientCost.TabIndex = 12;
@@ -654,7 +654,7 @@
             // AddIngredientUnits
             // 
             this.AddIngredientUnits.Location = new System.Drawing.Point(111, 110);
-            this.AddIngredientUnits.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddIngredientUnits.Margin = new System.Windows.Forms.Padding(4);
             this.AddIngredientUnits.Name = "AddIngredientUnits";
             this.AddIngredientUnits.Size = new System.Drawing.Size(132, 22);
             this.AddIngredientUnits.TabIndex = 8;
@@ -662,7 +662,7 @@
             // AddIngredientAmount
             // 
             this.AddIngredientAmount.Location = new System.Drawing.Point(111, 78);
-            this.AddIngredientAmount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddIngredientAmount.Margin = new System.Windows.Forms.Padding(4);
             this.AddIngredientAmount.Name = "AddIngredientAmount";
             this.AddIngredientAmount.Size = new System.Drawing.Size(132, 22);
             this.AddIngredientAmount.TabIndex = 7;
@@ -670,7 +670,7 @@
             // AddIngredientName
             // 
             this.AddIngredientName.Location = new System.Drawing.Point(111, 46);
-            this.AddIngredientName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddIngredientName.Margin = new System.Windows.Forms.Padding(4);
             this.AddIngredientName.Name = "AddIngredientName";
             this.AddIngredientName.Size = new System.Drawing.Size(132, 22);
             this.AddIngredientName.TabIndex = 6;
@@ -689,7 +689,7 @@
             // AddIngredientButton
             // 
             this.AddIngredientButton.Location = new System.Drawing.Point(111, 177);
-            this.AddIngredientButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AddIngredientButton.Margin = new System.Windows.Forms.Padding(4);
             this.AddIngredientButton.Name = "AddIngredientButton";
             this.AddIngredientButton.Size = new System.Drawing.Size(133, 28);
             this.AddIngredientButton.TabIndex = 2;
@@ -707,7 +707,7 @@
             this.ReportPanel.Controls.Add(this.EotMPanel);
             this.ReportPanel.Controls.Add(this.DailySalesPanel);
             this.ReportPanel.Location = new System.Drawing.Point(16, 15);
-            this.ReportPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ReportPanel.Margin = new System.Windows.Forms.Padding(4);
             this.ReportPanel.Name = "ReportPanel";
             this.ReportPanel.Size = new System.Drawing.Size(768, 421);
             this.ReportPanel.TabIndex = 4;
@@ -716,7 +716,7 @@
             // ReportsReturnButton
             // 
             this.ReportsReturnButton.Location = new System.Drawing.Point(8, 378);
-            this.ReportsReturnButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ReportsReturnButton.Margin = new System.Windows.Forms.Padding(4);
             this.ReportsReturnButton.Name = "ReportsReturnButton";
             this.ReportsReturnButton.Size = new System.Drawing.Size(161, 28);
             this.ReportsReturnButton.TabIndex = 2;
@@ -841,7 +841,7 @@
             this.EmployeeShiftsPanel.Controls.Add(this.EmployeeShiftsSubmit);
             this.EmployeeShiftsPanel.Controls.Add(this.EmployeeShiftsLabel_1);
             this.EmployeeShiftsPanel.Location = new System.Drawing.Point(181, 10);
-            this.EmployeeShiftsPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EmployeeShiftsPanel.Margin = new System.Windows.Forms.Padding(4);
             this.EmployeeShiftsPanel.Name = "EmployeeShiftsPanel";
             this.EmployeeShiftsPanel.Size = new System.Drawing.Size(581, 407);
             this.EmployeeShiftsPanel.TabIndex = 6;
@@ -851,7 +851,7 @@
             // 
             this.EmployeeShiftsOutputTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.EmployeeShiftsOutputTable.Location = new System.Drawing.Point(4, 171);
-            this.EmployeeShiftsOutputTable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EmployeeShiftsOutputTable.Margin = new System.Windows.Forms.Padding(4);
             this.EmployeeShiftsOutputTable.Name = "EmployeeShiftsOutputTable";
             this.EmployeeShiftsOutputTable.RowHeadersWidth = 51;
             this.EmployeeShiftsOutputTable.Size = new System.Drawing.Size(573, 236);
@@ -880,7 +880,7 @@
             // EmployeeShiftsStartDateInput
             // 
             this.EmployeeShiftsStartDateInput.Location = new System.Drawing.Point(95, 59);
-            this.EmployeeShiftsStartDateInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EmployeeShiftsStartDateInput.Margin = new System.Windows.Forms.Padding(4);
             this.EmployeeShiftsStartDateInput.Name = "EmployeeShiftsStartDateInput";
             this.EmployeeShiftsStartDateInput.Size = new System.Drawing.Size(132, 22);
             this.EmployeeShiftsStartDateInput.TabIndex = 2;
@@ -888,7 +888,7 @@
             // EmployeeShiftsSubmit
             // 
             this.EmployeeShiftsSubmit.Location = new System.Drawing.Point(95, 95);
-            this.EmployeeShiftsSubmit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EmployeeShiftsSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.EmployeeShiftsSubmit.Name = "EmployeeShiftsSubmit";
             this.EmployeeShiftsSubmit.Size = new System.Drawing.Size(164, 28);
             this.EmployeeShiftsSubmit.TabIndex = 1;
@@ -916,7 +916,7 @@
             this.MostOrderedFoodPanel.Controls.Add(this.MostOrderedFoodSubmit);
             this.MostOrderedFoodPanel.Controls.Add(this.label16);
             this.MostOrderedFoodPanel.Location = new System.Drawing.Point(181, 10);
-            this.MostOrderedFoodPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MostOrderedFoodPanel.Margin = new System.Windows.Forms.Padding(4);
             this.MostOrderedFoodPanel.Name = "MostOrderedFoodPanel";
             this.MostOrderedFoodPanel.Size = new System.Drawing.Size(581, 407);
             this.MostOrderedFoodPanel.TabIndex = 1;
@@ -926,7 +926,7 @@
             // 
             this.MostOrderedFoodOutputTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.MostOrderedFoodOutputTable.Location = new System.Drawing.Point(4, 143);
-            this.MostOrderedFoodOutputTable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MostOrderedFoodOutputTable.Margin = new System.Windows.Forms.Padding(4);
             this.MostOrderedFoodOutputTable.Name = "MostOrderedFoodOutputTable";
             this.MostOrderedFoodOutputTable.RowHeadersWidth = 51;
             this.MostOrderedFoodOutputTable.Size = new System.Drawing.Size(573, 257);
@@ -955,7 +955,7 @@
             // MostOrderedFoodInput
             // 
             this.MostOrderedFoodInput.Location = new System.Drawing.Point(79, 59);
-            this.MostOrderedFoodInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MostOrderedFoodInput.Margin = new System.Windows.Forms.Padding(4);
             this.MostOrderedFoodInput.Name = "MostOrderedFoodInput";
             this.MostOrderedFoodInput.Size = new System.Drawing.Size(132, 22);
             this.MostOrderedFoodInput.TabIndex = 2;
@@ -963,7 +963,7 @@
             // MostOrderedFoodSubmit
             // 
             this.MostOrderedFoodSubmit.Location = new System.Drawing.Point(79, 91);
-            this.MostOrderedFoodSubmit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MostOrderedFoodSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.MostOrderedFoodSubmit.Name = "MostOrderedFoodSubmit";
             this.MostOrderedFoodSubmit.Size = new System.Drawing.Size(209, 28);
             this.MostOrderedFoodSubmit.TabIndex = 1;
@@ -993,7 +993,7 @@
             this.EotMPanel.Controls.Add(this.EotMSubmit);
             this.EotMPanel.Controls.Add(this.EotMLabel_1);
             this.EotMPanel.Location = new System.Drawing.Point(181, 10);
-            this.EotMPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EotMPanel.Margin = new System.Windows.Forms.Padding(4);
             this.EotMPanel.Name = "EotMPanel";
             this.EotMPanel.Size = new System.Drawing.Size(581, 407);
             this.EotMPanel.TabIndex = 5;
@@ -1002,7 +1002,7 @@
             // EotMYearInput
             // 
             this.EotMYearInput.Location = new System.Drawing.Point(79, 91);
-            this.EotMYearInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EotMYearInput.Margin = new System.Windows.Forms.Padding(4);
             this.EotMYearInput.Name = "EotMYearInput";
             this.EotMYearInput.Size = new System.Drawing.Size(132, 22);
             this.EotMYearInput.TabIndex = 7;
@@ -1021,7 +1021,7 @@
             // 
             this.EotMOutputTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.EotMOutputTable.Location = new System.Drawing.Point(4, 196);
-            this.EotMOutputTable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EotMOutputTable.Margin = new System.Windows.Forms.Padding(4);
             this.EotMOutputTable.Name = "EotMOutputTable";
             this.EotMOutputTable.RowHeadersWidth = 51;
             this.EotMOutputTable.Size = new System.Drawing.Size(573, 207);
@@ -1050,7 +1050,7 @@
             // EotMMonthInput
             // 
             this.EotMMonthInput.Location = new System.Drawing.Point(79, 59);
-            this.EotMMonthInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EotMMonthInput.Margin = new System.Windows.Forms.Padding(4);
             this.EotMMonthInput.Name = "EotMMonthInput";
             this.EotMMonthInput.Size = new System.Drawing.Size(132, 22);
             this.EotMMonthInput.TabIndex = 2;
@@ -1058,7 +1058,7 @@
             // EotMSubmit
             // 
             this.EotMSubmit.Location = new System.Drawing.Point(79, 126);
-            this.EotMSubmit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EotMSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.EotMSubmit.Name = "EotMSubmit";
             this.EotMSubmit.Size = new System.Drawing.Size(209, 28);
             this.EotMSubmit.TabIndex = 1;
@@ -1086,7 +1086,7 @@
             this.DailySalesPanel.Controls.Add(this.DailySalesSubmit);
             this.DailySalesPanel.Controls.Add(this.label20);
             this.DailySalesPanel.Location = new System.Drawing.Point(181, 10);
-            this.DailySalesPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DailySalesPanel.Margin = new System.Windows.Forms.Padding(4);
             this.DailySalesPanel.Name = "DailySalesPanel";
             this.DailySalesPanel.Size = new System.Drawing.Size(581, 407);
             this.DailySalesPanel.TabIndex = 5;
@@ -1096,7 +1096,7 @@
             // 
             this.DailySalesOutputTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DailySalesOutputTable.Location = new System.Drawing.Point(4, 135);
-            this.DailySalesOutputTable.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DailySalesOutputTable.Margin = new System.Windows.Forms.Padding(4);
             this.DailySalesOutputTable.Name = "DailySalesOutputTable";
             this.DailySalesOutputTable.RowHeadersWidth = 51;
             this.DailySalesOutputTable.Size = new System.Drawing.Size(573, 268);
@@ -1125,7 +1125,7 @@
             // DailySalesInput
             // 
             this.DailySalesInput.Location = new System.Drawing.Point(79, 59);
-            this.DailySalesInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DailySalesInput.Margin = new System.Windows.Forms.Padding(4);
             this.DailySalesInput.Name = "DailySalesInput";
             this.DailySalesInput.Size = new System.Drawing.Size(132, 22);
             this.DailySalesInput.TabIndex = 2;
@@ -1133,7 +1133,7 @@
             // DailySalesSubmit
             // 
             this.DailySalesSubmit.Location = new System.Drawing.Point(79, 91);
-            this.DailySalesSubmit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DailySalesSubmit.Margin = new System.Windows.Forms.Padding(4);
             this.DailySalesSubmit.Name = "DailySalesSubmit";
             this.DailySalesSubmit.Size = new System.Drawing.Size(133, 28);
             this.DailySalesSubmit.TabIndex = 1;
@@ -1162,7 +1162,7 @@
             this.Controls.Add(this.PropertyChangePanel);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "Restaurant App";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.MainPanel.ResumeLayout(false);
             this.PropertyChangePanel.ResumeLayout(false);

@@ -24,30 +24,6 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             tableno = no;
-            string connectionString = "Server=mssql.cs.ksu.edu;Database=santiagoscavone;UID=santiagoscavone;Pwd=Sqlpassword1!";
-            SqlMenuItemsRepository sql = new SqlMenuItemsRepository(connectionString);
-            foreach (DatabaseData.Models.MenuItem i in sql.FetchActiveMenuItems())
-            {
-                
-                    if (i != null){
-
-                        it.Add(i);
-                        comboBox1.Items.Add(i.Name);
-                    }
-                    
-                
-            }
-            SqlWaiterRepository sql2 = new SqlWaiterRepository(connectionString);
-
-            foreach (DatabaseData.Models.Waiter w in sql2.FetchAllCurrentylWorkingWaiters())
-            {
-                if (!comboBox3.Items.Contains(w.FirstName + " " + w.LastName))
-                {
-                    mw.Add(w);
-                    comboBox3.Items.Add(w.FirstName + " " + w.LastName);
-
-                }
-            }
         }
 
         private void Combo1_clicked(object sender, EventArgs e)
@@ -87,15 +63,22 @@ namespace WindowsFormsApp1
 
         private void Done_Click(object sender, EventArgs e)
         {
-            string connectionString = "Server=mssql.cs.ksu.edu;Database=santiagoscavone;UID=santiagoscavone;Pwd=Sqlpassword1!";
-            SqlOrderRepository sqlo = new SqlOrderRepository(connectionString);
-            if (selectedWaiter != null)
+            try
             {
-                DatabaseData.Models.Order o = sqlo.AddOrder(selectedWaiter.FirstName, selectedWaiter.LastName, tableno);
-                foreach(Food f in orderFoods)
+                string connectionString = "Server=mssql.cs.ksu.edu;Database=santiagoscavone;UID=santiagoscavone;Pwd=Sqlpassword1!";
+                SqlOrderRepository sqlo = new SqlOrderRepository(connectionString);
+                if (selectedWaiter != null)
                 {
-                    Food added = sqlo.AddFood(o.OrderID, f.Name, f.Quantity, f.IngredientsUsed);
+                    DatabaseData.Models.Order o = sqlo.AddOrder(selectedWaiter.FirstName, selectedWaiter.LastName, tableno);
+                    foreach (Food f in orderFoods)
+                    {
+                        Food added = sqlo.AddFood(o.OrderID, f.Name, f.Quantity, f.IngredientsUsed);
+                    }
                 }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
             View_Orders vo = new View_Orders(tableno);
             this.Hide();
@@ -262,27 +245,34 @@ namespace WindowsFormsApp1
         {
             if (m != null)
             {
-                List<Ingredient> ingredientsIntoFood = new List<Ingredient>();
-                foreach (Ingredient ing in GetIngredients(m.Name))
+                try
                 {
-                    bool add = true;
+                    List<Ingredient> ingredientsIntoFood = new List<Ingredient>();
+                    foreach (Ingredient ing in GetIngredients(m.Name))
+                    {
+                        bool add = true;
+                        foreach (DatabaseData.Models.Ingredient ingre in removedIngredients)
+                        {
+                            if (ingre.Name == ing.Name)
+                                add = false;
+                        }
+                        if (add)
+                            ingredientsIntoFood.Add(ing);
+                    }
+                    DatabaseData.Models.Food food = new Food(-1, m.Name, (int)QuantityNumericUpDown.Value);
+                    food.IngredientsUsed = ingredientsIntoFood;
+                    orderFoods.Add(food);
+                    FoodList.Items.Add(food.Name + "," + food.Quantity);
                     foreach (DatabaseData.Models.Ingredient ingre in removedIngredients)
                     {
-                        if (ingre.Name == ing.Name)
-                            add = false;
+                        FoodList.Items.Add("     NO " + ingre.Name);
                     }
-                    if (add)
-                        ingredientsIntoFood.Add(ing);
+                    removedIngredients = new List<Ingredient>();
                 }
-                DatabaseData.Models.Food food = new Food(-1, m.Name, (int)QuantityNumericUpDown.Value);
-                food.IngredientsUsed = ingredientsIntoFood;
-                orderFoods.Add(food);
-                FoodList.Items.Add(food.Name + "," + food.Quantity);
-                foreach (DatabaseData.Models.Ingredient ingre in removedIngredients)
+                catch(Exception ex)
                 {
-                    FoodList.Items.Add("     " + ingre.Name);
+                    MessageBox.Show(ex.ToString());
                 }
-                removedIngredients = new List<Ingredient>();
             }
         }
 
@@ -299,7 +289,50 @@ namespace WindowsFormsApp1
         private void Button3_Click(object sender, EventArgs e)
         {
             Tables t = new Tables();
-            Hide();
+            t.Show();
+            Close();
+        }
+
+        private void Order_Load_1(object sender, EventArgs e)
+        {
+            Text = "Order Table " + tableno;
+            try
+            {
+                string connectionString = "Server=mssql.cs.ksu.edu;Database=santiagoscavone;UID=santiagoscavone;Pwd=Sqlpassword1!";
+                SqlMenuItemsRepository sql = new SqlMenuItemsRepository(connectionString);
+                foreach (DatabaseData.Models.MenuItem i in sql.FetchActiveMenuItems())
+                {
+
+                    if (i != null)
+                    {
+
+                        it.Add(i);
+                        comboBox1.Items.Add(i.Name);
+                    }
+
+
+                }
+                SqlWaiterRepository sql2 = new SqlWaiterRepository(connectionString);
+
+                foreach (DatabaseData.Models.Waiter w in sql2.FetchAllCurrentylWorkingWaiters())
+                {
+                    if (!comboBox3.Items.Contains(w.FirstName + " " + w.LastName))
+                    {
+                        mw.Add(w);
+                        comboBox3.Items.Add(w.FirstName + " " + w.LastName);
+
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void Order_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Tables t = new Tables();
             t.Show();
         }
     }

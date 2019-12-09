@@ -107,7 +107,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(381, 48);
             this.button3.TabIndex = 7;
-            this.button3.Text = "cancel";
+            this.button3.Text = "Cancel";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
@@ -195,7 +195,8 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
             this.Name = "Order";
-            this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Order_FormClosing);
+            this.Load += new System.EventHandler(this.Order_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.QuantityNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

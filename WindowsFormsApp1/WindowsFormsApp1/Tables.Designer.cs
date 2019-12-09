@@ -266,6 +266,7 @@
             this.Controls.Add(this.Table9);
             this.Name = "Tables";
             this.Text = "Form2";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Tables_FormClosing);
             this.ResumeLayout(false);
 
         }

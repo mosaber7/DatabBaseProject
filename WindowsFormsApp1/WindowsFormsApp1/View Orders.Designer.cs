@@ -105,7 +105,9 @@
             this.Controls.Add(this.FoodsListBox);
             this.Controls.Add(this.OrdersListBox);
             this.Name = "View_Orders";
-            this.Text = "View_Orders";
+            this.Text = "View Orders";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.View_Orders_FormClosing);
+            this.Load += new System.EventHandler(this.View_Orders_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

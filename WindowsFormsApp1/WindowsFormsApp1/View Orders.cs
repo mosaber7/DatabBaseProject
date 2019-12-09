@@ -19,17 +19,7 @@ namespace WindowsFormsApp1
         public View_Orders(int tableNumber)
         {
             InitializeComponent();
-            string connectionString = "Server=mssql.cs.ksu.edu;Database=santiagoscavone;UID=santiagoscavone;Pwd=Sqlpassword1!";
-
-            orderRepository = new SqlOrderRepository(connectionString);
             this.tableNumber = tableNumber;
-
-            IReadOnlyList<DatabaseData.Models.Order> orders = orderRepository.FetchAllOrdersFromTable(tableNumber);
-
-            foreach(DatabaseData.Models.Order o in orders)
-            {
-                OrdersListBox.Items.Add(o.OrderID);
-            }
         }
 
         private void OrdersListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -45,7 +35,7 @@ namespace WindowsFormsApp1
                 FoodsListBox.Items.Add(f.Name + ", " + f.Quantity);
                 foreach(Ingredient i in f.IngredientsUsed)
                 {
-                    FoodsListBox.Items.Add("      " + i.Name);
+                    FoodsListBox.Items.Add("      NO " + i.Name);
                 }
             }
         }
@@ -88,6 +78,29 @@ namespace WindowsFormsApp1
             Order o = new Order(tableNumber);
             Hide();
             o.Show();
+        }
+
+        private void View_Orders_Load(object sender, EventArgs e)
+        {
+
+            Text = "View Orders from Table " + tableNumber.ToString();
+
+            string connectionString = "Server=mssql.cs.ksu.edu;Database=santiagoscavone;UID=santiagoscavone;Pwd=Sqlpassword1!";
+
+            orderRepository = new SqlOrderRepository(connectionString);
+
+            IReadOnlyList<DatabaseData.Models.Order> orders = orderRepository.FetchAllOrdersFromTable(tableNumber);
+
+            foreach (DatabaseData.Models.Order o in orders)
+            {
+                OrdersListBox.Items.Add(o.OrderID);
+            }
+        }
+
+        private void View_Orders_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Tables t = new Tables();
+            t.Show();
         }
     }
 }

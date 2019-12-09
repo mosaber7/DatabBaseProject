@@ -25,15 +25,6 @@ namespace WindowsFormsApp1
         public MainForm()
         {
             InitializeComponent();
-
-            menuItemsRepository = new SqlMenuItemsRepository(connectionString);
-            orderRepository = new SqlOrderRepository(connectionString);
-            waiterRepository = new SqlWaiterRepository(connectionString);
-            statisticsRepository = new SqlStatisticsRepository(connectionString);
-
-            DateTime start = new DateTime(2018, 3, 6, 7, 0, 0);
-            DateTime end = new DateTime(2018, 3, 6, 18, 0, 0);
-            waiterRepository.AddShift("ww", "ss", start, end);
         }
 
         private void Button1_Click(object sender, EventArgs e)
@@ -51,6 +42,18 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            try
+            {
+                menuItemsRepository = new SqlMenuItemsRepository(connectionString);
+                orderRepository = new SqlOrderRepository(connectionString);
+                waiterRepository = new SqlWaiterRepository(connectionString);
+                statisticsRepository = new SqlStatisticsRepository(connectionString);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
             PropertiesDict = new[] {
                 HireWaiterPanel,
                 FireWaiterPanel,
@@ -140,17 +143,10 @@ namespace WindowsFormsApp1
 
                 FirstName = Name.Substring(0, Name.IndexOf(' '));
                 LastName = Name.Substring(Name.IndexOf(' ') + 1);
-            } catch(Exception ex)
-            {
-                return;
-            }
-            
-            try
-            {
                 waiterRepository.AddWaiter(FirstName, LastName, Wage);
             } catch(Exception ex)
             {
-                return;
+                MessageBox.Show(ex.ToString());
             }
             
 
@@ -168,17 +164,10 @@ namespace WindowsFormsApp1
             {
                 FirstName = Name.Substring(0, Name.IndexOf(' '));
                 LastName = Name.Substring(Name.IndexOf(' ') + 1);
-            } catch(Exception ex)
-            {
-                return;
-            }
-
-            try
-            {
                 waiterRepository.FireWaiter(FirstName, LastName);
             } catch(Exception ex)
             {
-                return;
+                MessageBox.Show(ex.ToString());
             }
             
 
@@ -206,21 +195,13 @@ namespace WindowsFormsApp1
                     string IngName = line.Substring(0, line.IndexOf(',')).Trim();
                     decimal IngAmt = decimal.Parse(line.Substring(line.IndexOf(',') + 1).Trim());
                     Ingredients.Add(new Ingredient(IngName, IngAmt));
+                    menuItemsRepository.AddMenuItem(Name, Description, Price, Ingredients);
                 }
             } catch(Exception ex)
             {
-                return;
+                MessageBox.Show(ex.ToString());
             }
 
-            try
-            {
-                menuItemsRepository.AddMenuItem(Name, Description, Price, Ingredients);
-            } catch(Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-                return;
-            }
-            
 
             RemoveMenuItemList.Items.Clear();
             RemoveMenuItemListLoad();
@@ -236,7 +217,7 @@ namespace WindowsFormsApp1
                 menuItemsRepository.RemoveMenuItem(RemovedMenuItem);
             } catch(Exception ex)
             {
-                return;
+                MessageBox.Show(ex.ToString());
             }
             
             RemoveMenuItemList.Items.Clear();
@@ -256,19 +237,10 @@ namespace WindowsFormsApp1
                 Amount = decimal.Parse(AddIngredientAmount.Text);
                 Units = AddIngredientUnits.Text;
                 Cost = decimal.Parse(AddIngredientCost.Text);
+                menuItemsRepository.AddIngredient(Name, Amount, Units, Cost);
             } catch(Exception ex)
             {
-                return;
-            }
-
-            try
-            {
-         menuItemsRepository.AddIngredient(Name, Amount, Units, Cost);
-
- 
-            } catch(Exception ex)
-            {
-                return;
+                MessageBox.Show(ex.ToString());
             }
 
             RestockIngredientsList.Items.Clear();
@@ -286,17 +258,12 @@ namespace WindowsFormsApp1
                 Name = RestockIngredientsList.SelectedItem.ToString();
                 Name = Name.Substring(0, Name.IndexOf(','));
                 NewAmount = decimal.Parse(RestockIngredientAmount.Text);
-            } catch(Exception ex)
-            {
-                return;
-            }
-
-            try
-            {
                 menuItemsRepository.RestockIngredient(Name, NewAmount);
-            } catch(Exception ex)
+
+            }
+            catch (Exception ex)
             {
-                return;
+                MessageBox.Show(ex.ToString());
             }
 
             RestockIngredientsList.Items.Clear();
@@ -374,7 +341,7 @@ namespace WindowsFormsApp1
                 }
             } catch(Exception ex)
             {
-
+                MessageBox.Show(ex.ToString());
             }
         }
 
@@ -397,7 +364,7 @@ namespace WindowsFormsApp1
                 }
             } catch(Exception ex)
             {
-                return;
+                MessageBox.Show(ex.ToString());
             }
             
         }
@@ -422,25 +389,24 @@ namespace WindowsFormsApp1
                 }
             } catch(Exception ex)
             {
-                return;
+                MessageBox.Show(ex.ToString());
             }
         }
 
         private void EmployeeShiftsSubmit_Click(object sender, EventArgs e)
         {
-            DateTimeOffset Date;
-            // TODO SQL query.
-
-            Date = new DateTimeOffset(DateTime.Parse(EmployeeShiftsStartDateInput.Text + " 8:00:00 AM"));
-
-            Console.WriteLine(statisticsRepository.WaitersWorkOnDate(Date).Count());
 
             try
             {
-                
+                DateTimeOffset Date;
+                // TODO SQL query.
+
+                Date = new DateTimeOffset(DateTime.Parse(EmployeeShiftsStartDateInput.Text + " 8:00:00 AM"));
+
+                Console.WriteLine(statisticsRepository.WaitersWorkOnDate(Date).Count());
             } catch(Exception ex)
             {
-                return;
+                MessageBox.Show(ex.ToString());
             }
             
         }
@@ -474,7 +440,7 @@ namespace WindowsFormsApp1
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show(ex.ToString());
             }
         }
     }

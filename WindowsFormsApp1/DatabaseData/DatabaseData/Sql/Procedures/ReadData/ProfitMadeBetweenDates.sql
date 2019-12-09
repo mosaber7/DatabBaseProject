@@ -6,15 +6,22 @@ AS
 	AS
 	(
 		SELECT YEAR(O.OrderedOn), MONTH(O.OrderedOn),
-		(
-			SELECT SUM(F.Quantity * MI.Price)
-			FROM Restaurant.Orders OS
-				INNER JOIN Restaurant.Foods F ON F.OrderID = OS.OrderID
-				INNER JOIN Restaurant.MenuItems MI ON MI.MenuItemID = F.MenuItemID
-			WHERE YEAR(OS.OrderedOn) = YEAR(O.OrderedOn)
-				AND MONTH(OS.OrderedOn) = MONTH(O.OrderedOn)
-		) AS TotalEarnings,
-			SUM(DATEDIFF(MINUTE, S.ClockInTime, S.ClockOutTime) * W.Salary) / 60 AS WorkersWagesLoss,
+			(
+				SELECT SUM(F.Quantity * MI.Price)
+				FROM Restaurant.Orders OS
+					INNER JOIN Restaurant.Foods F ON F.OrderID = OS.OrderID
+					INNER JOIN Restaurant.MenuItems MI ON MI.MenuItemID = F.MenuItemID
+				WHERE YEAR(OS.OrderedOn) = YEAR(O.OrderedOn)
+					AND MONTH(OS.OrderedOn) = MONTH(O.OrderedOn)
+			) AS TotalEarnings,
+			(
+				SELECT SUM(DATEDIFF(MINUTE, SH.ClockInTime, SH.ClockOutTime) * WA.Salary) / 60
+				FROM Restaurant.Waiters WA
+					INNER JOIN Restaurant.Shifts SH ON SH.WaiterID = WA.WaiterID
+				WHERE 
+					YEAR(SH.ClockInTime) = YEAR(O.OrderedOn)
+					AND MONTH(SH.ClockInTime) = MONTH(O.OrderedOn)
+			) AS  WorkersWagesLoss,
 			(
 				SELECT SUM(I.CostPerUnit * FI.AmountUsed)
 				FROM Restaurant.Orders OS
@@ -32,7 +39,17 @@ AS
 					INNER JOIN Restaurant.MenuItems MI ON MI.MenuItemID = F.MenuItemID
 				WHERE YEAR(OS.OrderedOn) = YEAR(O.OrderedOn)
 					AND MONTH(OS.OrderedOn) = MONTH(O.OrderedOn)
-			) - SUM(DATEDIFF(MINUTE, S.ClockInTime, S.ClockOutTime) * W.Salary) / 60 - 
+			) 
+			- 
+			(
+				SELECT SUM(DATEDIFF(MINUTE, SH.ClockInTime, SH.ClockOutTime) * WA.Salary) / 60
+				FROM Restaurant.Waiters WA
+					INNER JOIN Restaurant.Shifts SH ON SH.WaiterID = WA.WaiterID
+				WHERE 
+					YEAR(SH.ClockInTime) = YEAR(O.OrderedOn)
+					AND MONTH(SH.ClockInTime) = MONTH(O.OrderedOn)
+			) 
+			- 
 			(
 				SELECT SUM(I.CostPerUnit * FI.AmountUsed)
 				FROM Restaurant.Orders OS
@@ -52,7 +69,7 @@ AS
 		WHERE S.ClockOutTime IS NOT NULL AND
 			O.[Status] = 2 AND 
 			O.OrderedOn BETWEEN @StartingDate AND DATEADD(DAY, 1, @EndingDate) AND
-			S.ClockInTime BETWEEN @StartingDate AND DATEADD(DAY,1,@EndingDate)
+			S.ClockInTime BETWEEN @StartingDate AND DATEADD(DAY, 1, @EndingDate)
 		GROUP BY MONTH(O.OrderedOn), YEAR(O.OrderedOn)
 	)
 	SELECT MP.[Year], MP.[Month], MP.TotalEarnings, MP.WorkersWagesLoss, MP.IngredientsLoss, MP.MonthProfit, 

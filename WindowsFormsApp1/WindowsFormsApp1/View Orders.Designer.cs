@@ -53,6 +53,7 @@
             this.FoodsListBox.Name = "FoodsListBox";
             this.FoodsListBox.Size = new System.Drawing.Size(226, 356);
             this.FoodsListBox.TabIndex = 1;
+            this.FoodsListBox.SelectedIndexChanged += new System.EventHandler(this.FoodsListBox_SelectedIndexChanged);
             // 
             // textBox1
             // 
@@ -69,6 +70,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "Complete";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // button2
             // 
@@ -78,6 +80,7 @@
             this.button2.TabIndex = 4;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // View_Orders
             // 

@@ -49,5 +49,37 @@ namespace WindowsFormsApp1
                 }
             }
         }
+
+        private void FoodsListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                decimal tip = Convert.ToDecimal(textBox1.Text);
+                orderRepository.DeliverOrder(Convert.ToInt32(OrdersListBox.SelectedItem.ToString()), tip);
+                OrdersListBox.Items.Remove(OrdersListBox.SelectedItem);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void Button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                orderRepository.CancelOrder(Convert.ToInt32(OrdersListBox.SelectedItem.ToString()));
+                OrdersListBox.Items.Remove(OrdersListBox.SelectedItem);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }

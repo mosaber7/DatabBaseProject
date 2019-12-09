@@ -35,7 +35,7 @@ namespace WindowsFormsApp1
                 FoodsListBox.Items.Add(f.Name + ", " + f.Quantity);
                 foreach(Ingredient i in f.IngredientsUsed)
                 {
-                    FoodsListBox.Items.Add("      NO " + i.Name);
+                    FoodsListBox.Items.Add(" " + i.Name);
                 }
             }
         }

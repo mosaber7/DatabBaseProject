@@ -30,8 +30,8 @@ namespace WindowsFormsApp1
         private void Button1_Click(object sender, EventArgs e)
         {
             Tables t = new Tables();
-            this.Hide();
             t.Show();
+            this.Hide();
         }
 
         private void Waiter_Click(object sender, EventArgs e)
@@ -399,11 +399,15 @@ namespace WindowsFormsApp1
             try
             {
                 DateTimeOffset Date;
-                // TODO SQL query.
 
                 Date = new DateTimeOffset(DateTime.Parse(EmployeeShiftsStartDateInput.Text + " 8:00:00 AM"));
 
-                Console.WriteLine(statisticsRepository.WaitersWorkOnDate(Date).Count());
+                List<WaitersWork> work = (List<WaitersWork>)statisticsRepository.WaitersWorkOnDate(Date);
+
+                foreach(WaitersWork shifts in work)
+                {
+                    EmployeeShiftsOutputTable.Rows.Add(shifts.FirstName, shifts.LastName, shifts.MinutesWorked, shifts.WorkerEarnings, shifts.OrdersServed);
+                }
             } catch(Exception ex)
             {
                 MessageBox.Show(ex.ToString());

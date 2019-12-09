@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DatabaseData;
+using DatabaseData.Models;
 
 namespace WindowsFormsApp1
 {
@@ -16,6 +17,9 @@ namespace WindowsFormsApp1
         List<DatabaseData.Models.MenuItem> it =new List<DatabaseData.Models.MenuItem>() ;
         List<DatabaseData.Models.Waiter> mw = new List<DatabaseData.Models.Waiter>();
         int tableno;
+        List<DatabaseData.Models.MenuItem> orderItems = new List<DatabaseData.Models.MenuItem>();
+        List<DatabaseData.Models.Ingredient> removedIngredients = new List<DatabaseData.Models.Ingredient>();
+        DatabaseData.Models.MenuItem m;
         public Order(int no)
         {
             InitializeComponent();
@@ -50,7 +54,7 @@ namespace WindowsFormsApp1
         {
 
         }
-        DatabaseData.Models.MenuItem m;
+
         private void Combo1_clicked(object sender, EventArgs e)
         {
             if (comboBox1.SelectedItem != null)
@@ -97,7 +101,6 @@ namespace WindowsFormsApp1
             }
 
         }
-        List<DatabaseData.Models.Ingredient> removedingredi = new List<DatabaseData.Models.Ingredient>();
 
         /// <summary>
         /// when we wanna delete ingreients from the ingredients list 
@@ -114,7 +117,7 @@ namespace WindowsFormsApp1
                     {
                         if (ig.Name == comboBox2.SelectedItem.ToString())
                         {
-                            removedingredi.Add(ig);
+                            removedIngredients.Add(ig);
                             comboBox2.Items.Remove(comboBox2.SelectedItem);
                         }
 
@@ -221,7 +224,7 @@ namespace WindowsFormsApp1
                     if (comboBox2.SelectedItem!=null) {
                         if (ig.Name == comboBox2.SelectedItem.ToString())
                         {
-                            removedingredi.Add(ig);
+                            removedIngredients.Add(ig);
                             comboBox2.Items.Remove(comboBox2.SelectedItem);
                         }
 
@@ -230,6 +233,39 @@ namespace WindowsFormsApp1
                 }
                 
             }
+        }
+
+        private void AddFoodButton_Click(object sender, EventArgs e)
+        {
+            if (m != null)
+            {
+                List<Ingredient> ingredientsIntoFood = new List<Ingredient>();
+                foreach (Ingredient ing in GetIngredients(m.Name))
+                {
+                    bool add = true;
+                    foreach (DatabaseData.Models.Ingredient ingre in removedIngredients)
+                    {
+                        if (ingre.Name == ing.Name)
+                            add = false;
+                    }
+                    if (add)
+                        ingredientsIntoFood.Add(ing);
+                }
+                DatabaseData.Models.MenuItem menuI = new DatabaseData.Models.MenuItem(m.Name, m.Description, m.Price);
+                menuI.Ingredients = ingredientsIntoFood;
+                orderItems.Add(menuI);
+                FoodList.Items.Add(menuI.Name + ",");
+            }
+        }
+
+        private IReadOnlyList<Ingredient> GetIngredients(string menuItemName)
+        {
+            foreach(DatabaseData.Models.MenuItem menuItem in it)
+            {
+                if (menuItemName == menuItem.Name)
+                    return menuItem.Ingredients;
+            }
+            return null;
         }
     }
 

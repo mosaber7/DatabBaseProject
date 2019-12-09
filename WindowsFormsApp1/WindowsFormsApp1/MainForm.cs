@@ -38,7 +38,9 @@ namespace WindowsFormsApp1
 
         private void Button1_Click(object sender, EventArgs e)
         {
-
+            Tables t = new Tables();
+            this.Hide();
+            t.Show();
         }
 
         private void Waiter_Click(object sender, EventArgs e)
@@ -261,7 +263,9 @@ namespace WindowsFormsApp1
 
             try
             {
-                menuItemsRepository.AddIngredient(Name, Amount, Units, Cost);
+         menuItemsRepository.AddIngredient(Name, Amount, Units, Cost);
+
+ 
             } catch(Exception ex)
             {
                 return;

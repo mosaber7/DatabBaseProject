@@ -231,6 +231,27 @@ namespace WindowsFormsApp1
                 
             }
         }
+
+        private void ComboBox2_Click(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedIndex >= 0)
+            {
+                foreach (DatabaseData.Models.Ingredient ig in ingredi)
+                {
+                    if (comboBox2.SelectedItem != null)
+                    {
+                        if (ig.Name == comboBox2.SelectedItem.ToString())
+                        {
+                            removedingredi.Add(ig);
+                            comboBox2.Items.Remove(comboBox2.SelectedItem);
+                        }
+
+
+                    }
+                }
+
+            }
+        }
     }
 
 }

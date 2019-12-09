@@ -19,14 +19,14 @@ namespace WindowsFormsApp1
 
         private void Button7_Click(object sender, EventArgs e)
         {
-            Order o = new Order();
+            Order o = new Order(7);
             this.Hide();
             o.Show();
         }
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            Order o = new Order();
+            Order o = new Order(1);
             this.Hide();
             o.Show();
 
@@ -35,7 +35,7 @@ namespace WindowsFormsApp1
         private void Table2_Click(object sender, EventArgs e)
         {
 
-            Order o = new Order();
+            Order o = new Order(2);
             this.Hide();
             o.Show();
         }
@@ -43,7 +43,7 @@ namespace WindowsFormsApp1
         private void Table3_Click(object sender, EventArgs e)
         {
 
-            Order o = new Order();
+            Order o = new Order(3);
             this.Hide();
             o.Show();
         }
@@ -51,7 +51,7 @@ namespace WindowsFormsApp1
         private void Table4_Click(object sender, EventArgs e)
         {
 
-            Order o = new Order();
+            Order o = new Order(4);
             this.Hide();
             o.Show();
         }
@@ -59,7 +59,7 @@ namespace WindowsFormsApp1
         private void Table6_Click(object sender, EventArgs e)
         {
 
-            Order o = new Order();
+            Order o = new Order(6);
             this.Hide();
             o.Show();
         }
@@ -67,7 +67,7 @@ namespace WindowsFormsApp1
         private void Table7_Click(object sender, EventArgs e)
         {
 
-            Order o = new Order();
+            Order o = new Order(7);
             this.Hide();
             o.Show();
         }
@@ -75,7 +75,7 @@ namespace WindowsFormsApp1
         private void Table8_Click(object sender, EventArgs e)
         {
 
-            Order o = new Order();
+            Order o = new Order(8);
             this.Hide();
             o.Show();
         }
@@ -83,7 +83,7 @@ namespace WindowsFormsApp1
         private void Table9_Click(object sender, EventArgs e)
         {
 
-            Order o = new Order();
+            Order o = new Order(9);
             this.Hide();
             o.Show();
         }

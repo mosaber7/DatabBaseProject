@@ -15,10 +15,11 @@ namespace WindowsFormsApp1
     {
         List<DatabaseData.Models.MenuItem> it =new List<DatabaseData.Models.MenuItem>() ;
         List<DatabaseData.Models.Waiter> mw = new List<DatabaseData.Models.Waiter>();
-
-        public Order()
+        int tableno;
+        public Order(int no)
         {
             InitializeComponent();
+            tableno = no;
             string connectionString = "Server=mssql.cs.ksu.edu;Database=santiagoscavone;UID=santiagoscavone;Pwd=Sqlpassword1!";
             SqlMenuItemsRepository sql = new SqlMenuItemsRepository(connectionString);
             foreach (DatabaseData.Models.MenuItem i in sql.FetchActiveMenuItems())
@@ -87,6 +88,13 @@ namespace WindowsFormsApp1
 
         private void Done_Click(object sender, EventArgs e)
         {
+            string connectionString = "Server=mssql.cs.ksu.edu;Database=santiagoscavone;UID=santiagoscavone;Pwd=Sqlpassword1!";
+            SqlOrderRepository sqlo = new SqlOrderRepository(connectionString);
+            if (selectedWaiter != null)
+            {
+                Console.WriteLine("5555555");
+                sqlo.AddOrder(selectedWaiter.FirstName, selectedWaiter.LastName, tableno);
+            }
 
         }
         List<DatabaseData.Models.Ingredient> removedingredi = new List<DatabaseData.Models.Ingredient>();
@@ -98,8 +106,24 @@ namespace WindowsFormsApp1
         /// <param name="e"></param>
         private void ComboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
-           
+            if (comboBox1.SelectedIndex >= 0)
+            {
+                foreach (DatabaseData.Models.Ingredient ig in ingredi)
+                {
+                    if (comboBox2.SelectedItem != null)
+                    {
+                        if (ig.Name == comboBox2.SelectedItem.ToString())
+                        {
+                            removedingredi.Add(ig);
+                            comboBox2.Items.Remove(comboBox2.SelectedItem);
+                        }
+
+
+                    }
+                }
+
+            }
+
         }
         List<DatabaseData.Models.Ingredient> ingredi =new List<DatabaseData.Models.Ingredient>();
         private void ComboBox2_MouseEnter(object sender, EventArgs e)
@@ -118,6 +142,7 @@ namespace WindowsFormsApp1
             }
         }
         DatabaseData.Models.Waiter selectedWaiter;
+
         private void Waiter_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedIndex >= 0)
@@ -144,6 +169,8 @@ namespace WindowsFormsApp1
                     if ((ww.FirstName + " " + ww.LastName) == (string)comboBox3.SelectedItem)
                     {
                         selectedWaiter = ww;
+                        Console.WriteLine(comboBox3.SelectedItem);
+
                     }
 
                 }
@@ -160,6 +187,7 @@ namespace WindowsFormsApp1
                     if ((ww.FirstName + " " + ww.LastName) == (string)comboBox3.SelectedItem)
                     {
                         selectedWaiter = ww;
+                        Console.WriteLine(comboBox3.SelectedItem);
                     }
 
                 }

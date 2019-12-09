@@ -87,5 +87,12 @@ namespace WindowsFormsApp1
             this.Hide();
             o.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            View_Orders vw = new View_Orders(1);
+            Hide();
+            vw.Show();
+        }
     }
 }

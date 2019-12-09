@@ -76,6 +76,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View Orders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View Orders.Designer.cs">
+      <DependentUpon>View Orders.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="ClockInOut.resx">
       <DependentUpon>ClockInOut.cs</DependentUpon>
     </EmbeddedResource>
@@ -97,6 +103,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View Orders.resx">
+      <DependentUpon>View Orders.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

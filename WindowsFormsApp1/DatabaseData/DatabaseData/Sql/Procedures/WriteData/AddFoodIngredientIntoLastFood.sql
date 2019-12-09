@@ -3,8 +3,11 @@ CREATE OR ALTER PROCEDURE Restaurant.AddFoodIngredient
 	@IngredientName NVARCHAR (32),
 	@AmountUsed DECIMAL
 AS
+	DECLARE @IngredientID INT = Restaurant.RetrieveIngredientID(@IngredientName);
+	IF(@IngredientID IS NULL)
+		THROW 50000, 'Ingredient not found', 1
 	INSERT INTO Restaurant.FoodIngredient(FoodID, IngredientID, AmountUsed)
-	VALUES (@FoodID, Restaurant.RetrieveIngredientID(@IngredientName), @AmountUsed);
+	VALUES (@FoodID, @IngredientID, @AmountUsed);
 GO
 
 CREATE OR ALTER PROCEDURE Restaurant.AddFoodIngredientIntoLastFood

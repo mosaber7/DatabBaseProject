@@ -4,6 +4,8 @@ CREATE OR ALTER PROCEDURE Restaurant.AddShift
 	@ClockIn DATETIMEOFFSET
 AS
 	DECLARE @WaiterID INT = Restaurant.RetrieveWaiter(@WaiterFirstName, @WaiterLastName);
+	IF(@WaiterID IS NULL)
+		THROW 50000,'Waiter not found in the database',1
 	---If that waiter doesn't have an open shift already
 	IF NOT EXISTS
 	(
@@ -25,6 +27,8 @@ CREATE OR ALTER PROCEDURE Restaurant.AddShiftNoDate
 	@ClockIn DATETIMEOFFSET OUTPUT
 AS
 	DECLARE @WaiterID INT = Restaurant.RetrieveWaiter(@WaiterFirstName, @WaiterLastName);
+	IF(@WaiterID IS NULL)
+		THROW 50000,'Waiter not found in the database',1
 	---If that waiter doesn't have an open shift already
 	IF NOT EXISTS
 	(

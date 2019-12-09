@@ -5,6 +5,8 @@ CREATE OR ALTER PROCEDURE Restaurant.AddFood
 	@FoodID INT OUTPUT
 AS
 	DECLARE @MenuItemID INT = Restaurant.RetrieveActiveMenuItemID(@MenuItemName);
+	IF (@MenuItemID IS NULL)
+		THROW 50000, 'Menu Item not found in the database', 1
 	INSERT INTO Restaurant.Foods (OrderID, MenuItemID, Quantity)
 	VALUES (@OrderID, @MenuItemID, @Quantity)
 	SET @FoodID = SCOPE_IDENTITY();

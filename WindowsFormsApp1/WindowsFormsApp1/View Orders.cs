@@ -26,16 +26,19 @@ namespace WindowsFormsApp1
         {
             FoodsListBox.Items.Clear();
 
-            int orderID = Convert.ToInt32(OrdersListBox.SelectedItem.ToString());
-
-            IReadOnlyList<Food> foods = orderRepository.GetFoodsFromOrder(orderID);
-
-            foreach(Food f in foods )
+            if (OrdersListBox.SelectedItem != null)
             {
-                FoodsListBox.Items.Add(f.Name + ", " + f.Quantity);
-                foreach(Ingredient i in f.IngredientsUsed)
+                int orderID = Convert.ToInt32(OrdersListBox.SelectedItem.ToString());
+
+                IReadOnlyList<Food> foods = orderRepository.GetFoodsFromOrder(orderID);
+
+                foreach (Food f in foods)
                 {
-                    FoodsListBox.Items.Add(" " + i.Name);
+                    FoodsListBox.Items.Add(f.Name + ", " + f.Quantity);
+                    foreach (Ingredient i in f.IngredientsUsed)
+                    {
+                        FoodsListBox.Items.Add(" " + i.Name);
+                    }
                 }
             }
         }
@@ -47,37 +50,41 @@ namespace WindowsFormsApp1
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            try
+            if (OrdersListBox.SelectedItem != null)
             {
-                decimal tip = Convert.ToDecimal(textBox1.Text);
-                orderRepository.DeliverOrder(Convert.ToInt32(OrdersListBox.SelectedItem.ToString()), tip);
-                OrdersListBox.Items.Remove(OrdersListBox.SelectedItem);
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
+                try
+                {
+                    decimal tip = Convert.ToDecimal(textBox1.Text);
+                    orderRepository.DeliverOrder(Convert.ToInt32(OrdersListBox.SelectedItem.ToString()), tip);
+                    OrdersListBox.Items.Remove(OrdersListBox.SelectedItem);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
             }
         }
 
         private void Button2_Click(object sender, EventArgs e)
         {
-            try
+            if (OrdersListBox.SelectedItem != null)
             {
-                orderRepository.CancelOrder(Convert.ToInt32(OrdersListBox.SelectedItem.ToString()));
-                OrdersListBox.Items.Remove(OrdersListBox.SelectedItem);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
+                try
+                {
+                    orderRepository.CancelOrder(Convert.ToInt32(OrdersListBox.SelectedItem.ToString()));
+                    OrdersListBox.Items.Remove(OrdersListBox.SelectedItem);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                }
             }
 
         }
 
         private void Button3_Click(object sender, EventArgs e)
         {
-            Order o = new Order(tableNumber);
-            Hide();
-            o.Show();
+            Close();
         }
 
         private void View_Orders_Load(object sender, EventArgs e)

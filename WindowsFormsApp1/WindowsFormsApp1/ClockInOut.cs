@@ -38,13 +38,12 @@ namespace WindowsFormsApp1
             {
                 SqlWaiterRepository sql = new SqlWaiterRepository(connectionString);
                 sql.OpenShift(firstName, lastName);
+
+                ClockInOutResultsLabel.Text = name + " clocked in!";
             } catch(Exception ex)
             {
-                ClockInOutResultsLabel.Text = name + " is already clocked in.";
-                return;
+                ClockInOutResultsLabel.Text = ex.Message;
             }
-
-            ClockInOutResultsLabel.Text = name + " clocked in!";
         }
 
         private void ClockOutSubmit_Click(object sender, EventArgs e)
@@ -67,14 +66,13 @@ namespace WindowsFormsApp1
             {
                 SqlWaiterRepository sql = new SqlWaiterRepository(connectionString);
                 sql.CloseShift(firstName, lastName);
+
+                ClockInOutResultsLabel.Text = name + " clocked out!";
             }
             catch (Exception ex)
             {
-                ClockInOutResultsLabel.Text = name + " is already clocked out.";
-                return;
+                ClockInOutResultsLabel.Text = ex.Message;
             }
-
-            ClockInOutResultsLabel.Text = name + " clocked out!";
         }
     }
 }

@@ -3,12 +3,11 @@ CREATE OR ALTER PROCEDURE Restaurant.FireWaiter
 	@WaiterLastName NVARCHAR(64)
 AS
 	DECLARE @WaiterID INT = Restaurant.RetrieveWaiter (@WaiterFirstName, @WaiterLastName);
-	IF @WaiterID IS NOT NULL
-	BEGIN
-		UPDATE Restaurant.Waiters
-		SET
-			TerminationDate = SYSDATETIMEOFFSET()
-		WHERE WaiterID = @WaiterID
-	END
+	IF(@WaiterID IS NULL)
+		THROW 50000,'Waiter not found in the database',1
+	UPDATE Restaurant.Waiters
+	SET
+		TerminationDate = SYSDATETIMEOFFSET()
+	WHERE WaiterID = @WaiterID
 GO
 		

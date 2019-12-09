@@ -7,6 +7,10 @@ AS
 
 	DECLARE @WaiterID INT = Restaurant.RetrieveWaiter(@WaiterFirstName, @WaiterLastName);
 	DECLARE @TableID INT = Restaurant.RetrieveTableID(@TableNumber);
+	IF(@WaiterID IS NULL)
+		THROW 50000,'Waiter not found in the database',1
+	IF(@TableID IS NULL)
+		THROW 50000,'Table not found in the database',1
 	INSERT INTO Restaurant.Orders (WaiterID, TableID, OrderedOn)
 	VALUES (@WaiterID, @TableID, @OrderDate)
 GO
@@ -21,6 +25,10 @@ AS
 
 	DECLARE @WaiterID INT = Restaurant.RetrieveWaiter(@WaiterFirstName, @WaiterLastName);
 	DECLARE @TableID INT = Restaurant.RetrieveTableID(@TableNumber);
+	IF(@WaiterID IS NULL)
+		THROW 50000,'Waiter not found in the database',1
+	IF(@TableID IS NULL)
+		THROW 50000,'Table not found in the database',1
 	INSERT INTO Restaurant.Orders (WaiterID, TableID)
 	VALUES (@WaiterID, @TableID)
 	SET @OrderID = SCOPE_IDENTITY();
